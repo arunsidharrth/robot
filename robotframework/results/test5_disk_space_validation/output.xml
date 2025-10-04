@@ -1,206 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-30T17:22:35.506786" rpa="false" schemaversion="5">
-<suite id="s1" name="Disk Space Validation" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test5_disk_space_validation\disk_space_validation.robot">
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-02T21:24:29.473168" rpa="false" schemaversion="5">
+<suite id="s1" name="Disk Space Validation" source="C:\Users\write\robot\robot\robotframework\tests\test5_disk_space_validation\disk_space_validation.robot">
 <kw name="Initialize Storage Test Environment And Lookup Configuration" owner="storage_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.336488" level="INFO">🚀 Initializing Test-5: Storage &amp; System Validation Environment...</msg>
+<msg time="2025-10-02T21:24:29.675616" level="INFO">🚀 Initializing Test-5: Storage &amp; System Validation Environment...</msg>
 <arg>🚀 Initializing Test-5: Storage &amp; System Validation Environment...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.336283" elapsed="0.000485"/>
+<status status="PASS" start="2025-10-02T21:24:29.675432" elapsed="0.000325"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-09-30T17:22:36.337237" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test5_disk_space_validation\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test5_disk_space_validation\data&lt;/a&gt;' already exists.</msg>
+<msg time="2025-10-02T21:24:29.676060" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\write\robot\robot\robotframework\results\test5_disk_space_validation\data"&gt;C:\Users\write\robot\robot\robotframework\results\test5_disk_space_validation\data&lt;/a&gt;' already exists.</msg>
 <arg>${DATA_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.337036" elapsed="0.000257"/>
+<status status="PASS" start="2025-10-02T21:24:29.675872" elapsed="0.000248"/>
 </kw>
-<kw name="Lookup Server Config" owner="EDSLookup">
-<msg time="2025-09-30T17:22:36.358417" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
-<msg time="2025-09-30T17:22:36.358777" level="INFO">Extracted IP from EDS: 10.26.216.107</msg>
-<msg time="2025-09-30T17:22:36.358926" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
-<msg time="2025-09-30T17:22:36.358989" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
-<msg time="2025-09-30T17:22:36.359147" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
-<msg time="2025-09-30T17:22:36.359199" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
-<msg time="2025-09-30T17:22:36.359249" level="INFO">Extracted domain from EDS: gnscet.com</msg>
-<msg time="2025-09-30T17:22:36.359340" level="INFO">Extracted CPU cores from EDS: 8</msg>
-<msg time="2025-09-30T17:22:36.359429" level="INFO">Extracted RAM from EDS: 16</msg>
-<msg time="2025-09-30T17:22:36.359589" level="INFO">Extracted storage type from EDS: VSAN</msg>
-<msg time="2025-09-30T17:22:36.359638" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
-<msg time="2025-09-30T17:22:36.359670" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
-<msg time="2025-09-30T17:22:36.359700" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
-<msg time="2025-09-30T17:22:36.359729" level="INFO">Extracted logical volume/partition from EDS: /</msg>
-<msg time="2025-09-30T17:22:36.359770" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
-<msg time="2025-09-30T17:22:36.359801" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
-<msg time="2025-09-30T17:22:36.359827" level="INFO">Extracted drive purpose from EDS: OS</msg>
-<msg time="2025-09-30T17:22:36.359853" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
-<msg time="2025-09-30T17:22:36.359889" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
-<msg time="2025-09-30T17:22:36.360233" level="INFO">${eds_config} = {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<kw name="EDSLookup.Lookup Server Config">
+<msg time="2025-10-02T21:24:29.677890" level="FAIL">No keyword with name 'EDSLookup.Lookup Server Config' found.</msg>
 <var>${eds_config}</var>
 <arg>${TARGET_HOSTNAME}</arg>
-<doc>Lookup server configuration from EDS sheet based on hostname</doc>
-<status status="PASS" start="2025-09-30T17:22:36.337408" elapsed="0.022875"/>
+<status status="FAIL" start="2025-10-02T21:24:29.677865" elapsed="0.000060">No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.365608" level="INFO">${TARGET_IP} = 10.26.216.107</msg>
 <arg>${TARGET_IP}</arg>
 <arg>${eds_config['ip']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.360944" elapsed="0.004741"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678027" elapsed="0.000014"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.366687" level="INFO">${TARGET_CPU_CORES} = 8</msg>
 <arg>${TARGET_CPU_CORES}</arg>
 <arg>${eds_config['cpu_cores']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.365861" elapsed="0.000868"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678113" elapsed="0.000013"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.367653" level="INFO">${TARGET_RAM} = 16</msg>
 <arg>${TARGET_RAM}</arg>
 <arg>${eds_config['ram']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.366854" elapsed="0.000834"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678194" elapsed="0.000012"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.368454" level="INFO">${TARGET_STORAGE_TYPE} = VSAN</msg>
 <arg>${TARGET_STORAGE_TYPE}</arg>
 <arg>${eds_config['storage_type']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.367804" elapsed="0.000685"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678269" elapsed="0.000012"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.369180" level="INFO">${TARGET_STORAGE_TOTAL_TB} = 0.465</msg>
 <arg>${TARGET_STORAGE_TOTAL_TB}</arg>
 <arg>${eds_config['storage_total_tb']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.368585" elapsed="0.000629"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678343" elapsed="0.000011"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.369967" level="INFO">${TARGET_DRIVE_VOLUME_GROUP} = rootvg:</msg>
 <arg>${TARGET_DRIVE_VOLUME_GROUP}</arg>
 <arg>${eds_config['drive_volume_group']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.369307" elapsed="0.000710"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678416" elapsed="0.000012"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.370819" level="INFO">${TARGET_FILE_SYSTEM} = /dev/mapper/rootvg-rootlv</msg>
 <arg>${TARGET_FILE_SYSTEM}</arg>
 <arg>${eds_config['file_system']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.370128" elapsed="0.000725"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678489" elapsed="0.000011"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.373181" level="INFO">${TARGET_LOGICAL_VOLUME} = /</msg>
 <arg>${TARGET_LOGICAL_VOLUME}</arg>
 <arg>${eds_config['logical_volume_partition']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.370950" elapsed="0.002335"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678565" elapsed="0.000012"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.375016" level="INFO">${TARGET_STORAGE_ALLOC_GB} = 20</msg>
 <arg>${TARGET_STORAGE_ALLOC_GB}</arg>
 <arg>${eds_config['storage_allocation_gb']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.373541" elapsed="0.001560"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678639" elapsed="0.000011"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.376445" level="INFO">${TARGET_RECOMMENDED_GB} = 20</msg>
 <arg>${TARGET_RECOMMENDED_GB}</arg>
 <arg>${eds_config['recommended_storage_gb']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.375310" elapsed="0.001212"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678710" elapsed="0.000011"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.379064" level="INFO">${TARGET_DRIVE_PURPOSE} = OS</msg>
 <arg>${TARGET_DRIVE_PURPOSE}</arg>
 <arg>${eds_config['drive_purpose']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.376979" elapsed="0.002189"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678781" elapsed="0.000011"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.381462" level="INFO">${TARGET_OS_TYPE} = RHEL 9.6</msg>
 <arg>${TARGET_OS_TYPE}</arg>
 <arg>${eds_config['os_type']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.379420" elapsed="0.002128"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678851" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.382078" level="INFO">📋 EDS Target IP: 10.26.216.107</msg>
 <arg>📋 EDS Target IP: ${TARGET_IP}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.381749" elapsed="0.000775"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678920" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.383319" level="INFO">📋 EDS CPU Cores: 8</msg>
 <arg>📋 EDS CPU Cores: ${TARGET_CPU_CORES}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.382974" elapsed="0.000637"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.678988" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.384407" level="INFO">📋 EDS RAM: 16 GB</msg>
 <arg>📋 EDS RAM: ${TARGET_RAM} GB</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.383828" elapsed="0.000972"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.679055" elapsed="0.000021"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.385379" level="INFO">📋 EDS Storage Type: VSAN</msg>
 <arg>📋 EDS Storage Type: ${TARGET_STORAGE_TYPE}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.385074" elapsed="0.000596"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.679132" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.386074" level="INFO">📋 EDS Storage Total: 0.465 TB</msg>
 <arg>📋 EDS Storage Total: ${TARGET_STORAGE_TOTAL_TB} TB</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.385850" elapsed="0.000479"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.679199" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.386810" level="INFO">📋 EDS OS Type: RHEL 9.6</msg>
 <arg>📋 EDS OS Type: ${TARGET_OS_TYPE}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.386546" elapsed="0.000535"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.679271" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:22:36.387517" level="INFO">🔗 Connecting to target server: 10.26.216.107...</msg>
 <arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.387286" elapsed="0.000441"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.679337" elapsed="0.000011"/>
 </kw>
 <kw name="Open Connection" owner="SSHLibrary">
 <arg>${TARGET_IP}</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="PASS" start="2025-09-30T17:22:36.387899" elapsed="0.000246"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.679406" elapsed="0.000011"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
-<msg time="2025-09-30T17:22:36.388419" level="INFO">Logging into '10.26.216.107:22' as 'pauls6'.</msg>
-<msg time="2025-09-30T17:22:39.404796" level="FAIL">TimeoutError: timed out</msg>
 <arg>${SSH_USERNAME}</arg>
 <arg>${SSH_PASSWORD}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="FAIL" start="2025-09-30T17:22:36.388245" elapsed="3.021323">TimeoutError: timed out</status>
+<status status="NOT RUN" start="2025-10-02T21:24:29.679479" elapsed="0.000012"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ SSH connection established successfully</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-30T17:22:39.409878" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.679546" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Test-5 environment initialized</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-30T17:22:39.410080" elapsed="0.000025"/>
+<status status="NOT RUN" start="2025-10-02T21:24:29.679614" elapsed="0.000011"/>
 </kw>
 <doc>🏗️ Set up test environment and lookup EDS configuration</doc>
-<status status="FAIL" start="2025-09-30T17:22:36.335641" elapsed="3.074658">TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-02T21:24:29.674743" elapsed="0.004977">No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </kw>
 <test id="s1-t1" name="Critical - CPU Cores Validation" line="19">
 <doc>💻 SSH to server and validate CPU core count matches EDS specification</doc>
@@ -208,8 +167,8 @@
 <tag>cpu</tag>
 <tag>critical</tag>
 <tag>hardware</tag>
-<status status="FAIL" start="2025-09-30T17:22:39.410450" elapsed="0.001027">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-02T21:24:29.679938" elapsed="0.000479">Parent suite setup failed:
+No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t2" name="Critical - Memory Allocation Validation" line="36">
 <doc>🧠 SSH to server and validate memory allocation matches EDS specification</doc>
@@ -217,8 +176,8 @@ TimeoutError: timed out</status>
 <tag>critical</tag>
 <tag>hardware</tag>
 <tag>memory</tag>
-<status status="FAIL" start="2025-09-30T17:22:39.412418" elapsed="0.000507">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-02T21:24:29.680896" elapsed="0.000358">Parent suite setup failed:
+No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t3" name="Critical - Disk Space Allocation Validation" line="53">
 <doc>💾 SSH to server and validate disk space allocation against EDS requirements</doc>
@@ -226,8 +185,8 @@ TimeoutError: timed out</status>
 <tag>critical</tag>
 <tag>disk</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-09-30T17:22:39.413592" elapsed="0.000716">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-02T21:24:29.681646" elapsed="0.000381">Parent suite setup failed:
+No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t4" name="Critical - Storage Type Validation" line="70">
 <doc>📡 SSH to server and validate storage infrastructure matches EDS specification</doc>
@@ -235,8 +194,8 @@ TimeoutError: timed out</status>
 <tag>critical</tag>
 <tag>infrastructure</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-09-30T17:22:39.414831" elapsed="0.000644">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-02T21:24:29.682383" elapsed="0.000312">Parent suite setup failed:
+No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t5" name="Critical - Root Filesystem Validation" line="87">
 <doc>🗂️ SSH to server and validate root filesystem configuration against EDS</doc>
@@ -244,8 +203,8 @@ TimeoutError: timed out</status>
 <tag>critical</tag>
 <tag>filesystem</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-09-30T17:22:39.416001" elapsed="0.000423">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-02T21:24:29.683038" elapsed="0.000450">Parent suite setup failed:
+No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t6" name="Normal - Storage Capacity Analysis" line="107">
 <doc>📊 Analyze overall storage capacity and utilization patterns</doc>
@@ -253,8 +212,8 @@ TimeoutError: timed out</status>
 <tag>capacity</tag>
 <tag>normal</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-09-30T17:22:39.417045" elapsed="0.000543">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-02T21:24:29.683951" elapsed="0.000374">Parent suite setup failed:
+No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t7" name="Normal - Volume Group Analysis" line="127">
 <doc>🏗️ Analyze volume group and logical volume configuration</doc>
@@ -262,8 +221,8 @@ TimeoutError: timed out</status>
 <tag>lvm</tag>
 <tag>normal</tag>
 <tag>volumes</tag>
-<status status="FAIL" start="2025-09-30T17:22:39.418473" elapsed="0.001028">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-02T21:24:29.684909" elapsed="0.000387">Parent suite setup failed:
+No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t8" name="Normal - Operating System Validation" line="146">
 <doc>🖥️ Validate operating system type matches EDS specification</doc>
@@ -271,39 +230,34 @@ TimeoutError: timed out</status>
 <tag>normal</tag>
 <tag>os</tag>
 <tag>system</tag>
-<status status="FAIL" start="2025-09-30T17:22:39.420336" elapsed="0.000676">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-02T21:24:29.685685" elapsed="0.000415">Parent suite setup failed:
+No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <kw name="Generate Storage Executive Summary" owner="storage_keywords" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:22:39.422913" level="INFO">📊 Generating Test-5 Storage Validation Executive Summary...</msg>
+<msg time="2025-10-02T21:24:29.688614" level="INFO">📊 Generating Test-5 Storage Validation Executive Summary...</msg>
 <arg>📊 Generating Test-5 Storage Validation Executive Summary...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:22:39.422707" elapsed="0.000393"/>
+<status status="PASS" start="2025-10-02T21:24:29.688472" elapsed="0.000274"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-09-30T17:22:39.423898" level="INFO">${timestamp} = 2025-09-30 17:22:39</msg>
+<msg time="2025-10-02T21:24:29.689035" level="INFO">${timestamp} = 2025-10-02 21:24:29</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-09-30T17:22:39.423372" elapsed="0.000557"/>
+<status status="PASS" start="2025-10-02T21:24:29.688843" elapsed="0.000225"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:22:39.424168" level="INFO">${summary_file} = results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
+<msg time="2025-10-02T21:24:29.689335" level="INFO">${summary_file} = results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
 <var>${summary_file}</var>
 <arg>results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-30T17:22:39.424051" elapsed="0.000139"/>
+<status status="PASS" start="2025-10-02T21:24:29.689193" elapsed="0.000172"/>
 </kw>
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2025-09-30T17:22:39.424829" level="INFO">${summary_content} = ========================================
-🗄️ TEST-5: STORAGE &amp; SYSTEM VALIDATION
-📊 EXECUTIVE SUMMARY REPORT
-========================================
-
-📅 Report Generated: 2025-09-30 17:22:39
-🎯 Target Sy...</msg>
+<msg time="2025-10-02T21:24:29.690761" level="INFO">${summary_content} = None</msg>
+<msg time="2025-10-02T21:24:29.690785" level="FAIL">Variable '${TARGET_IP}' not found.</msg>
 <var>${summary_content}</var>
 <arg>SEPARATOR=\n</arg>
 <arg>========================================</arg>
@@ -342,38 +296,49 @@ TimeoutError: timed out</status>
 <arg>End of Executive Summary</arg>
 <arg>========================================</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2025-09-30T17:22:39.424279" elapsed="0.000607"/>
+<status status="FAIL" start="2025-10-02T21:24:29.689476" elapsed="0.001331">Variable '${TARGET_IP}' not found.</status>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-09-30T17:22:39.426291" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test5_disk_space_validation\Test5_Storage_Executive_Summary.txt"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test5_disk_space_validation\Test5_Storage_Executive_Summary.txt&lt;/a&gt;'.</msg>
+<msg time="2025-10-02T21:24:29.691577" level="FAIL">TypeError: write() argument must be str, not None</msg>
 <arg>${summary_file}</arg>
 <arg>${summary_content}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-09-30T17:22:39.425089" elapsed="0.001292"/>
+<status status="FAIL" start="2025-10-02T21:24:29.690953" elapsed="0.000754">TypeError: write() argument must be str, not None</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:22:39.426700" level="INFO">📊 Executive summary generated: results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
+<msg time="2025-10-02T21:24:29.691921" level="INFO">📊 Executive summary generated: results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
 <arg>📊 Executive summary generated: ${summary_file}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:22:39.426499" elapsed="0.000367"/>
+<status status="PASS" start="2025-10-02T21:24:29.691803" elapsed="0.000230"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:22:39.427271" level="INFO">✅ Test-5 Storage Validation completed successfully!</msg>
+<msg time="2025-10-02T21:24:29.692274" level="INFO">✅ Test-5 Storage Validation completed successfully!</msg>
 <arg>✅ Test-5 Storage Validation completed successfully!</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:22:39.427049" elapsed="0.000450"/>
+<status status="PASS" start="2025-10-02T21:24:29.692113" elapsed="0.000270"/>
 </kw>
 <doc>📊 Generate executive summary for storage validation results</doc>
-<status status="PASS" start="2025-09-30T17:22:39.422408" elapsed="0.005215"/>
+<status status="FAIL" start="2025-10-02T21:24:29.688236" elapsed="0.004248">Several failures occurred:
+
+1) Variable '${TARGET_IP}' not found.
+
+2) TypeError: write() argument must be str, not None</status>
 </kw>
 <doc>🗄️ Storage &amp; System Validation Test Suite - Test-5
 🔍 Process: Find hostname in EDS → SSH to server → Collect disk/CPU/memory data → Compare server vs EDS
 ✅ Pass if server resources match EDS requirements, ❌ Fail if mismatch
 📊 Validates: CPU cores, RAM, disk space allocation, filesystem types, storage configuration</doc>
-<status status="FAIL" start="2025-09-30T17:22:35.510232" elapsed="3.917462">Suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-02T21:24:29.474616" elapsed="0.217925">Suite setup failed:
+No keyword with name 'EDSLookup.Lookup Server Config' found.
+
+Also suite teardown failed:
+Several failures occurred:
+
+1) Variable '${TARGET_IP}' not found.
+
+2) TypeError: write() argument must be str, not None</status>
 </suite>
 <statistics>
 <total>
@@ -402,5 +367,18 @@ TimeoutError: timed out</status>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-10-02T21:24:29.665868" level="ERROR">Error in file 'C:\Users\write\robot\robot\robotframework\tests\test5_disk_space_validation\disk_space_validation.robot' on line 10: Importing library 'C:\Users\write\robot\robot\robotframework\library\EDSLookup.py' failed: ModuleNotFoundError: No module named 'pandas'
+Traceback (most recent call last):
+  File "C:\Users\write\robot\robot\robotframework\library\EDSLookup.py", line 6, in &lt;module&gt;
+    import pandas as pd
+PYTHONPATH:
+  C:\Users\write\robot\robot\robotframework\library
+  C:\Users\write\robot\robot\robotframework
+  C:\Python313\python313.zip
+  C:\Python313\DLLs
+  C:\Python313\Lib
+  C:\Python313
+  C:\Users\write\robot\robot\robotframework\venv
+  C:\Users\write\robot\robot\robotframework\venv\Lib\site-packages</msg>
 </errors>
 </robot>

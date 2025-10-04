@@ -82,7 +82,12 @@ class EDSLookup:
                 'storage_allocation_gb': self._extract_storage_allocation_gb(row),
                 'recommended_storage_gb': self._extract_recommended_storage_gb(row),
                 'drive_purpose': self._extract_drive_purpose(row),
-                'os_type': self._extract_os_type(row)
+                'os_type': self._extract_os_type(row),
+                'vxrail_cluster': self._extract_vxrail_cluster(row),
+                'vcenter_host': self._extract_vcenter_host(row),
+                'vm_hardware_version': self._extract_vm_hardware_version(row),
+                'vm_memory_reservation': self._extract_vm_memory_reservation(row),
+                'vm_cpu_reservation': self._extract_vm_cpu_reservation(row)
             }
 
             info(f"EDS configuration for {hostname}: {config}")
@@ -302,3 +307,73 @@ class EDSLookup:
             raise ValueError(f"OS type not found in EDS column '{os_col}'")
         except Exception as e:
             raise ValueError(f"Failed to extract OS type from EDS: {str(e)}")
+
+    def _extract_vxrail_cluster(self, row):
+        """Extract VxRail cluster name from EDS row"""
+        try:
+            cluster_col = "VxRail Cluster"
+            if cluster_col in row.index and pd.notna(row[cluster_col]):
+                cluster_value = str(row[cluster_col])
+                info(f"Extracted VxRail cluster from EDS: {cluster_value}")
+                return cluster_value
+            warn(f"VxRail cluster not found in EDS column '{cluster_col}', using N/A")
+            return "N/A"
+        except Exception as e:
+            warn(f"Failed to extract VxRail cluster from EDS: {str(e)}")
+            return "N/A"
+
+    def _extract_vcenter_host(self, row):
+        """Extract vCenter host from EDS row"""
+        try:
+            vcenter_col = "vCenter Host"
+            if vcenter_col in row.index and pd.notna(row[vcenter_col]):
+                vcenter_value = str(row[vcenter_col])
+                info(f"Extracted vCenter host from EDS: {vcenter_value}")
+                return vcenter_value
+            warn(f"vCenter host not found in EDS column '{vcenter_col}', using N/A")
+            return "N/A"
+        except Exception as e:
+            warn(f"Failed to extract vCenter host from EDS: {str(e)}")
+            return "N/A"
+
+    def _extract_vm_hardware_version(self, row):
+        """Extract VM hardware version from EDS row"""
+        try:
+            hw_col = "VM Hardware Version"
+            if hw_col in row.index and pd.notna(row[hw_col]):
+                hw_value = str(row[hw_col])
+                info(f"Extracted VM hardware version from EDS: {hw_value}")
+                return hw_value
+            warn(f"VM hardware version not found in EDS column '{hw_col}', using N/A")
+            return "N/A"
+        except Exception as e:
+            warn(f"Failed to extract VM hardware version from EDS: {str(e)}")
+            return "N/A"
+
+    def _extract_vm_memory_reservation(self, row):
+        """Extract VM memory reservation from EDS row"""
+        try:
+            mem_res_col = "VM Memory Reservation (MB)"
+            if mem_res_col in row.index and pd.notna(row[mem_res_col]):
+                mem_res_value = str(row[mem_res_col])
+                info(f"Extracted VM memory reservation from EDS: {mem_res_value}")
+                return mem_res_value
+            warn(f"VM memory reservation not found in EDS column '{mem_res_col}', using N/A")
+            return "N/A"
+        except Exception as e:
+            warn(f"Failed to extract VM memory reservation from EDS: {str(e)}")
+            return "N/A"
+
+    def _extract_vm_cpu_reservation(self, row):
+        """Extract VM CPU reservation from EDS row"""
+        try:
+            cpu_res_col = "VM CPU Reservation (MHz)"
+            if cpu_res_col in row.index and pd.notna(row[cpu_res_col]):
+                cpu_res_value = str(row[cpu_res_col])
+                info(f"Extracted VM CPU reservation from EDS: {cpu_res_value}")
+                return cpu_res_value
+            warn(f"VM CPU reservation not found in EDS column '{cpu_res_col}', using N/A")
+            return "N/A"
+        except Exception as e:
+            warn(f"Failed to extract VM CPU reservation from EDS: {str(e)}")
+            return "N/A"
