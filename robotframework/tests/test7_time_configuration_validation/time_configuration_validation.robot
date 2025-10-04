@@ -7,7 +7,6 @@ Documentation    ⏰ Time Configuration Validation Test Suite - Test-7
 Resource         ../../settings.resource
 Resource         time_keywords.resource
 Resource         variables.resource
-Library          ../../library/EDSLookup.py
 
 Suite Setup      Initialize Time Test Environment
 Suite Teardown   Generate Time Configuration Executive Summary

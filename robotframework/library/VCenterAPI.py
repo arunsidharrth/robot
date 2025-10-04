@@ -155,7 +155,7 @@ class VCenterAPI:
             vm_id: VM identifier (moref)
 
         Returns:
-            Dictionary with cluster information
+            Dictionary with cluster information including cluster name if available
         """
         try:
             if not self.api_session_id:
@@ -181,9 +181,24 @@ class VCenterAPI:
 
                     if host_response.status_code == 200:
                         host_data = host_response.json().get('value', {})
+                        cluster_id = host_data.get('cluster', 'N/A')
+
+                        # Try to get cluster name if cluster_id is available
+                        cluster_name = 'N/A'
+                        if cluster_id != 'N/A':
+                            try:
+                                cluster_url = f"https://{self.vcenter_host}/rest/vcenter/cluster/{cluster_id}"
+                                cluster_response = requests.get(cluster_url, headers=headers, verify=False)
+                                if cluster_response.status_code == 200:
+                                    cluster_data = cluster_response.json().get('value', {})
+                                    cluster_name = cluster_data.get('name', cluster_id)
+                            except:
+                                # If we can't get cluster name, use cluster_id
+                                cluster_name = cluster_id
 
                         cluster_info = {
-                            'cluster_id': host_data.get('cluster', 'N/A'),
+                            'cluster_id': cluster_id if cluster_id != 'N/A' else cluster_name,
+                            'cluster_name': cluster_name,
                             'host_id': host_id,
                             'host_name': host_data.get('name', 'N/A')
                         }
@@ -191,7 +206,7 @@ class VCenterAPI:
                         info(f"VM Cluster Placement: {json.dumps(cluster_info, indent=2)}")
                         return cluster_info
 
-            return {'cluster_id': 'N/A', 'host_id': 'N/A', 'host_name': 'N/A'}
+            return {'cluster_id': 'N/A', 'cluster_name': 'N/A', 'host_id': 'N/A', 'host_name': 'N/A'}
 
         except Exception as e:
             error(f"Error retrieving cluster placement: {str(e)}")

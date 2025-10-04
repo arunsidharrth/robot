@@ -7,7 +7,6 @@ Documentation    🗄️ Storage & System Validation Test Suite - Test-5
 Resource         ../../settings.resource
 Resource         storage_keywords.resource
 Resource         variables.resource
-Library          ../../library/EDSLookup.py
 
 Suite Setup      Initialize Storage Test Environment And Lookup Configuration
 Suite Teardown   Generate Storage Executive Summary

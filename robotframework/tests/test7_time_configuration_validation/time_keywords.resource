@@ -2,6 +2,7 @@
 Documentation    ⏰ Time Configuration Keywords for Test-7
 ...              📋 Provides SSH connection, time/NTP data collection, and validation capabilities
 ...
+Library          ../../library/EDSLookup.py
 Library          SSHLibrary
 Library          Collections
 Library          String
@@ -21,7 +22,7 @@ Initialize Time Test Environment
     Create Directory    ${DATA_DIR}
 
     # Lookup EDS configuration to get target IP
-    ${eds_config}=    EDSLookup.Lookup Server Config    ${TARGET_HOSTNAME}
+    ${eds_config}=    Lookup Server Config    ${TARGET_HOSTNAME}
     Set Suite Variable    ${TARGET_IP}    ${eds_config['ip']}
 
     Log    📋 Target Server: ${TARGET_HOSTNAME}    console=yes

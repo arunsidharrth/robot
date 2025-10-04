@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation    VM Validation Keywords - vCenter API interactions and VM data collection
 Library          ../../library/VCenterAPI.py
-Library          ../../library/EDSLookup.py
 Library          Collections
 Library          String
 Library          BuiltIn
@@ -25,17 +24,27 @@ Connect To vCenter And Get VM Details
     RETURN    ${vm_details}
 
 Get VM Cluster Placement
-    [Documentation]    Extract cluster placement from VM details
+    [Documentation]    Extract cluster placement from VM details - prefers cluster name over ID
     [Arguments]    ${vm_details}
 
     ${cluster_info}=    Get From Dictionary    ${vm_details}    cluster_placement
-    ${cluster_id}=      Get From Dictionary    ${cluster_info}    cluster_id
-    ${host_name}=       Get From Dictionary    ${cluster_info}    host_name
 
+    # Try to get cluster_name first, fallback to cluster_id, then host_name
+    ${cluster_name}=    Get From Dictionary    ${cluster_info}    cluster_name    default=N/A
+    ${cluster_id}=      Get From Dictionary    ${cluster_info}    cluster_id      default=N/A
+    ${host_name}=       Get From Dictionary    ${cluster_info}    host_name       default=N/A
+
+    Log    🏢 VM Cluster Name: ${cluster_name}    console=yes
     Log    🏢 VM Cluster ID: ${cluster_id}    console=yes
     Log    🖥️ VM Host: ${host_name}    console=yes
 
-    RETURN    ${cluster_id}
+    # Determine best identifier: cluster_name > cluster_id > host_name
+    ${cluster_identifier}=    Set Variable If
+    ...    '${cluster_name}' != 'N/A'    ${cluster_name}
+    ...    '${cluster_id}' != 'N/A'      ${cluster_id}
+    ...    ${host_name}
+
+    RETURN    ${cluster_identifier}
 
 Get VM CPU Configuration
     [Documentation]    Extract CPU configuration from VM details
@@ -114,16 +123,16 @@ Get VM Disk Configuration
 
 Validate VM Cluster Placement Against EDS
     [Documentation]    Validate that VM is in the expected VxRail cluster
-    [Arguments]    ${actual_cluster_id}    ${expected_cluster}
+    [Arguments]    ${actual_cluster}    ${expected_cluster}
 
     Log    🔍 Validating cluster placement...    console=yes
-    Log    📋 Expected VxRail Cluster: ${expected_cluster}    console=yes
-    Log    🏢 Actual Cluster ID: ${actual_cluster_id}    console=yes
+    Log    📋 Expected VxRail Cluster (from EDS): ${expected_cluster}    console=yes
+    Log    🏢 Actual Cluster (from vCenter): ${actual_cluster}    console=yes
 
-    # If EDS has specific cluster name, validate it's contained in cluster ID
+    # If EDS has specific cluster name, validate it matches or is contained in actual cluster
     Run Keyword If    '${expected_cluster}' != 'N/A'
-    ...    Should Contain    ${actual_cluster_id}    ${expected_cluster}    ignore_case=True
-    ...    msg=❌ CLUSTER MISMATCH: Expected '${expected_cluster}' but VM is in cluster '${actual_cluster_id}'
+    ...    Should Contain    ${actual_cluster}    ${expected_cluster}    ignore_case=True
+    ...    msg=❌ CLUSTER MISMATCH: Expected cluster name '${expected_cluster}' but VM is in '${actual_cluster}'
 
     Log    ✅ Cluster placement validated    console=yes
 

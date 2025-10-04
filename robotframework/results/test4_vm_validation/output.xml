@@ -1,143 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-04T10:47:12.514000" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-04T17:48:35.730669" rpa="false" schemaversion="5">
 <suite id="s1" name="Vm Validation" source="C:\Users\write\robot\robot\robotframework\tests\test4_vm_validation\vm_validation.robot">
 <kw name="Initialize VM Test Environment And Lookup Configuration" owner="variables" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.641370" level="INFO">🚀 Initializing VM Validation Test Suite (Test-4)</msg>
+<msg time="2025-10-04T17:48:35.847771" level="INFO">🚀 Initializing VM Validation Test Suite (Test-4)</msg>
 <arg>🚀 Initializing VM Validation Test Suite (Test-4)</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.641212" elapsed="0.000285"/>
+<status status="PASS" start="2025-10-04T17:48:35.847592" elapsed="0.000329"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.641739" level="INFO">🎯 Target VM: alhxdvitap01</msg>
+<msg time="2025-10-04T17:48:35.848191" level="INFO">🎯 Target VM: alhxdvitap01</msg>
 <arg>🎯 Target VM: ${TARGET_HOSTNAME}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.641611" elapsed="0.000220"/>
+<status status="PASS" start="2025-10-04T17:48:35.848047" elapsed="0.000245"/>
 </kw>
 <kw name="Lookup Server Config">
-<msg time="2025-10-04T10:47:12.643090" level="FAIL">No keyword with name 'Lookup Server Config' found.</msg>
+<msg time="2025-10-04T17:48:35.849799" level="FAIL">No keyword with name 'Lookup Server Config' found.</msg>
 <var>${eds_config}</var>
 <arg>${TARGET_HOSTNAME}</arg>
-<status status="FAIL" start="2025-10-04T10:47:12.643065" elapsed="0.000059">No keyword with name 'Lookup Server Config' found.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.849766" elapsed="0.000071">No keyword with name 'Lookup Server Config' found.</status>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_VXRAIL_CLUSTER}</arg>
 <arg>${eds_config['vxrail_cluster']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.643229" elapsed="0.000016"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.849942" elapsed="0.000016"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${vcenter_from_eds}</var>
+<arg>${eds_config['vcenter_host']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850026" elapsed="0.000013"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<var>${final_vcenter_host}</var>
+<arg>'${vcenter_from_eds}' == 'N/A'</arg>
+<arg>Set Variable</arg>
+<arg>${DEFAULT_VCENTER_HOST}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${vcenter_from_eds}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850108" elapsed="0.000014"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_VCENTER_HOST}</arg>
-<arg>${eds_config['vcenter_host']}</arg>
+<arg>${final_vcenter_host}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.643317" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850202" elapsed="0.000012"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_VM_CPU_CORES}</arg>
 <arg>${eds_config['cpu_cores']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.643393" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850277" elapsed="0.000012"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_VM_RAM}</arg>
 <arg>${eds_config['ram']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.643465" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850350" elapsed="0.000011"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_VM_HARDWARE_VERSION}</arg>
 <arg>${eds_config['vm_hardware_version']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.643542" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850420" elapsed="0.000012"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_VM_MEMORY_RESERVATION}</arg>
 <arg>${eds_config['vm_memory_reservation']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.643614" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850491" elapsed="0.000011"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_VM_CPU_RESERVATION}</arg>
 <arg>${eds_config['vm_cpu_reservation']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.643687" elapsed="0.000011"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850564" elapsed="0.000012"/>
 </kw>
-<kw name="Get Variable Value" owner="BuiltIn">
-<var>${vcenter_user}</var>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<var>${env_vcenter_user}</var>
+<arg>VCENTER_USERNAME</arg>
 <arg>${VCENTER_USERNAME}</arg>
-<arg>${EMPTY}</arg>
-<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.643768" elapsed="0.000012"/>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850640" elapsed="0.000013"/>
 </kw>
-<kw name="Get Variable Value" owner="BuiltIn">
-<var>${vcenter_pass}</var>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<var>${env_vcenter_pass}</var>
+<arg>VCENTER_PASSWORD</arg>
 <arg>${VCENTER_PASSWORD}</arg>
-<arg>${EMPTY}</arg>
-<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.643842" elapsed="0.000011"/>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850714" elapsed="0.000011"/>
 </kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${vcenter_user}' == '${EMPTY}'</arg>
-<arg>Set Suite Variable</arg>
+<kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${VCENTER_USERNAME}</arg>
-<arg>${ENV_VCENTER_USERNAME}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.643919" elapsed="0.000013"/>
+<arg>${env_vcenter_user}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850784" elapsed="0.000012"/>
 </kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${vcenter_pass}' == '${EMPTY}'</arg>
-<arg>Set Suite Variable</arg>
+<kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${VCENTER_PASSWORD}</arg>
-<arg>${ENV_VCENTER_PASSWORD}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.643994" elapsed="0.000012"/>
+<arg>${env_vcenter_pass}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850854" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 EDS Configuration Retrieved:</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.644121" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850919" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 - VxRail Cluster: ${TARGET_VXRAIL_CLUSTER}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.644262" elapsed="0.000032"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.850989" elapsed="0.000012"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 - vCenter Host: ${TARGET_VCENTER_HOST}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.644419" elapsed="0.000016"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.851056" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 - CPU Cores: ${TARGET_VM_CPU_CORES}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.644554" elapsed="0.000019"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.851121" elapsed="0.000017"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 - RAM: ${TARGET_VM_RAM}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.644647" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.851195" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 - Hardware Version: ${TARGET_VM_HARDWARE_VERSION}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.644714" elapsed="0.000018"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.851259" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ VM Test Environment Initialized</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-04T10:47:12.644792" elapsed="0.000010"/>
+<status status="NOT RUN" start="2025-10-04T17:48:35.851323" elapsed="0.000010"/>
 </kw>
 <doc>Initialize test environment and lookup VM configuration from EDS</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.640748" elapsed="0.004153">No keyword with name 'Lookup Server Config' found.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.847112" elapsed="0.004324">No keyword with name 'Lookup Server Config' found.</status>
 </kw>
 <test id="s1-t1" name="Critical - vCenter API Connection" line="21">
 <doc>🔌 Establish API connection to vCenter and retrieve VM details</doc>
@@ -145,7 +158,7 @@
 <tag>connection</tag>
 <tag>critical</tag>
 <tag>vcenter</tag>
-<status status="FAIL" start="2025-10-04T10:47:12.644984" elapsed="0.000549">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T17:48:35.851509" elapsed="0.000529">Parent suite setup failed:
 No keyword with name 'Lookup Server Config' found.</status>
 </test>
 <test id="s1-t2" name="Critical - VM Cluster Placement Validation" line="48">
@@ -154,7 +167,7 @@ No keyword with name 'Lookup Server Config' found.</status>
 <tag>compliance</tag>
 <tag>critical</tag>
 <tag>placement</tag>
-<status status="FAIL" start="2025-10-04T10:47:12.645958" elapsed="0.000354">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T17:48:35.852555" elapsed="0.000490">Parent suite setup failed:
 No keyword with name 'Lookup Server Config' found.</status>
 </test>
 <test id="s1-t3" name="Critical - VM CPU Configuration Validation" line="62">
@@ -163,7 +176,7 @@ No keyword with name 'Lookup Server Config' found.</status>
 <tag>cpu</tag>
 <tag>critical</tag>
 <tag>hardware</tag>
-<status status="FAIL" start="2025-10-04T10:47:12.646699" elapsed="0.000335">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T17:48:35.853629" elapsed="0.000408">Parent suite setup failed:
 No keyword with name 'Lookup Server Config' found.</status>
 </test>
 <test id="s1-t4" name="Critical - VM Memory Configuration Validation" line="76">
@@ -172,7 +185,7 @@ No keyword with name 'Lookup Server Config' found.</status>
 <tag>critical</tag>
 <tag>hardware</tag>
 <tag>memory</tag>
-<status status="FAIL" start="2025-10-04T10:47:12.647468" elapsed="0.000522">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T17:48:35.854374" elapsed="0.000348">Parent suite setup failed:
 No keyword with name 'Lookup Server Config' found.</status>
 </test>
 <test id="s1-t5" name="Critical - VM Hardware Version Validation" line="90">
@@ -181,7 +194,7 @@ No keyword with name 'Lookup Server Config' found.</status>
 <tag>critical</tag>
 <tag>hardware</tag>
 <tag>version</tag>
-<status status="FAIL" start="2025-10-04T10:47:12.648379" elapsed="0.000327">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T17:48:35.855088" elapsed="0.000460">Parent suite setup failed:
 No keyword with name 'Lookup Server Config' found.</status>
 </test>
 <test id="s1-t6" name="Critical - VM Network Adapter Validation" line="104">
@@ -190,7 +203,7 @@ No keyword with name 'Lookup Server Config' found.</status>
 <tag>compliance</tag>
 <tag>critical</tag>
 <tag>network</tag>
-<status status="FAIL" start="2025-10-04T10:47:12.649129" elapsed="0.000506">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T17:48:35.855941" elapsed="0.000347">Parent suite setup failed:
 No keyword with name 'Lookup Server Config' found.</status>
 </test>
 <test id="s1-t7" name="Critical - VM Disk Configuration Validation" line="118">
@@ -199,45 +212,36 @@ No keyword with name 'Lookup Server Config' found.</status>
 <tag>critical</tag>
 <tag>disk</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-10-04T10:47:12.650039" elapsed="0.000399">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T17:48:35.856631" elapsed="0.000295">Parent suite setup failed:
 No keyword with name 'Lookup Server Config' found.</status>
 </test>
-<test id="s1-t8" name="Normal - VM Resource Reservations Analysis" line="132">
-<doc>📊 Analyze VM resource reservations (CPU and Memory)</doc>
-<tag>analysis</tag>
-<tag>normal</tag>
-<tag>reservations</tag>
-<tag>resources</tag>
-<status status="FAIL" start="2025-10-04T10:47:12.650831" elapsed="0.000404">Parent suite setup failed:
-No keyword with name 'Lookup Server Config' found.</status>
-</test>
-<test id="s1-t9" name="Normal - VM Properties Comprehensive Review" line="145">
+<test id="s1-t8" name="Normal - VM Properties Comprehensive Review" line="132">
 <doc>📋 Review all VM properties and configuration details</doc>
 <tag>analysis</tag>
 <tag>normal</tag>
 <tag>properties</tag>
 <tag>review</tag>
-<status status="FAIL" start="2025-10-04T10:47:12.651642" elapsed="0.000300">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T17:48:35.857340" elapsed="0.000320">Parent suite setup failed:
 No keyword with name 'Lookup Server Config' found.</status>
 </test>
 <kw name="Generate VM Executive Summary And Disconnect" type="TEARDOWN">
 <kw name="Generate VM Executive Summary" owner="variables">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.653026" level="INFO">📊 Generating VM Validation Executive Summary...</msg>
+<msg time="2025-10-04T17:48:35.858861" level="INFO">📊 Generating VM Validation Executive Summary...</msg>
 <arg>📊 Generating VM Validation Executive Summary...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.652910" elapsed="0.000223"/>
+<status status="PASS" start="2025-10-04T17:48:35.858720" elapsed="0.000257"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.653408" level="INFO">${summary_file} = C:\Users\write\robot\robot\robotframework\results\test4_vm_validation/Test4_VM_Validation_Executive_Summary.txt</msg>
+<msg time="2025-10-04T17:48:35.859245" level="INFO">${summary_file} = C:\Users\write\robot\robot\robotframework\results\test4_vm_validation/Test4_VM_Validation_Executive_Summary.txt</msg>
 <var>${summary_file}</var>
 <arg>${OUTPUT_DIR}/Test4_VM_Validation_Executive_Summary.txt</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.653249" elapsed="0.000185"/>
+<status status="PASS" start="2025-10-04T17:48:35.859095" elapsed="0.000173"/>
 </kw>
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.655036" level="INFO">${summary} = ========================================
+<msg time="2025-10-04T17:48:35.861134" level="INFO">${summary} = ========================================
 VM VALIDATION TEST - EXECUTIVE SUMMARY
 ========================================
 
@@ -269,24 +273,24 @@ EDS CONFIGURATION:
 <arg>${EMPTY}</arg>
 <arg>========================================</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.653525" elapsed="0.001532"/>
+<status status="PASS" start="2025-10-04T17:48:35.859352" elapsed="0.001804"/>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-10-04T10:47:12.655761" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\write\robot\robot\robotframework\results\test4_vm_validation\Test4_VM_Validation_Executive_Summary.txt"&gt;C:\Users\write\robot\robot\robotframework\results\test4_vm_validation\Test4_VM_Validation_Executive_Summary.txt&lt;/a&gt;'.</msg>
+<msg time="2025-10-04T17:48:35.861913" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\write\robot\robot\robotframework\results\test4_vm_validation\Test4_VM_Validation_Executive_Summary.txt"&gt;C:\Users\write\robot\robot\robotframework\results\test4_vm_validation\Test4_VM_Validation_Executive_Summary.txt&lt;/a&gt;'.</msg>
 <arg>${summary_file}</arg>
 <arg>${summary}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.655160" elapsed="0.000649"/>
+<status status="PASS" start="2025-10-04T17:48:35.861259" elapsed="0.000701"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.656000" level="INFO">✅ Executive Summary generated: C:\Users\write\robot\robot\robotframework\results\test4_vm_validation/Test4_VM_Validation_Executive_Summary.txt</msg>
+<msg time="2025-10-04T17:48:35.862166" level="INFO">✅ Executive Summary generated: C:\Users\write\robot\robot\robotframework\results\test4_vm_validation/Test4_VM_Validation_Executive_Summary.txt</msg>
 <arg>✅ Executive Summary generated: ${summary_file}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.655888" elapsed="0.000218"/>
+<status status="PASS" start="2025-10-04T17:48:35.862040" elapsed="0.000252"/>
 </kw>
 <doc>Generate executive summary for VM validation test results</doc>
-<status status="PASS" start="2025-10-04T10:47:12.652791" elapsed="0.003368"/>
+<status status="PASS" start="2025-10-04T17:48:35.858589" elapsed="0.003771"/>
 </kw>
 <kw name="Disconnect From vCenter" owner="vm_keywords">
 <kw name="Disconnect From vCenter" owner="vm_keywords">
@@ -435,1478 +439,1478 @@ EDS CONFIGURATION:
 <kw name="Disconnect From vCenter" owner="vm_keywords">
 <kw name="Disconnect From vCenter" owner="vm_keywords">
 <kw name="Disconnect From vCenter" owner="vm_keywords">
-<msg time="2025-10-04T10:47:12.674216" level="FAIL">Recursive execution stopped.</msg>
+<msg time="2025-10-04T17:48:35.881493" level="FAIL">Recursive execution stopped.</msg>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.673977" elapsed="0.000270">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.881249" elapsed="0.000275">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.674513" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.881829" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.674394" elapsed="0.000884"/>
+<status status="PASS" start="2025-10-04T17:48:35.881680" elapsed="0.000300"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.673859" elapsed="0.001668">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.881154" elapsed="0.001022">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.675821" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.882416" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.675708" elapsed="0.000275"/>
+<status status="PASS" start="2025-10-04T17:48:35.882304" elapsed="0.000301"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.673764" elapsed="0.002452">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.881052" elapsed="0.001980">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.676474" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.883509" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.676368" elapsed="0.000249"/>
+<status status="PASS" start="2025-10-04T17:48:35.883309" elapsed="0.000361"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.673668" elapsed="0.003147">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.880952" elapsed="0.002899">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.677027" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.884113" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.676940" elapsed="0.000193"/>
+<status status="PASS" start="2025-10-04T17:48:35.884027" elapsed="0.000174"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.673571" elapsed="0.003803">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.880851" elapsed="0.003512">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.677582" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.884558" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.677495" elapsed="0.000193"/>
+<status status="PASS" start="2025-10-04T17:48:35.884479" elapsed="0.000164"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.673471" elapsed="0.004389">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.880751" elapsed="0.004056">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.679667" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.886687" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.679560" elapsed="0.000212"/>
+<status status="PASS" start="2025-10-04T17:48:35.886601" elapsed="0.000177"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.673285" elapsed="0.006798">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.880558" elapsed="0.006531">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.680457" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.887651" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.680283" elapsed="0.000331"/>
+<status status="PASS" start="2025-10-04T17:48:35.887427" elapsed="0.000373"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.673118" elapsed="0.007723">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.880381" elapsed="0.007626">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.681165" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.888301" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.681031" elapsed="0.000284"/>
+<status status="PASS" start="2025-10-04T17:48:35.888179" elapsed="0.000274"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.673021" elapsed="0.008510">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.880286" elapsed="0.008391">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.681741" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.888894" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.681656" elapsed="0.000193"/>
+<status status="PASS" start="2025-10-04T17:48:35.888809" elapsed="0.000201"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.672915" elapsed="0.009172">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.880193" elapsed="0.008980">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.682361" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.889363" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.682258" elapsed="0.000202"/>
+<status status="PASS" start="2025-10-04T17:48:35.889285" elapsed="0.000170"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.672813" elapsed="0.009896">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.880094" elapsed="0.009520">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.682934" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.889809" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.682860" elapsed="0.000180"/>
+<status status="PASS" start="2025-10-04T17:48:35.889729" elapsed="0.000171"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.672713" elapsed="0.010481">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.879967" elapsed="0.010099">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.683375" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.890256" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.683301" elapsed="0.000155"/>
+<status status="PASS" start="2025-10-04T17:48:35.890180" elapsed="0.000192"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.672614" elapsed="0.010996">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.879869" elapsed="0.010786">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.683796" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.890933" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.683721" elapsed="0.000153"/>
+<status status="PASS" start="2025-10-04T17:48:35.890833" elapsed="0.000230"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.672455" elapsed="0.011573">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.879695" elapsed="0.011602">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.684213" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.891582" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.684138" elapsed="0.000153"/>
+<status status="PASS" start="2025-10-04T17:48:35.891468" elapsed="0.000224"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.672358" elapsed="0.012085">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.879596" elapsed="0.012342">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.684625" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.892191" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.684549" elapsed="0.000154"/>
+<status status="PASS" start="2025-10-04T17:48:35.892093" elapsed="0.000201"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.672263" elapsed="0.012596">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.879497" elapsed="0.012998">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.685042" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.892719" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.684966" elapsed="0.000158"/>
+<status status="PASS" start="2025-10-04T17:48:35.892633" elapsed="0.000192"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.672167" elapsed="0.013111">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.879402" elapsed="0.013703">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.685458" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.893396" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.685383" elapsed="0.000156"/>
+<status status="PASS" start="2025-10-04T17:48:35.893280" elapsed="0.000235"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.672068" elapsed="0.013620">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.879307" elapsed="0.014445">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.685864" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.894007" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.685791" elapsed="0.000163"/>
+<status status="PASS" start="2025-10-04T17:48:35.893907" elapsed="0.000210"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.671968" elapsed="0.014140">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.879208" elapsed="0.015075">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.686289" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.894486" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.686214" elapsed="0.000149"/>
+<status status="PASS" start="2025-10-04T17:48:35.894402" elapsed="0.000165"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.671837" elapsed="0.014675">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.879109" elapsed="0.015631">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.686685" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.895063" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.686614" elapsed="0.000147"/>
+<status status="PASS" start="2025-10-04T17:48:35.894978" elapsed="0.000172"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.671680" elapsed="0.018041">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.878949" elapsed="0.019363">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.690037" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.898617" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.689882" elapsed="0.000292"/>
+<status status="PASS" start="2025-10-04T17:48:35.898475" elapsed="0.000293"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.671476" elapsed="0.018862">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.878751" elapsed="0.020222">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.690634" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.899344" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.690475" elapsed="0.000261"/>
+<status status="PASS" start="2025-10-04T17:48:35.899153" elapsed="0.000365"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.671382" elapsed="0.019538">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.878640" elapsed="0.021194">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.691117" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.900085" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.691041" elapsed="0.000171"/>
+<status status="PASS" start="2025-10-04T17:48:35.899980" elapsed="0.000205"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.671290" elapsed="0.020126">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.878547" elapsed="0.021800">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.691657" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.900537" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.691555" elapsed="0.000199"/>
+<status status="PASS" start="2025-10-04T17:48:35.900459" elapsed="0.000162"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.671192" elapsed="0.020717">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.878452" elapsed="0.022340">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.692103" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.900999" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.692021" elapsed="0.000161"/>
+<status status="PASS" start="2025-10-04T17:48:35.900921" elapsed="0.000160"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.671096" elapsed="0.021245">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.878354" elapsed="0.022895">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.692522" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.901441" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.692446" elapsed="0.000202"/>
+<status status="PASS" start="2025-10-04T17:48:35.901364" elapsed="0.000161"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.671000" elapsed="0.021868">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.878258" elapsed="0.023415">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.693123" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.901863" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.693018" elapsed="0.000225"/>
+<status status="PASS" start="2025-10-04T17:48:35.901788" elapsed="0.000156"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.670881" elapsed="0.022521">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.878156" elapsed="0.023939">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.693593" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.902272" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.693510" elapsed="0.000176"/>
+<status status="PASS" start="2025-10-04T17:48:35.902199" elapsed="0.000157"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.670783" elapsed="0.023059">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.878055" elapsed="0.024447">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.694033" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.902677" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.693951" elapsed="0.000169"/>
+<status status="PASS" start="2025-10-04T17:48:35.902605" elapsed="0.000159"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.670682" elapsed="0.023595">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.877955" elapsed="0.024956">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.694497" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.903089" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.694418" elapsed="0.000160"/>
+<status status="PASS" start="2025-10-04T17:48:35.903015" elapsed="0.000154"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.670585" elapsed="0.024139">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.877859" elapsed="0.025454">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.694928" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.903492" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.694837" elapsed="0.000288"/>
+<status status="PASS" start="2025-10-04T17:48:35.903417" elapsed="0.000154"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.670489" elapsed="0.024835">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.877757" elapsed="0.025957">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.695581" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.903897" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.695475" elapsed="0.000237"/>
+<status status="PASS" start="2025-10-04T17:48:35.903826" elapsed="0.000149"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.670392" elapsed="0.025483">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.877641" elapsed="0.026476">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.696087" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.904300" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.695997" elapsed="0.000193"/>
+<status status="PASS" start="2025-10-04T17:48:35.904228" elapsed="0.000172"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.670292" elapsed="0.026068">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.877543" elapsed="0.027072">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.696552" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.904844" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.696474" elapsed="0.000182"/>
+<status status="PASS" start="2025-10-04T17:48:35.904754" elapsed="0.000192"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.670142" elapsed="0.026798">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.877385" elapsed="0.027757">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.697321" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.905436" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.697154" elapsed="0.000302"/>
+<status status="PASS" start="2025-10-04T17:48:35.905304" elapsed="0.000285"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.669898" elapsed="0.027745">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.877142" elapsed="0.028674">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.698053" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.906355" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.697869" elapsed="0.000342"/>
+<status status="PASS" start="2025-10-04T17:48:35.906056" elapsed="0.000489"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.669756" elapsed="0.028686">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.876993" elapsed="0.029786">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.698778" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.907029" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.698663" elapsed="0.000219"/>
+<status status="PASS" start="2025-10-04T17:48:35.906914" elapsed="0.000234"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.669633" elapsed="0.029526">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.876901" elapsed="0.030398">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.699535" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.907495" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.699385" elapsed="0.000276"/>
+<status status="PASS" start="2025-10-04T17:48:35.907409" elapsed="0.000192"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.669536" elapsed="0.030358">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.876806" elapsed="0.030979">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.700085" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.908028" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.700011" elapsed="0.000174"/>
+<status status="PASS" start="2025-10-04T17:48:35.907930" elapsed="0.000207"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.669440" elapsed="0.030887">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.876702" elapsed="0.031659">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.700501" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.908623" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.700427" elapsed="0.000161"/>
+<status status="PASS" start="2025-10-04T17:48:35.908515" elapsed="0.000225"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.669345" elapsed="0.031380">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.876604" elapsed="0.032359">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.700899" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.909244" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.700827" elapsed="0.000168"/>
+<status status="PASS" start="2025-10-04T17:48:35.909128" elapsed="0.000232"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.669246" elapsed="0.031886">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.876508" elapsed="0.033042">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.701316" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.909914" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.701229" elapsed="0.000188"/>
+<status status="PASS" start="2025-10-04T17:48:35.909754" elapsed="0.000317"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.669148" elapsed="0.032410">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.876409" elapsed="0.034009">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.701734" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.910712" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.701656" elapsed="0.000171"/>
+<status status="PASS" start="2025-10-04T17:48:35.910635" elapsed="0.000169"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.669049" elapsed="0.033016">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.876310" elapsed="0.034650">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.702334" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.911152" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.702216" elapsed="0.000222"/>
+<status status="PASS" start="2025-10-04T17:48:35.911068" elapsed="0.000190"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.668951" elapsed="0.033632">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.876217" elapsed="0.035219">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.702767" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.911667" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.702688" elapsed="0.000166"/>
+<status status="PASS" start="2025-10-04T17:48:35.911566" elapsed="0.000201"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.668854" elapsed="0.034141">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.876122" elapsed="0.035825">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.703164" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.912176" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.703092" elapsed="0.000147"/>
+<status status="PASS" start="2025-10-04T17:48:35.912074" elapsed="0.000201"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.668755" elapsed="0.034617">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.876022" elapsed="0.036433">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.703538" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.912651" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.703467" elapsed="0.000149"/>
+<status status="PASS" start="2025-10-04T17:48:35.912571" elapsed="0.000185"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.668652" elapsed="0.035094">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.875918" elapsed="0.037011">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.703915" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.913150" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.703843" elapsed="0.000156"/>
+<status status="PASS" start="2025-10-04T17:48:35.913053" elapsed="0.000195"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.668483" elapsed="0.035654">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.875707" elapsed="0.037684">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.704349" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.913635" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.704273" elapsed="0.000154"/>
+<status status="PASS" start="2025-10-04T17:48:35.913551" elapsed="0.000168"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.668250" elapsed="0.036364">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.875445" elapsed="0.038493">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.704921" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.914304" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.704780" elapsed="0.000250"/>
+<status status="PASS" start="2025-10-04T17:48:35.914134" elapsed="0.000339"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.668012" elapsed="0.037159">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.875180" elapsed="0.039469">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.705470" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.915059" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.705314" elapsed="0.000253"/>
+<status status="PASS" start="2025-10-04T17:48:35.914848" elapsed="0.000336"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.667917" elapsed="0.037845">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.875073" elapsed="0.040399">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.705932" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.915673" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.705858" elapsed="0.000154"/>
+<status status="PASS" start="2025-10-04T17:48:35.915586" elapsed="0.000300"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.667812" elapsed="0.038334">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.874978" elapsed="0.041051">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.706436" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.916220" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.706357" elapsed="0.000183"/>
+<status status="PASS" start="2025-10-04T17:48:35.916131" elapsed="0.000185"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.667719" elapsed="0.038953">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.874845" elapsed="0.041623">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.706840" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.916680" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.706767" elapsed="0.000172"/>
+<status status="PASS" start="2025-10-04T17:48:35.916589" elapsed="0.000177"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.667621" elapsed="0.039496">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.874742" elapsed="0.042200">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.707349" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.917163" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.707252" elapsed="0.000189"/>
+<status status="PASS" start="2025-10-04T17:48:35.917075" elapsed="0.000184"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.667520" elapsed="0.040058">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.874637" elapsed="0.042815">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.707752" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.917655" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.707676" elapsed="0.000155"/>
+<status status="PASS" start="2025-10-04T17:48:35.917575" elapsed="0.000173"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.667420" elapsed="0.040542">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.874521" elapsed="0.043395">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.708141" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.918128" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.708067" elapsed="0.000163"/>
+<status status="PASS" start="2025-10-04T17:48:35.918035" elapsed="0.000188"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.667323" elapsed="0.041093">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.874403" elapsed="0.043994">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.708691" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.918595" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.708589" elapsed="0.000203"/>
+<status status="PASS" start="2025-10-04T17:48:35.918514" elapsed="0.000168"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.667203" elapsed="0.041726">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.874226" elapsed="0.044613">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.709097" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.919022" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.709022" elapsed="0.000164"/>
+<status status="PASS" start="2025-10-04T17:48:35.918945" elapsed="0.000164"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.667112" elapsed="0.042208">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.874041" elapsed="0.045205">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.709490" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.919417" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.709415" elapsed="0.000166"/>
+<status status="PASS" start="2025-10-04T17:48:35.919340" elapsed="0.000169"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.667017" elapsed="0.042703">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.873886" elapsed="0.045751">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.710167" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.920102" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.709820" elapsed="0.000432"/>
+<status status="PASS" start="2025-10-04T17:48:35.919732" elapsed="0.000462"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.666921" elapsed="0.043463">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.873767" elapsed="0.046558">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.710552" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.920503" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.710476" elapsed="0.000164"/>
+<status status="PASS" start="2025-10-04T17:48:35.920421" elapsed="0.000221"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.666824" elapsed="0.043951">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.873646" elapsed="0.047172">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.710951" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.921050" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.710872" elapsed="0.000159"/>
+<status status="PASS" start="2025-10-04T17:48:35.920944" elapsed="0.000223"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.666683" elapsed="0.044550">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.873495" elapsed="0.047881">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.711597" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.921655" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.711472" elapsed="0.000263"/>
+<status status="PASS" start="2025-10-04T17:48:35.921544" elapsed="0.000216"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.666461" elapsed="0.045438">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.873252" elapsed="0.048652">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.712262" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.922329" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.712066" elapsed="0.000329"/>
+<status status="PASS" start="2025-10-04T17:48:35.922063" elapsed="0.000380"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.666323" elapsed="0.046287">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.873111" elapsed="0.049503">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.712829" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.922797" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.712734" elapsed="0.000207"/>
+<status status="PASS" start="2025-10-04T17:48:35.922717" elapsed="0.000193"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.666224" elapsed="0.046874">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.873017" elapsed="0.050056">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.713304" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.923321" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.713216" elapsed="0.000194"/>
+<status status="PASS" start="2025-10-04T17:48:35.923206" elapsed="0.000224"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.666129" elapsed="0.047422">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.872919" elapsed="0.050660">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.713735" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.923754" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.713651" elapsed="0.000179"/>
+<status status="PASS" start="2025-10-04T17:48:35.923675" elapsed="0.000245"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.666033" elapsed="0.047929">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.872818" elapsed="0.051240">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.714215" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.924247" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.714126" elapsed="0.000182"/>
+<status status="PASS" start="2025-10-04T17:48:35.924160" elapsed="0.000197"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.665934" elapsed="0.048524">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.872724" elapsed="0.051777">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.714649" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.924687" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.714568" elapsed="0.000165"/>
+<status status="PASS" start="2025-10-04T17:48:35.924604" elapsed="0.000183"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.665830" elapsed="0.049045">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.872630" elapsed="0.052296">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.715108" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.925110" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.714992" elapsed="0.000214"/>
+<status status="PASS" start="2025-10-04T17:48:35.925031" elapsed="0.000179"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.665735" elapsed="0.049677">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.872534" elapsed="0.052825">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.715673" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.925539" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.715564" elapsed="0.000217"/>
+<status status="PASS" start="2025-10-04T17:48:35.925460" elapsed="0.000178"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.665640" elapsed="0.050289">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.872425" elapsed="0.053418">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.716089" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.926177" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.716018" elapsed="0.000181"/>
+<status status="PASS" start="2025-10-04T17:48:35.926032" elapsed="0.000273"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.665545" elapsed="0.050772">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.872330" elapsed="0.054139">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.716477" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.926701" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.716405" elapsed="0.000164"/>
+<status status="PASS" start="2025-10-04T17:48:35.926599" elapsed="0.000200"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.665449" elapsed="0.051236">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.872167" elapsed="0.054807">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.716843" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.927211" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.716772" elapsed="0.000170"/>
+<status status="PASS" start="2025-10-04T17:48:35.927105" elapsed="0.000208"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.665351" elapsed="0.051729">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.872041" elapsed="0.055455">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.717258" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.927749" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.717177" elapsed="0.000175"/>
+<status status="PASS" start="2025-10-04T17:48:35.927648" elapsed="0.000197"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.665254" elapsed="0.052222">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.871944" elapsed="0.056046">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.717641" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.928191" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.717565" elapsed="0.000159"/>
+<status status="PASS" start="2025-10-04T17:48:35.928099" elapsed="0.000182"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.665150" elapsed="0.052691">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.871844" elapsed="0.056576">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.718831" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.929404" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.718752" elapsed="0.000166"/>
+<status status="PASS" start="2025-10-04T17:48:35.929324" elapsed="0.000194"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.664940" elapsed="0.054201">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.871620" elapsed="0.058124">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.719457" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.930060" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.719308" elapsed="0.000264"/>
+<status status="PASS" start="2025-10-04T17:48:35.929909" elapsed="0.000272"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.664742" elapsed="0.054959">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.871451" elapsed="0.058861">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.719913" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.930526" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.719816" elapsed="0.000231"/>
+<status status="PASS" start="2025-10-04T17:48:35.930426" elapsed="0.000217"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.664648" elapsed="0.055545">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.871358" elapsed="0.059432">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.720355" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.930963" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.720281" elapsed="0.000157"/>
+<status status="PASS" start="2025-10-04T17:48:35.930887" elapsed="0.000167"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.664551" elapsed="0.056000">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.871257" elapsed="0.059909">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.720708" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.931326" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.720637" elapsed="0.000151"/>
+<status status="PASS" start="2025-10-04T17:48:35.931253" elapsed="0.000161"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.664443" elapsed="0.056458">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.871161" elapsed="0.060365">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.721068" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.931683" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.720986" elapsed="0.000165"/>
+<status status="PASS" start="2025-10-04T17:48:35.931611" elapsed="0.000181"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.664326" elapsed="0.056936">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.871062" elapsed="0.060887">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.721423" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.932163" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.721349" elapsed="0.000155"/>
+<status status="PASS" start="2025-10-04T17:48:35.932062" elapsed="0.000197"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.664081" elapsed="0.057530">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.870896" elapsed="0.061533">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.721813" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.932598" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.721740" elapsed="0.000158"/>
+<status status="PASS" start="2025-10-04T17:48:35.932519" elapsed="0.000167"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.663897" elapsed="0.058127">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.870800" elapsed="0.062002">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.722179" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.932974" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.722109" elapsed="0.000150"/>
+<status status="PASS" start="2025-10-04T17:48:35.932898" elapsed="0.000170"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.663776" elapsed="0.058591">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.870704" elapsed="0.062554">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.722520" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.933512" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.722449" elapsed="0.000190"/>
+<status status="PASS" start="2025-10-04T17:48:35.933399" elapsed="0.000213"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.663668" elapsed="0.059149">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.870597" elapsed="0.063133">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.723083" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.933908" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.722965" elapsed="0.000248"/>
+<status status="PASS" start="2025-10-04T17:48:35.933831" elapsed="0.000167"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.663572" elapsed="0.059759">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.870501" elapsed="0.063605">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.723536" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.934353" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.723455" elapsed="0.000178"/>
+<status status="PASS" start="2025-10-04T17:48:35.934251" elapsed="0.000195"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.663463" elapsed="0.060352">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.870409" elapsed="0.064181">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.724057" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.934773" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.723952" elapsed="0.000209"/>
+<status status="PASS" start="2025-10-04T17:48:35.934694" elapsed="0.000175"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.663366" elapsed="0.060903">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.870310" elapsed="0.064694">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.724429" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.935237" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.724355" elapsed="0.000155"/>
+<status status="PASS" start="2025-10-04T17:48:35.935128" elapsed="0.000227"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.663268" elapsed="0.061347">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.870211" elapsed="0.065277">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.724766" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.935670" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.724696" elapsed="0.000152"/>
+<status status="PASS" start="2025-10-04T17:48:35.935586" elapsed="0.000187"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.663107" elapsed="0.063049">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.870049" elapsed="0.067079">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.726436" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.937446" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.726285" elapsed="0.000270"/>
+<status status="PASS" start="2025-10-04T17:48:35.937279" elapsed="0.000312"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.662911" elapsed="0.063758">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.869842" elapsed="0.067873">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.726942" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.937998" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.726794" elapsed="0.000258"/>
+<status status="PASS" start="2025-10-04T17:48:35.937838" elapsed="0.000267"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.662814" elapsed="0.064377">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.869740" elapsed="0.068506">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.727345" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.938418" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.727273" elapsed="0.000154"/>
+<status status="PASS" start="2025-10-04T17:48:35.938339" elapsed="0.000186"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.662718" elapsed="0.064812">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.869607" elapsed="0.069080">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.727684" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.938909" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.727612" elapsed="0.000155"/>
+<status status="PASS" start="2025-10-04T17:48:35.938803" elapsed="0.000236"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.662622" elapsed="0.065246">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.869370" elapsed="0.069812">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.728020" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.939393" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.727950" elapsed="0.000283"/>
+<status status="PASS" start="2025-10-04T17:48:35.939294" elapsed="0.000203"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.662527" elapsed="0.065864">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.869100" elapsed="0.070522">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.728612" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.939791" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.728507" elapsed="0.000235"/>
+<status status="PASS" start="2025-10-04T17:48:35.939712" elapsed="0.000187"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.662432" elapsed="0.066438">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.868817" elapsed="0.071248">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.729043" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.940336" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.728958" elapsed="0.000188"/>
+<status status="PASS" start="2025-10-04T17:48:35.940212" elapsed="0.000259"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.662332" elapsed="0.066955">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.868507" elapsed="0.072110">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.729451" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.940811" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.729374" elapsed="0.000173"/>
+<status status="PASS" start="2025-10-04T17:48:35.940719" elapsed="0.000208"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.662212" elapsed="0.067470">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.868282" elapsed="0.072879">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.729930" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.941402" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.729771" elapsed="0.000266"/>
+<status status="PASS" start="2025-10-04T17:48:35.941290" elapsed="0.000226"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.662108" elapsed="0.068062">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.868111" elapsed="0.073523">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.730351" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.941807" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.730263" elapsed="0.000210"/>
+<status status="PASS" start="2025-10-04T17:48:35.941726" elapsed="0.000205"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.662012" elapsed="0.068638">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.867950" elapsed="0.074135">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.730931" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.942310" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.730792" elapsed="0.000256"/>
+<status status="PASS" start="2025-10-04T17:48:35.942206" elapsed="0.000220"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.661903" elapsed="0.069262">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.867858" elapsed="0.074766">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.731337" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.942918" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.731254" elapsed="0.000179"/>
+<status status="PASS" start="2025-10-04T17:48:35.942784" elapsed="0.000237"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.661761" elapsed="0.069831">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.867755" elapsed="0.075375">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.731810" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.943296" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.731711" elapsed="0.000213"/>
+<status status="PASS" start="2025-10-04T17:48:35.943217" elapsed="0.000160"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.661638" elapsed="0.070495">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.867635" elapsed="0.075841">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.732492" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.943631" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.732333" elapsed="0.000312"/>
+<status status="PASS" start="2025-10-04T17:48:35.943558" elapsed="0.000154"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.661479" elapsed="0.071426">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.867482" elapsed="0.076376">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.733272" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.944135" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.733100" elapsed="0.000324"/>
+<status status="PASS" start="2025-10-04T17:48:35.943995" elapsed="0.000251"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.661216" elapsed="0.072416">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.867241" elapsed="0.077131">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.734126" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.944740" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.733870" elapsed="0.000416"/>
+<status status="PASS" start="2025-10-04T17:48:35.944536" elapsed="0.000341"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.660961" elapsed="0.073467">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.867099" elapsed="0.077967">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.734615" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.945306" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.734522" elapsed="0.000183"/>
+<status status="PASS" start="2025-10-04T17:48:35.945188" elapsed="0.000223"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.660870" elapsed="0.073933">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.867007" elapsed="0.078581">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.734955" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.945867" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.734883" elapsed="0.000160"/>
+<status status="PASS" start="2025-10-04T17:48:35.945733" elapsed="0.000250"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.660774" elapsed="0.074365">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.866911" elapsed="0.079204">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.735290" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.946319" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.735219" elapsed="0.000158"/>
+<status status="PASS" start="2025-10-04T17:48:35.946220" elapsed="0.000204"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.660681" elapsed="0.074790">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.866814" elapsed="0.079714">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.735620" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.946716" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.735549" elapsed="0.000154"/>
+<status status="PASS" start="2025-10-04T17:48:35.946620" elapsed="0.000192"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.660589" elapsed="0.075205">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.866711" elapsed="0.080206">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.735939" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.947080" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.735870" elapsed="0.000150"/>
+<status status="PASS" start="2025-10-04T17:48:35.947001" elapsed="0.000173"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.660493" elapsed="0.075622">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.866517" elapsed="0.080756">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.736258" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.947429" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.736189" elapsed="0.000150"/>
+<status status="PASS" start="2025-10-04T17:48:35.947353" elapsed="0.000156"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.660396" elapsed="0.076032">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.866424" elapsed="0.081182">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.736572" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.947762" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.736503" elapsed="0.000150"/>
+<status status="PASS" start="2025-10-04T17:48:35.947688" elapsed="0.000170"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.660303" elapsed="0.076437">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.866330" elapsed="0.081664">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.736889" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.948201" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.736819" elapsed="0.000144"/>
+<status status="PASS" start="2025-10-04T17:48:35.948100" elapsed="0.000194"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.660210" elapsed="0.076843">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.866237" elapsed="0.082220">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.737198" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.948626" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.737126" elapsed="0.000227"/>
+<status status="PASS" start="2025-10-04T17:48:35.948544" elapsed="0.000169"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.660119" elapsed="0.077368">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.866147" elapsed="0.082669">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.737682" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.948990" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.737587" elapsed="0.000202"/>
+<status status="PASS" start="2025-10-04T17:48:35.948904" elapsed="0.000176"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.660024" elapsed="0.077862">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.866053" elapsed="0.083147">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.738038" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.949404" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.737964" elapsed="0.000152"/>
+<status status="PASS" start="2025-10-04T17:48:35.949299" elapsed="0.000198"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.659918" elapsed="0.078286">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.865942" elapsed="0.083668">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.738349" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.949823" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.738279" elapsed="0.000153"/>
+<status status="PASS" start="2025-10-04T17:48:35.949719" elapsed="0.000203"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.659801" elapsed="0.078729">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.865688" elapsed="0.084336">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.738715" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.950232" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.738642" elapsed="0.000162"/>
+<status status="PASS" start="2025-10-04T17:48:35.950152" elapsed="0.000169"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.659450" elapsed="0.079491">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.865495" elapsed="0.084967">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.739223" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.950749" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.739087" elapsed="0.000242"/>
+<status status="PASS" start="2025-10-04T17:48:35.950609" elapsed="0.000258"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.659241" elapsed="0.080186">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.865297" elapsed="0.085672">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.739691" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.951252" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.739545" elapsed="0.000244"/>
+<status status="PASS" start="2025-10-04T17:48:35.951099" elapsed="0.000259"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.659144" elapsed="0.080795">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.865202" elapsed="0.086324">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.740096" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.951750" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.740011" elapsed="0.000162"/>
+<status status="PASS" start="2025-10-04T17:48:35.951641" elapsed="0.000209"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.659048" elapsed="0.081209">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.865105" elapsed="0.086861">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.740396" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.952156" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.740328" elapsed="0.000150"/>
+<status status="PASS" start="2025-10-04T17:48:35.952062" elapsed="0.000187"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.658952" elapsed="0.081608">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.865012" elapsed="0.087342">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.740696" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.952546" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.740629" elapsed="0.000153"/>
+<status status="PASS" start="2025-10-04T17:48:35.952456" elapsed="0.000193"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.658828" elapsed="0.082036">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.864915" elapsed="0.087856">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.741004" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.952967" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.740936" elapsed="0.000145"/>
+<status status="PASS" start="2025-10-04T17:48:35.952871" elapsed="0.000194"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.658733" elapsed="0.082432">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.864821" elapsed="0.088358">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.741302" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.953380" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.741235" elapsed="0.000141"/>
+<status status="PASS" start="2025-10-04T17:48:35.953275" elapsed="0.000200"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.658625" elapsed="0.082830">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.864726" elapsed="0.088844">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.741591" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.953734" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.741524" elapsed="0.000151"/>
+<status status="PASS" start="2025-10-04T17:48:35.953648" elapsed="0.000183"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.658518" elapsed="0.083236">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.864632" elapsed="0.089312">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.741889" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.954092" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.741823" elapsed="0.000148"/>
+<status status="PASS" start="2025-10-04T17:48:35.954018" elapsed="0.000152"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.658411" elapsed="0.083637">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.864532" elapsed="0.089720">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.742200" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.954406" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.742121" elapsed="0.000165"/>
+<status status="PASS" start="2025-10-04T17:48:35.954333" elapsed="0.000159"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.658280" elapsed="0.084087">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.864436" elapsed="0.090146">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.742507" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.954737" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.742439" elapsed="0.000155"/>
+<status status="PASS" start="2025-10-04T17:48:35.954660" elapsed="0.000161"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.658171" elapsed="0.084501">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.864341" elapsed="0.090621">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.742811" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.955129" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.742743" elapsed="0.000176"/>
+<status status="PASS" start="2025-10-04T17:48:35.955040" elapsed="0.000218"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.658051" elapsed="0.084946">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.864238" elapsed="0.091113">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.743136" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.955511" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.743066" elapsed="0.000145"/>
+<status status="PASS" start="2025-10-04T17:48:35.955429" elapsed="0.000194"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.657922" elapsed="0.085365">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.864129" elapsed="0.091615">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.743421" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.955950" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.743354" elapsed="0.000163"/>
+<status status="PASS" start="2025-10-04T17:48:35.955847" elapsed="0.000211"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.657717" elapsed="0.085944">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.863964" elapsed="0.092293">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.743906" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.956570" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.743796" elapsed="0.000217"/>
+<status status="PASS" start="2025-10-04T17:48:35.956432" elapsed="0.000266"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.657401" elapsed="0.086712">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.863724" elapsed="0.093081">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.744435" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.957168" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.744246" elapsed="0.000284"/>
+<status status="PASS" start="2025-10-04T17:48:35.956950" elapsed="0.000347"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.657241" elapsed="0.087410">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.863570" elapsed="0.093868">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.744794" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.957614" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.744723" elapsed="0.000175"/>
+<status status="PASS" start="2025-10-04T17:48:35.957524" elapsed="0.000194"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.657146" elapsed="0.087916">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.863475" elapsed="0.094336">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.745267" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.958009" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.745161" elapsed="0.000219"/>
+<status status="PASS" start="2025-10-04T17:48:35.957907" elapsed="0.000218"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.657035" elapsed="0.088431">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.863377" elapsed="0.094893">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.745629" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.958533" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.745540" elapsed="0.000192"/>
+<status status="PASS" start="2025-10-04T17:48:35.958403" elapsed="0.000321"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.656936" elapsed="0.088883">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.863255" elapsed="0.095578">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.745982" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.959071" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.745894" elapsed="0.000183"/>
+<status status="PASS" start="2025-10-04T17:48:35.958950" elapsed="0.000254"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.656835" elapsed="0.089326">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.863127" elapsed="0.096199">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.746310" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.959534" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.746239" elapsed="0.000168"/>
+<status status="PASS" start="2025-10-04T17:48:35.959427" elapsed="0.000329"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.656735" elapsed="0.089768">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.863005" elapsed="0.096837">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.746666" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.960003" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.746590" elapsed="0.000170"/>
+<status status="PASS" start="2025-10-04T17:48:35.959927" elapsed="0.000186"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.656636" elapsed="0.090216">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.862876" elapsed="0.097343">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.747001" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.960412" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.746927" elapsed="0.000189"/>
+<status status="PASS" start="2025-10-04T17:48:35.960315" elapsed="0.000200"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.656531" elapsed="0.090683">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.862754" elapsed="0.097933">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.747402" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.960946" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.747323" elapsed="0.000194"/>
+<status status="PASS" start="2025-10-04T17:48:35.960815" elapsed="0.000247"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.656384" elapsed="0.091232">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.862627" elapsed="0.098518">Recursive execution stopped.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-04T10:47:12.747766" level="INFO">🔌 Disconnected from vCenter API</msg>
+<msg time="2025-10-04T17:48:35.961311" level="INFO">🔌 Disconnected from vCenter API</msg>
 <arg>🔌 Disconnected from vCenter API</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-04T10:47:12.747688" elapsed="0.000178"/>
+<status status="PASS" start="2025-10-04T17:48:35.961230" elapsed="0.000181"/>
 </kw>
 <doc>Disconnect from vCenter API session</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.656251" elapsed="0.091702">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.862475" elapsed="0.099072">Recursive execution stopped.</status>
 </kw>
 <doc>Generate executive summary and disconnect from vCenter</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.652588" elapsed="0.095433">Recursive execution stopped.</status>
+<status status="FAIL" start="2025-10-04T17:48:35.858369" elapsed="0.103284">Recursive execution stopped.</status>
 </kw>
 <doc>🖥️ VM Configuration Validation Test Suite - Test-4
 🔍 Process: Connect to vCenter API → Query VM details → Compare vCenter vs EDS
 ✅ Pass if VM configuration matches EDS requirements, ❌ Fail if mismatch
 📊 Validates: Cluster placement, CPU cores, memory, hardware version, network, disks</doc>
-<status status="FAIL" start="2025-10-04T10:47:12.515518" elapsed="0.232568">Suite setup failed:
+<status status="FAIL" start="2025-10-04T17:48:35.732168" elapsed="0.229566">Suite setup failed:
 No keyword with name 'Lookup Server Config' found.
 
 Also suite teardown failed:
@@ -1914,11 +1918,11 @@ Recursive execution stopped.</status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="9" skip="0">All Tests</stat>
+<stat pass="0" fail="8" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="0" fail="1" skip="0">adapters</stat>
-<stat pass="0" fail="2" skip="0">analysis</stat>
+<stat pass="0" fail="1" skip="0">analysis</stat>
 <stat pass="0" fail="1" skip="0">api</stat>
 <stat pass="0" fail="1" skip="0">cluster</stat>
 <stat pass="0" fail="6" skip="0">compliance</stat>
@@ -1929,22 +1933,20 @@ Recursive execution stopped.</status>
 <stat pass="0" fail="3" skip="0">hardware</stat>
 <stat pass="0" fail="1" skip="0">memory</stat>
 <stat pass="0" fail="1" skip="0">network</stat>
-<stat pass="0" fail="2" skip="0">normal</stat>
+<stat pass="0" fail="1" skip="0">normal</stat>
 <stat pass="0" fail="1" skip="0">placement</stat>
 <stat pass="0" fail="1" skip="0">properties</stat>
-<stat pass="0" fail="1" skip="0">reservations</stat>
-<stat pass="0" fail="1" skip="0">resources</stat>
 <stat pass="0" fail="1" skip="0">review</stat>
 <stat pass="0" fail="1" skip="0">storage</stat>
 <stat pass="0" fail="1" skip="0">vcenter</stat>
 <stat pass="0" fail="1" skip="0">version</stat>
 </tag>
 <suite>
-<stat name="Vm Validation" id="s1" pass="0" fail="9" skip="0">Vm Validation</stat>
+<stat name="Vm Validation" id="s1" pass="0" fail="8" skip="0">Vm Validation</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-10-04T10:47:12.608640" level="ERROR">Error in file 'C:\Users\write\robot\robot\robotframework\tests\test4_vm_validation\vm_keywords.resource' on line 4: Importing library 'C:\Users\write\robot\robot\robotframework\library\EDSLookup.py' failed: ModuleNotFoundError: No module named 'pandas'
+<msg time="2025-10-04T17:48:35.837257" level="ERROR">Error in file 'C:\Users\write\robot\robot\robotframework\tests\test4_vm_validation\variables.resource' on line 3: Importing library 'C:\Users\write\robot\robot\robotframework\library\EDSLookup.py' failed: ModuleNotFoundError: No module named 'pandas'
 Traceback (most recent call last):
   File "C:\Users\write\robot\robot\robotframework\library\EDSLookup.py", line 6, in &lt;module&gt;
     import pandas as pd

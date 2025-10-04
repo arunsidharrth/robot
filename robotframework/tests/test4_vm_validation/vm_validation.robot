@@ -129,19 +129,6 @@ Critical - VM Disk Configuration Validation
 
     Log    ✅ Disk configuration validation: PASSED - Disks configured    console=yes
 
-Normal - VM Resource Reservations Analysis
-    [Documentation]    📊 Analyze VM resource reservations (CPU and Memory)
-    [Tags]             normal    analysis    reservations    resources
-
-    Log    🔍 Analyzing VM resource reservations...    console=yes
-
-    Log    📋 EDS CPU Reservation: ${TARGET_VM_CPU_RESERVATION}    console=yes
-    Log    📋 EDS Memory Reservation: ${TARGET_VM_MEMORY_RESERVATION}    console=yes
-
-    # Note: Reservation details require additional API calls or are in advanced settings
-    Log    ℹ️ Resource reservation analysis: EDS configuration logged    console=yes
-    Log    ✅ Resource reservations: INFORMATIONAL - Available for review    console=yes
-
 Normal - VM Properties Comprehensive Review
     [Documentation]    📋 Review all VM properties and configuration details
     [Tags]             normal    analysis    review    properties

@@ -1,5 +1,6 @@
 *** Settings ***
 Documentation    VM Validation Test Variables - EDS Configuration Data
+Library          ../../library/EDSLookup.py
 Library          BuiltIn
 Library          OperatingSystem
 
@@ -13,9 +14,10 @@ ${TARGET_VM_HARDWARE_VERSION}    ${EMPTY}
 ${TARGET_VM_MEMORY_RESERVATION}  ${EMPTY}
 ${TARGET_VM_CPU_RESERVATION}     ${EMPTY}
 
-# vCenter credentials (to be set via environment variables or test parameters)
-${VCENTER_USERNAME}              ${EMPTY}
-${VCENTER_PASSWORD}              ${EMPTY}
+# vCenter credentials - Default values (can be overridden via environment variables)
+${VCENTER_USERNAME}              test
+${VCENTER_PASSWORD}              test
+${DEFAULT_VCENTER_HOST}          www.linux.com
 
 *** Keywords ***
 Initialize VM Test Environment And Lookup Configuration
@@ -29,23 +31,28 @@ Initialize VM Test Environment And Lookup Configuration
 
     # Extract VM-specific EDS configuration
     Set Suite Variable    ${TARGET_VXRAIL_CLUSTER}         ${eds_config['vxrail_cluster']}
-    Set Suite Variable    ${TARGET_VCENTER_HOST}           ${eds_config['vcenter_host']}
+
+    # Use EDS vCenter host if available, otherwise use default
+    ${vcenter_from_eds}=    Set Variable    ${eds_config['vcenter_host']}
+    ${final_vcenter_host}=    Run Keyword If    '${vcenter_from_eds}' == 'N/A'
+    ...    Set Variable    ${DEFAULT_VCENTER_HOST}
+    ...    ELSE
+    ...    Set Variable    ${vcenter_from_eds}
+    Set Suite Variable    ${TARGET_VCENTER_HOST}           ${final_vcenter_host}
+
     Set Suite Variable    ${TARGET_VM_CPU_CORES}           ${eds_config['cpu_cores']}
     Set Suite Variable    ${TARGET_VM_RAM}                 ${eds_config['ram']}
     Set Suite Variable    ${TARGET_VM_HARDWARE_VERSION}    ${eds_config['vm_hardware_version']}
     Set Suite Variable    ${TARGET_VM_MEMORY_RESERVATION}  ${eds_config['vm_memory_reservation']}
     Set Suite Variable    ${TARGET_VM_CPU_RESERVATION}     ${eds_config['vm_cpu_reservation']}
 
-    # Get vCenter credentials from environment or suite variables
-    ${vcenter_user}=    Get Variable Value    ${VCENTER_USERNAME}    ${EMPTY}
-    ${vcenter_pass}=    Get Variable Value    ${VCENTER_PASSWORD}    ${EMPTY}
+    # vCenter credentials are already set as default values in variables section
+    # They can be overridden via environment variables if needed
+    ${env_vcenter_user}=    Get Environment Variable    VCENTER_USERNAME    ${VCENTER_USERNAME}
+    ${env_vcenter_pass}=    Get Environment Variable    VCENTER_PASSWORD    ${VCENTER_PASSWORD}
 
-    # If not set, try to get from environment variables
-    Run Keyword If    '${vcenter_user}' == '${EMPTY}'
-    ...    Set Suite Variable    ${VCENTER_USERNAME}    ${ENV_VCENTER_USERNAME}
-
-    Run Keyword If    '${vcenter_pass}' == '${EMPTY}'
-    ...    Set Suite Variable    ${VCENTER_PASSWORD}    ${ENV_VCENTER_PASSWORD}
+    Set Suite Variable    ${VCENTER_USERNAME}    ${env_vcenter_user}
+    Set Suite Variable    ${VCENTER_PASSWORD}    ${env_vcenter_pass}
 
     Log    📋 EDS Configuration Retrieved:    console=yes
     Log    📋 - VxRail Cluster: ${TARGET_VXRAIL_CLUSTER}    console=yes

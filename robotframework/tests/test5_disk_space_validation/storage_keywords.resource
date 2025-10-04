@@ -2,6 +2,7 @@
 Documentation    🗄️ Storage and System Resource Keywords for Test-5
 ...              📋 Provides SSH connection, disk analysis, CPU validation, and data collection capabilities
 ...
+Library          ../../library/EDSLookup.py
 Library          SSHLibrary
 Library          Collections
 Library          String
@@ -21,7 +22,7 @@ Initialize Storage Test Environment And Lookup Configuration
     Create Directory    ${DATA_DIR}
 
     # Initialize EDS lookup and get configuration
-    ${eds_config}=    EDSLookup.Lookup Server Config    ${TARGET_HOSTNAME}
+    ${eds_config}=    Lookup Server Config    ${TARGET_HOSTNAME}
 
     # Store EDS configuration in suite variables for all tests
     Set Suite Variable    ${TARGET_IP}                    ${eds_config['ip']}
