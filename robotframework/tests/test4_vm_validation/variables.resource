@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    VM Validation Test Variables - EDS Configuration Data
-Library          ../../library/EDSLookup.py
+Library          BuiltIn
+Library          OperatingSystem
 
 *** Variables ***
 # Will be populated from EDS during suite setup

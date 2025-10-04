@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    VM Validation Keywords - vCenter API interactions and VM data collection
 Library          ../../library/VCenterAPI.py
+Library          ../../library/EDSLookup.py
 Library          Collections
 Library          String
 Library          BuiltIn
@@ -21,7 +22,7 @@ Connect To vCenter And Get VM Details
 
     Log    📦 Retrieved comprehensive VM details for: ${vm_name}    console=yes
 
-    [Return]    ${vm_details}
+    RETURN    ${vm_details}
 
 Get VM Cluster Placement
     [Documentation]    Extract cluster placement from VM details
@@ -34,7 +35,7 @@ Get VM Cluster Placement
     Log    🏢 VM Cluster ID: ${cluster_id}    console=yes
     Log    🖥️ VM Host: ${host_name}    console=yes
 
-    [Return]    ${cluster_id}
+    RETURN    ${cluster_id}
 
 Get VM CPU Configuration
     [Documentation]    Extract CPU configuration from VM details
@@ -47,7 +48,7 @@ Get VM CPU Configuration
     Log    💻 VM CPU Count: ${cpu_count}    console=yes
     Log    💻 VM Cores per Socket: ${cores_per_socket}    console=yes
 
-    [Return]    ${cpu_count}
+    RETURN    ${cpu_count}
 
 Get VM Memory Configuration
     [Documentation]    Extract memory configuration from VM details
@@ -58,7 +59,7 @@ Get VM Memory Configuration
 
     Log    🧠 VM Memory: ${memory_gb} GB    console=yes
 
-    [Return]    ${memory_gb}
+    RETURN    ${memory_gb}
 
 Get VM Hardware Version
     [Documentation]    Extract hardware version from VM details
@@ -69,7 +70,7 @@ Get VM Hardware Version
 
     Log    ⚙️ VM Hardware Version: ${hw_version}    console=yes
 
-    [Return]    ${hw_version}
+    RETURN    ${hw_version}
 
 Get VM Network Adapter Configuration
     [Documentation]    Extract network adapter configuration from VM details
@@ -87,7 +88,7 @@ Get VM Network Adapter Configuration
         Log    🔌 Adapter: ${label}, Type: ${type}, Network: ${network}    console=yes
     END
 
-    [Return]    ${adapters}
+    RETURN    ${adapters}
 
 Get VM Disk Configuration
     [Documentation]    Extract disk configuration from VM details
@@ -109,7 +110,7 @@ Get VM Disk Configuration
 
     Log    📊 Total Disk Capacity: ${total_capacity} GB    console=yes
 
-    [Return]    ${total_capacity}
+    RETURN    ${total_capacity}
 
 Validate VM Cluster Placement Against EDS
     [Documentation]    Validate that VM is in the expected VxRail cluster

@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-02T21:24:30.066229" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-04T10:47:13.653130" rpa="false" schemaversion="5">
 <suite id="s1" name="Time Configuration Validation" source="C:\Users\write\robot\robot\robotframework\tests\test7_time_configuration_validation\time_configuration_validation.robot">
 <kw name="Initialize Time Test Environment" owner="time_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-02T21:24:30.245064" level="INFO">🚀 Initializing Test-7: Time Configuration Validation Environment...</msg>
+<msg time="2025-10-04T10:47:13.832857" level="INFO">🚀 Initializing Test-7: Time Configuration Validation Environment...</msg>
 <arg>🚀 Initializing Test-7: Time Configuration Validation Environment...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-02T21:24:30.244918" elapsed="0.000290"/>
+<status status="PASS" start="2025-10-04T10:47:13.832703" elapsed="0.000293"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-10-02T21:24:30.245495" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\write\robot\robot\robotframework\results\test7_time_configuration_validation\data"&gt;C:\Users\write\robot\robot\robotframework\results\test7_time_configuration_validation\data&lt;/a&gt;' already exists.</msg>
+<msg time="2025-10-04T10:47:13.833308" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\write\robot\robot\robotframework\results\test7_time_configuration_validation\data"&gt;C:\Users\write\robot\robot\robotframework\results\test7_time_configuration_validation\data&lt;/a&gt;' already exists.</msg>
 <arg>${DATA_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-10-02T21:24:30.245346" elapsed="0.000201"/>
+<status status="PASS" start="2025-10-04T10:47:13.833156" elapsed="0.000206"/>
 </kw>
 <kw name="EDSLookup.Lookup Server Config">
-<msg time="2025-10-02T21:24:30.247168" level="FAIL">No keyword with name 'EDSLookup.Lookup Server Config' found.</msg>
+<msg time="2025-10-04T10:47:13.835424" level="FAIL">No keyword with name 'EDSLookup.Lookup Server Config' found.</msg>
 <var>${eds_config}</var>
 <arg>${TARGET_HOSTNAME}</arg>
-<status status="FAIL" start="2025-10-02T21:24:30.247144" elapsed="0.000058">No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
+<status status="FAIL" start="2025-10-04T10:47:13.835355" elapsed="0.000156">No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_IP}</arg>
 <arg>${eds_config['ip']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-02T21:24:30.247297" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-10-04T10:47:13.835777" elapsed="0.000044"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 Target Server: ${TARGET_HOSTNAME}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-02T21:24:30.247377" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-04T10:47:13.836007" elapsed="0.000036"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 Target IP: ${TARGET_IP}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-02T21:24:30.247454" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-04T10:47:13.836140" elapsed="0.000012"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-02T21:24:30.247523" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-04T10:47:13.836210" elapsed="0.000011"/>
 </kw>
 <kw name="Open Connection" owner="SSHLibrary">
 <arg>${TARGET_IP}</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="NOT RUN" start="2025-10-02T21:24:30.247594" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-04T10:47:13.836281" elapsed="0.000011"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
 <arg>${SSH_USERNAME}</arg>
 <arg>${SSH_PASSWORD}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="NOT RUN" start="2025-10-02T21:24:30.247662" elapsed="0.000011"/>
+<status status="NOT RUN" start="2025-10-04T10:47:13.836346" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ SSH connection established successfully</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-02T21:24:30.247728" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-04T10:47:13.836412" elapsed="0.000011"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Test-7 environment initialized</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-02T21:24:30.247798" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-04T10:47:13.836493" elapsed="0.000013"/>
 </kw>
 <doc>🏗️ Set up test environment for time configuration validation</doc>
-<status status="FAIL" start="2025-10-02T21:24:30.244441" elapsed="0.003451">No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
+<status status="FAIL" start="2025-10-04T10:47:13.832192" elapsed="0.004399">No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </kw>
 <test id="s1-t1" name="Critical - Connect to Target Server" line="19">
 <doc>🔗 Establish direct connection to target machine via SSH</doc>
@@ -77,7 +77,7 @@
 <tag>critical</tag>
 <tag>infrastructure</tag>
 <tag>ssh</tag>
-<status status="FAIL" start="2025-10-02T21:24:30.247950" elapsed="0.000407">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T10:47:13.836648" elapsed="0.000381">Parent suite setup failed:
 No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t2" name="Critical - Collect Time Configuration Data" line="32">
@@ -86,7 +86,7 @@ No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 <tag>data_collection</tag>
 <tag>ntp</tag>
 <tag>time</tag>
-<status status="FAIL" start="2025-10-02T21:24:30.248826" elapsed="0.000413">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T10:47:13.837432" elapsed="0.000420">Parent suite setup failed:
 No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t3" name="Critical - Validate Timezone Setting" line="50">
@@ -94,7 +94,7 @@ No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 <tag>compliance</tag>
 <tag>critical</tag>
 <tag>timezone</tag>
-<status status="FAIL" start="2025-10-02T21:24:30.249695" elapsed="0.000359">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T10:47:13.838369" elapsed="0.000364">Parent suite setup failed:
 No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t4" name="Critical - Validate Chrony Service Status" line="63">
@@ -103,7 +103,7 @@ No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 <tag>critical</tag>
 <tag>ntp</tag>
 <tag>service</tag>
-<status status="FAIL" start="2025-10-02T21:24:30.250544" elapsed="0.000377">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T10:47:13.839237" elapsed="0.000368">Parent suite setup failed:
 No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t5" name="Critical - Validate NTP Server Configuration" line="75">
@@ -112,7 +112,7 @@ No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 <tag>critical</tag>
 <tag>ntp</tag>
 <tag>server</tag>
-<status status="FAIL" start="2025-10-02T21:24:30.251472" elapsed="0.000418">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T10:47:13.840102" elapsed="0.000312">Parent suite setup failed:
 No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t6" name="Critical - Validate Time Synchronization Status" line="88">
@@ -121,7 +121,7 @@ No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 <tag>ntp</tag>
 <tag>synchronization</tag>
 <tag>time</tag>
-<status status="FAIL" start="2025-10-02T21:24:30.252308" elapsed="0.000510">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T10:47:13.840773" elapsed="0.000438">Parent suite setup failed:
 No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t7" name="Normal - Comprehensive Time Configuration Validation" line="101">
@@ -130,7 +130,7 @@ No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 <tag>comprehensive</tag>
 <tag>normal</tag>
 <tag>validation</tag>
-<status status="FAIL" start="2025-10-02T21:24:30.253271" elapsed="0.000464">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T10:47:13.841614" elapsed="0.000511">Parent suite setup failed:
 No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t8" name="Normal - Hardware Clock Verification" line="117">
@@ -139,7 +139,7 @@ No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 <tag>hardware</tag>
 <tag>normal</tag>
 <tag>verification</tag>
-<status status="FAIL" start="2025-10-02T21:24:30.254196" elapsed="0.000503">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T10:47:13.842488" elapsed="0.000381">Parent suite setup failed:
 No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t9" name="Normal - NTP Source Analysis" line="134">
@@ -148,7 +148,7 @@ No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 <tag>normal</tag>
 <tag>ntp</tag>
 <tag>sources</tag>
-<status status="FAIL" start="2025-10-02T21:24:30.255241" elapsed="0.000371">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T10:47:13.843219" elapsed="0.000288">Parent suite setup failed:
 No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <test id="s1-t10" name="Normal - Clock Drift Monitoring" line="166">
@@ -157,34 +157,34 @@ No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 <tag>drift</tag>
 <tag>monitoring</tag>
 <tag>normal</tag>
-<status status="FAIL" start="2025-10-02T21:24:30.255988" elapsed="0.000350">Parent suite setup failed:
+<status status="FAIL" start="2025-10-04T10:47:13.843891" elapsed="0.000268">Parent suite setup failed:
 No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 </test>
 <kw name="Generate Time Configuration Executive Summary" owner="time_keywords" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-02T21:24:30.257704" level="INFO">📊 Generating Test-7 Time Configuration Executive Summary...</msg>
+<msg time="2025-10-04T10:47:13.845474" level="INFO">📊 Generating Test-7 Time Configuration Executive Summary...</msg>
 <arg>📊 Generating Test-7 Time Configuration Executive Summary...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-02T21:24:30.257547" elapsed="0.000276"/>
+<status status="PASS" start="2025-10-04T10:47:13.845334" elapsed="0.000265"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-02T21:24:30.258111" level="INFO">${timestamp} = 2025-10-02 21:24:30</msg>
+<msg time="2025-10-04T10:47:13.845929" level="INFO">${timestamp} = 2025-10-04 10:47:13</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-02T21:24:30.257922" elapsed="0.000214"/>
+<status status="PASS" start="2025-10-04T10:47:13.845716" elapsed="0.000241"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-02T21:24:30.258342" level="INFO">${summary_file} = results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
+<msg time="2025-10-04T10:47:13.846168" level="INFO">${summary_file} = results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
 <var>${summary_file}</var>
 <arg>results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-02T21:24:30.258229" elapsed="0.000136"/>
+<status status="PASS" start="2025-10-04T10:47:13.846050" elapsed="0.000141"/>
 </kw>
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2025-10-02T21:24:30.259745" level="INFO">${summary_content} = None</msg>
-<msg time="2025-10-02T21:24:30.259769" level="FAIL">Variable '${TARGET_IP}' not found.</msg>
+<msg time="2025-10-04T10:47:13.847648" level="INFO">${summary_content} = None</msg>
+<msg time="2025-10-04T10:47:13.847681" level="FAIL">Variable '${TARGET_IP}' not found.</msg>
 <var>${summary_content}</var>
 <arg>SEPARATOR=\n</arg>
 <arg>========================================</arg>
@@ -219,31 +219,31 @@ No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 <arg>End of Executive Summary</arg>
 <arg>========================================</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="FAIL" start="2025-10-02T21:24:30.258449" elapsed="0.001341">Variable '${TARGET_IP}' not found.</status>
+<status status="FAIL" start="2025-10-04T10:47:13.846273" elapsed="0.001431">Variable '${TARGET_IP}' not found.</status>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-10-02T21:24:30.260490" level="FAIL">TypeError: write() argument must be str, not None</msg>
+<msg time="2025-10-04T10:47:13.848548" level="FAIL">TypeError: write() argument must be str, not None</msg>
 <arg>${summary_file}</arg>
 <arg>${summary_content}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="FAIL" start="2025-10-02T21:24:30.259927" elapsed="0.000691">TypeError: write() argument must be str, not None</status>
+<status status="FAIL" start="2025-10-04T10:47:13.847866" elapsed="0.000828">TypeError: write() argument must be str, not None</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-02T21:24:30.260825" level="INFO">📊 Executive summary generated: results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
+<msg time="2025-10-04T10:47:13.848920" level="INFO">📊 Executive summary generated: results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
 <arg>📊 Executive summary generated: ${summary_file}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-02T21:24:30.260705" elapsed="0.000230"/>
+<status status="PASS" start="2025-10-04T10:47:13.848786" elapsed="0.000296"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-02T21:24:30.261092" level="INFO">✅ Test-7 Time Configuration Validation completed successfully!</msg>
+<msg time="2025-10-04T10:47:13.849299" level="INFO">✅ Test-7 Time Configuration Validation completed successfully!</msg>
 <arg>✅ Test-7 Time Configuration Validation completed successfully!</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-02T21:24:30.261016" elapsed="0.000206"/>
+<status status="PASS" start="2025-10-04T10:47:13.849192" elapsed="0.000370"/>
 </kw>
 <doc>📊 Generate executive summary for time configuration validation</doc>
-<status status="FAIL" start="2025-10-02T21:24:30.257344" elapsed="0.004010">Several failures occurred:
+<status status="FAIL" start="2025-10-04T10:47:13.845127" elapsed="0.004570">Several failures occurred:
 
 1) Variable '${TARGET_IP}' not found.
 
@@ -253,7 +253,7 @@ No keyword with name 'EDSLookup.Lookup Server Config' found.</status>
 🔍 Process: Find hostname in EDS → SSH to server → Collect time/NTP data → Validate timezone and NTP configuration
 ✅ Pass if timezone is Pacific/Los Angeles and NTP server is ntpx.domain.com with proper synchronization
 📊 Validates: Timezone setting, Chrony service status, NTP server configuration, time synchronization</doc>
-<status status="FAIL" start="2025-10-02T21:24:30.068083" elapsed="0.193339">Suite setup failed:
+<status status="FAIL" start="2025-10-04T10:47:13.654629" elapsed="0.195145">Suite setup failed:
 No keyword with name 'EDSLookup.Lookup Server Config' found.
 
 Also suite teardown failed:
@@ -299,7 +299,7 @@ Several failures occurred:
 </suite>
 </statistics>
 <errors>
-<msg time="2025-10-02T21:24:30.240730" level="ERROR">Error in file 'C:\Users\write\robot\robot\robotframework\tests\test7_time_configuration_validation\time_configuration_validation.robot' on line 10: Importing library 'C:\Users\write\robot\robot\robotframework\library\EDSLookup.py' failed: ModuleNotFoundError: No module named 'pandas'
+<msg time="2025-10-04T10:47:13.828932" level="ERROR">Error in file 'C:\Users\write\robot\robot\robotframework\tests\test7_time_configuration_validation\time_configuration_validation.robot' on line 10: Importing library 'C:\Users\write\robot\robot\robotframework\library\EDSLookup.py' failed: ModuleNotFoundError: No module named 'pandas'
 Traceback (most recent call last):
   File "C:\Users\write\robot\robot\robotframework\library\EDSLookup.py", line 6, in &lt;module&gt;
     import pandas as pd

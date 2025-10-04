@@ -16,7 +16,8 @@
       "Bash(sudo apt:*)",
       "Bash(sudo apt install:*)",
       "Bash(python -m robot:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(venv\\Scripts\\python.exe -m pip install:*)"
     ],
     "deny": [],
     "ask": []
