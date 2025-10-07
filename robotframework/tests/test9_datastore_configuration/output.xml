@@ -1,0 +1,1922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-06T20:32:52.838711" rpa="false" schemaversion="5">
+<suite id="s1" name="Datastore Configuration" source="C:\Users\write\project_2025\robot\robotframework\tests\test9_datastore_configuration\datastore_configuration.robot">
+<kw name="Initialize Datastore Configuration Test Environment" owner="datastore_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<arg>🚀 Initializing Datastore Configuration Test Environment...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.031675" elapsed="0.000108"/>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<arg>${SCREENSHOT_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.031910" elapsed="0.000040"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${VCENTER_CONN}</arg>
+<arg>${None}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.032041" elapsed="0.000044"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${TEST_START_TIME}</arg>
+<arg>${EMPTY}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.032160" elapsed="0.000041"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<var>${start_time}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.032276" elapsed="0.000057"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${TEST_START_TIME}</arg>
+<arg>${start_time}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.032408" elapsed="0.000035"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Test environment initialized at ${TEST_START_TIME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.032511" elapsed="0.000064"/>
+</kw>
+<doc>Initialize test environment and create necessary directories</doc>
+<status status="PASS" start="2025-10-06T20:32:53.031172" elapsed="0.001442"/>
+</kw>
+<test id="s1-t1" name="Critical - Connect to vCenter" line="18">
+<kw name="Log Test Start" owner="datastore_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.033223" elapsed="0.000060"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.033076" elapsed="0.000247"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Establishing connection to vCenter...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.033403" elapsed="0.000050"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 vCenter Server: ${VCENTER_SERVER}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.033522" elapsed="0.000050"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 Target Host: ${VCENTER_HOST}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.033639" elapsed="0.000046"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 Cluster Environment: ${CLUSTER_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.033752" elapsed="0.000046"/>
+</kw>
+<kw name="Connect To vCenter" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>🔗 Connecting to vCenter server: ${VCENTER_SERVER}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.034051" elapsed="0.000051"/>
+</kw>
+<kw name="Vcenter Connect" owner="VCenterLibrary">
+<var>${connection}</var>
+<arg>${VCENTER_SERVER}</arg>
+<arg>${VCENTER_USERNAME}</arg>
+<arg>${VCENTER_PASSWORD}</arg>
+<doc>Establish connection to vCenter server</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.034172" elapsed="0.000031"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${VCENTER_CONN}</arg>
+<arg>${connection}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.034276" elapsed="0.000033"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Connected to vCenter: ${VCENTER_SERVER}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.034373" elapsed="0.000049"/>
+</kw>
+<return>
+<value>${connection}</value>
+<status status="PASS" start="2025-10-06T20:32:53.034461" elapsed="0.000021"/>
+</return>
+<doc>Establish connection to vCenter server</doc>
+<status status="PASS" start="2025-10-06T20:32:53.033925" elapsed="0.000588"/>
+</kw>
+<kw name="Verify vCenter Connection" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Verifying vCenter connection status...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.034739" elapsed="0.000047"/>
+</kw>
+<kw name="Vcenter Verify Connection" owner="VCenterLibrary">
+<var>${status}</var>
+<arg>${VCENTER_CONN}</arg>
+<doc>Verify vCenter connection is active</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.034857" elapsed="0.000026"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ vCenter connection verified: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.034949" elapsed="0.000048"/>
+</kw>
+<return>
+<value>${status}</value>
+<status status="PASS" start="2025-10-06T20:32:53.035030" elapsed="0.000019"/>
+</return>
+<var>${connection_status}</var>
+<doc>Verify vCenter connection is active</doc>
+<status status="PASS" start="2025-10-06T20:32:53.034610" elapsed="0.000467"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${connection_status}</arg>
+<arg>msg=Failed to establish vCenter connection</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.035140" elapsed="0.000059"/>
+</kw>
+<kw name="Locate Target Host In Cluster" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Locating target host ${VCENTER_HOST} in cluster ${CLUSTER_NAME}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.035468" elapsed="0.000052"/>
+</kw>
+<kw name="Vcenter Find Host In Cluster" owner="VCenterLibrary">
+<var>${found}</var>
+<arg>${VCENTER_CONN}</arg>
+<arg>${CLUSTER_NAME}</arg>
+<arg>${VCENTER_HOST}</arg>
+<doc>Locate ESXi host within a cluster</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.035594" elapsed="0.000032"/>
+</kw>
+<if>
+<branch type="IF" condition="${found}">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Target host located: ${VCENTER_HOST}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.035773" elapsed="0.000048"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.035700" elapsed="0.000146"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Target host not found: ${VCENTER_HOST}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.035939" elapsed="0.000048"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.035872" elapsed="0.000140"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.035681" elapsed="0.000475"/>
+</if>
+<return>
+<value>${found}</value>
+<status status="PASS" start="2025-10-06T20:32:53.036195" elapsed="0.000012"/>
+</return>
+<var>${host_found}</var>
+<doc>Locate target ESXi host within the cluster</doc>
+<status status="PASS" start="2025-10-06T20:32:53.035348" elapsed="0.000887"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${host_found}</arg>
+<arg>msg=Target host ${VCENTER_HOST} not found in cluster ${CLUSTER_NAME}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.036306" elapsed="0.000062"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ vCenter connection established and target host located</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.036437" elapsed="0.000047"/>
+</kw>
+<kw name="Log Test End" owner="datastore_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.036874" elapsed="0.000053"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.036805" elapsed="0.000149"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.037035" elapsed="0.000048"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.036973" elapsed="0.000135"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.036791" elapsed="0.000333"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.036668" elapsed="0.000483"/>
+</kw>
+<doc>🔗 Establish connection to VMware vCenter and locate target host</doc>
+<tag>connection</tag>
+<tag>critical</tag>
+<tag>infrastructure</tag>
+<tag>vcenter</tag>
+<status status="PASS" start="2025-10-06T20:32:53.032676" elapsed="0.004506"/>
+</test>
+<test id="s1-t2" name="Critical - Collect VM Assignments to Datastores" line="40">
+<kw name="Log Test Start" owner="datastore_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.037798" elapsed="0.000053"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.037672" elapsed="0.000212"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Collecting VM assignments to datastores...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.037954" elapsed="0.000044"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 Target Host: ${VCENTER_HOST}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.038065" elapsed="0.000047"/>
+</kw>
+<kw name="Collect VM Datastore Assignments" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Collecting VM datastore assignments for host: ${VCENTER_HOST}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.038328" elapsed="0.000050"/>
+</kw>
+<kw name="Vcenter Get Vm Datastore Assignments" owner="VCenterLibrary">
+<var>${assignments}</var>
+<arg>${VCENTER_CONN}</arg>
+<arg>${VCENTER_HOST}</arg>
+<doc>Get VM to datastore assignments for a host</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.038448" elapsed="0.000029"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${count}</var>
+<arg>${assignments}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.038546" elapsed="0.000025"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Collected ${count} VM assignments</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.038633" elapsed="0.000056"/>
+</kw>
+<return>
+<value>${assignments}</value>
+<status status="PASS" start="2025-10-06T20:32:53.038724" elapsed="0.000014"/>
+</return>
+<var>${vm_assignments}</var>
+<doc>Collect all VM to datastore assignments for the target host</doc>
+<status status="PASS" start="2025-10-06T20:32:53.038211" elapsed="0.000552"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${VM_ASSIGNMENTS}</arg>
+<arg>${vm_assignments}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.038836" elapsed="0.000035"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${vm_count}</var>
+<arg>${vm_assignments}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.038937" elapsed="0.000027"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${vm_count} &gt; 0</arg>
+<arg>msg=No VMs found on target host</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.039102" elapsed="0.000113"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 VM assignments collected: ${vm_count} VMs found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.039343" elapsed="0.000061"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ VM datastore assignments collection complete</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.039479" elapsed="0.000048"/>
+</kw>
+<kw name="Log Test End" owner="datastore_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.039939" elapsed="0.000058"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.039857" elapsed="0.000168"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.040107" elapsed="0.000051"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.040045" elapsed="0.000139"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.039843" elapsed="0.000357"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.039715" elapsed="0.000510"/>
+</kw>
+<doc>📊 Gather all VM to datastore assignments for the target host</doc>
+<tag>collection</tag>
+<tag>critical</tag>
+<tag>datastore</tag>
+<tag>vm_assignments</tag>
+<status status="PASS" start="2025-10-06T20:32:53.037355" elapsed="0.002904"/>
+</test>
+<test id="s1-t3" name="Critical - Collect Available Datastore Capacity" line="57">
+<kw name="Log Test Start" owner="datastore_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.040918" elapsed="0.000065"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.040772" elapsed="0.000247"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Collecting datastore capacity information...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.041184" elapsed="0.000055"/>
+</kw>
+<kw name="Collect Datastore Capacity" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Collecting datastore capacity information...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.041467" elapsed="0.000051"/>
+</kw>
+<kw name="Vcenter Get Datastore Capacity" owner="VCenterLibrary">
+<var>${capacity}</var>
+<arg>${VCENTER_CONN}</arg>
+<arg>${VCENTER_HOST}</arg>
+<doc>Get capacity information for datastores on a host</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.041590" elapsed="0.000030"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${count}</var>
+<arg>${capacity}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.041687" elapsed="0.000025"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Collected capacity data for ${count} datastores</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.041776" elapsed="0.000048"/>
+</kw>
+<return>
+<value>${capacity}</value>
+<status status="PASS" start="2025-10-06T20:32:53.041857" elapsed="0.000013"/>
+</return>
+<var>${capacity_data}</var>
+<doc>Collect capacity information for all datastores on target host</doc>
+<status status="PASS" start="2025-10-06T20:32:53.041348" elapsed="0.000551"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${CAPACITY_DATA}</arg>
+<arg>${capacity_data}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.041987" elapsed="0.000036"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${datastore_count}</var>
+<arg>${capacity_data}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.042089" elapsed="0.000041"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${datastore_count} &gt; 0</arg>
+<arg>msg=No datastores found on target host</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.042194" elapsed="0.000056"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Capacity data collected for ${datastore_count} datastores</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.042316" elapsed="0.000049"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Datastore: ${ds['name']} - Total: ${ds['total_gb']}GB, Free: ${ds['free_gb']}GB, Used: ${ds['used_percent']}%</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.042553" elapsed="0.000064"/>
+</kw>
+<var name="${ds}"/>
+<status status="PASS" start="2025-10-06T20:32:53.042495" elapsed="0.000149"/>
+</iter>
+<var>${ds}</var>
+<value>@{capacity_data}</value>
+<status status="PASS" start="2025-10-06T20:32:53.042419" elapsed="0.000261"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Datastore capacity collection complete</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.042756" elapsed="0.000048"/>
+</kw>
+<kw name="Log Test End" owner="datastore_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.043246" elapsed="0.000053"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.043176" elapsed="0.000157"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.043452" elapsed="0.000049"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.043376" elapsed="0.000149"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.043161" elapsed="0.000380"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.043012" elapsed="0.000556"/>
+</kw>
+<doc>💾 Gather available capacity for all datastores on target host</doc>
+<tag>capacity</tag>
+<tag>collection</tag>
+<tag>critical</tag>
+<tag>datastore</tag>
+<status status="PASS" start="2025-10-06T20:32:53.040440" elapsed="0.003159"/>
+</test>
+<test id="s1-t4" name="Critical - Collect Performance Tier Information" line="77">
+<kw name="Log Test Start" owner="datastore_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.044289" elapsed="0.000057"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.044146" elapsed="0.000244"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Collecting datastore performance tier information...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.044463" elapsed="0.000047"/>
+</kw>
+<kw name="Collect Datastore Performance Tiers" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Collecting datastore performance tier information...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.044753" elapsed="0.000050"/>
+</kw>
+<kw name="Vcenter Get Datastore Performance Tiers" owner="VCenterLibrary">
+<var>${tiers}</var>
+<arg>${VCENTER_CONN}</arg>
+<arg>${VCENTER_HOST}</arg>
+<doc>Get performance tier classification for datastores</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.044875" elapsed="0.000029"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${count}</var>
+<arg>${tiers}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.044975" elapsed="0.000034"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Collected performance tier data for ${count} datastores</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.045075" elapsed="0.000047"/>
+</kw>
+<return>
+<value>${tiers}</value>
+<status status="PASS" start="2025-10-06T20:32:53.045158" elapsed="0.000016"/>
+</return>
+<var>${performance_tiers}</var>
+<doc>Collect performance tier classification for datastores</doc>
+<status status="PASS" start="2025-10-06T20:32:53.044622" elapsed="0.000579"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${PERFORMANCE_TIERS}</arg>
+<arg>${performance_tiers}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.045276" elapsed="0.000038"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${tier_count}</var>
+<arg>${performance_tiers}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.045380" elapsed="0.000026"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${tier_count} &gt; 0</arg>
+<arg>msg=No performance tier information available</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.045475" elapsed="0.000057"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Performance tier data collected for ${tier_count} datastores</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.045675" elapsed="0.000054"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Datastore: ${tier['name']} - Tier: ${tier['performance_tier']} - Type: ${tier['storage_type']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.045906" elapsed="0.000051"/>
+</kw>
+<var name="${tier}"/>
+<status status="PASS" start="2025-10-06T20:32:53.045848" elapsed="0.000135"/>
+</iter>
+<var>${tier}</var>
+<value>@{performance_tiers}</value>
+<status status="PASS" start="2025-10-06T20:32:53.045779" elapsed="0.000227"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Performance tier collection complete</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.046073" elapsed="0.000044"/>
+</kw>
+<kw name="Log Test End" owner="datastore_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.046500" elapsed="0.000052"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.046432" elapsed="0.000148"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.046660" elapsed="0.000059"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.046599" elapsed="0.000145"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.046416" elapsed="0.000345"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.046293" elapsed="0.000493"/>
+</kw>
+<doc>⚡ Gather performance tier classification for all datastores</doc>
+<tag>critical</tag>
+<tag>datastore</tag>
+<tag>performance</tag>
+<tag>tiers</tag>
+<status status="PASS" start="2025-10-06T20:32:53.043783" elapsed="0.003032"/>
+</test>
+<test id="s1-t5" name="Critical - Collect Subscription Level Information" line="97">
+<kw name="Log Test Start" owner="datastore_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.047432" elapsed="0.000054"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.047298" elapsed="0.000220"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Collecting datastore subscription level information...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.047588" elapsed="0.000044"/>
+</kw>
+<kw name="Collect Datastore Subscription Levels" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Collecting datastore subscription level information...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.047870" elapsed="0.000046"/>
+</kw>
+<kw name="Vcenter Get Datastore Subscription Levels" owner="VCenterLibrary">
+<var>${subscription}</var>
+<arg>${VCENTER_CONN}</arg>
+<arg>${VCENTER_HOST}</arg>
+<doc>Get subscription levels and oversubscription ratios for datastores</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.047988" elapsed="0.000029"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${count}</var>
+<arg>${subscription}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.048084" elapsed="0.000025"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Collected subscription data for ${count} datastores</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.048170" elapsed="0.000047"/>
+</kw>
+<return>
+<value>${subscription}</value>
+<status status="PASS" start="2025-10-06T20:32:53.048248" elapsed="0.000012"/>
+</return>
+<var>${subscription_data}</var>
+<doc>Collect subscription levels and oversubscription ratios</doc>
+<status status="PASS" start="2025-10-06T20:32:53.047749" elapsed="0.000538"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${SUBSCRIPTION_DATA}</arg>
+<arg>${subscription_data}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.048358" elapsed="0.000036"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${sub_count}</var>
+<arg>${subscription_data}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.048461" elapsed="0.000026"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${sub_count} &gt; 0</arg>
+<arg>msg=No subscription level information available</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.048552" elapsed="0.000054"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Subscription data collected for ${sub_count} datastores</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.048671" elapsed="0.000059"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Datastore: ${sub['name']} - Provisioned: ${sub['provisioned_gb']}GB, Ratio: ${sub['subscription_ratio']}:1</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.048877" elapsed="0.000050"/>
+</kw>
+<var name="${sub}"/>
+<status status="PASS" start="2025-10-06T20:32:53.048823" elapsed="0.000132"/>
+</iter>
+<var>${sub}</var>
+<value>@{subscription_data}</value>
+<status status="PASS" start="2025-10-06T20:32:53.048771" elapsed="0.000204"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Subscription level collection complete</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.049042" elapsed="0.000045"/>
+</kw>
+<kw name="Log Test End" owner="datastore_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.049459" elapsed="0.000050"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.049389" elapsed="0.000146"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.049615" elapsed="0.000421"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.049555" elapsed="0.000508"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.049377" elapsed="0.000702"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.049250" elapsed="0.000854"/>
+</kw>
+<doc>📈 Gather subscription levels and oversubscription ratios</doc>
+<tag>capacity_planning</tag>
+<tag>critical</tag>
+<tag>datastore</tag>
+<tag>subscription</tag>
+<status status="PASS" start="2025-10-06T20:32:53.046972" elapsed="0.003162"/>
+</test>
+<test id="s1-t6" name="Critical - Capture Host Configuration Screenshot" line="117">
+<kw name="Log Test Start" owner="datastore_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.050880" elapsed="0.000056"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.050748" elapsed="0.000223"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Capturing host configuration screenshot...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.051040" elapsed="0.000046"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 Screenshot will include: Datastores, VM assignments, Capacity, Performance status</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.051152" elapsed="0.000043"/>
+</kw>
+<kw name="Capture Host Configuration Screenshot" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>📸 Capturing host configuration screenshot...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.051418" elapsed="0.000049"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.051537" elapsed="0.000047"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${screenshot_file}</var>
+<arg>${SCREENSHOT_DIR}/host_config_${timestamp}.${SCREENSHOT_FORMAT}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.051653" elapsed="0.000026"/>
+</kw>
+<kw name="Vcenter Capture Host Screenshot" owner="VCenterLibrary">
+<var>${path}</var>
+<arg>${VCENTER_CONN}</arg>
+<arg>${VCENTER_HOST}</arg>
+<arg>${screenshot_file}</arg>
+<doc>Capture screenshot of host configuration</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.051746" elapsed="0.000030"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📸 Screenshot captured: ${path}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.051842" elapsed="0.000047"/>
+</kw>
+<return>
+<value>${path}</value>
+<status status="PASS" start="2025-10-06T20:32:53.051936" elapsed="0.000012"/>
+</return>
+<var>${screenshot_path}</var>
+<doc>Capture screenshot of host configuration and status</doc>
+<status status="PASS" start="2025-10-06T20:32:53.051300" elapsed="0.000674"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${SCREENSHOT_PATH}</arg>
+<arg>${screenshot_path}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.052047" elapsed="0.000035"/>
+</kw>
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${screenshot_path}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.052157" elapsed="0.000034"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📸 Screenshot saved: ${screenshot_path}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.052253" elapsed="0.000047"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Host configuration screenshot captured</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.052366" elapsed="0.000043"/>
+</kw>
+<kw name="Log Test End" owner="datastore_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.052772" elapsed="0.000053"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.052693" elapsed="0.000159"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.052931" elapsed="0.000048"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.052871" elapsed="0.000134"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.052679" elapsed="0.000342"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.052564" elapsed="0.000480"/>
+</kw>
+<doc>📸 Capture screenshot of host configuration and status parameters</doc>
+<tag>critical</tag>
+<tag>documentation</tag>
+<tag>host_status</tag>
+<tag>screenshot</tag>
+<status status="PASS" start="2025-10-06T20:32:53.050405" elapsed="0.002667"/>
+</test>
+<test id="s1-t7" name="Critical - Validate VM Datastore Placement" line="133">
+<kw name="Log Test Start" owner="datastore_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.053635" elapsed="0.000053"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.053512" elapsed="0.000208"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Validating VM datastore placement against cluster standards...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.053787" elapsed="0.000044"/>
+</kw>
+<kw name="Validate VM Datastore Placement" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Validating VM datastore placement...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.054065" elapsed="0.000045"/>
+</kw>
+<kw name="Datastore Validator Validate Vm Placement" owner="DatastoreValidator">
+<var>${results}</var>
+<arg>${vm_assignments}</arg>
+<arg>${CLUSTER_NAME}</arg>
+<doc>Validate VM datastore placement against cluster standards</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.054180" elapsed="0.000030"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${violations}</var>
+<arg>${results}</arg>
+<arg>violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.054278" elapsed="0.000036"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${violation_count}</var>
+<arg>${violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.054381" elapsed="0.000026"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Validation complete: ${violation_count} violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.054469" elapsed="0.000048"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="PASS" start="2025-10-06T20:32:53.054548" elapsed="0.000012"/>
+</return>
+<var>${placement_results}</var>
+<arg>${VM_ASSIGNMENTS}</arg>
+<doc>Validate VM datastore assignments against cluster standards</doc>
+<status status="PASS" start="2025-10-06T20:32:53.053949" elapsed="0.000636"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${violations}</var>
+<arg>${placement_results}</arg>
+<arg>violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.054650" elapsed="0.000037"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${violation_count}</var>
+<arg>${violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.054825" elapsed="0.000030"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Placement validation results: ${violation_count} violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.054922" elapsed="0.000051"/>
+</kw>
+<if>
+<branch type="IF" condition="${violation_count} &gt; 0">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ Violation: VM ${violation['vm_name']} - ${violation['reason']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.055172" elapsed="0.000051"/>
+</kw>
+<var name="${violation}"/>
+<status status="PASS" start="2025-10-06T20:32:53.055116" elapsed="0.000133"/>
+</iter>
+<var>${violation}</var>
+<value>@{violations}</value>
+<status status="PASS" start="2025-10-06T20:32:53.055068" elapsed="0.000199"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>VM datastore placement has ${violation_count} violations</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.055333" elapsed="0.000035"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.055035" elapsed="0.000357"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.055023" elapsed="0.000386"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ VM datastore placement validated: All VMs comply with cluster standards</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.055468" elapsed="0.000043"/>
+</kw>
+<kw name="Log Test End" owner="datastore_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.055857" elapsed="0.000050"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.055794" elapsed="0.000141"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.056012" elapsed="0.000046"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.055952" elapsed="0.000132"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.055782" elapsed="0.000317"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.055667" elapsed="0.000455"/>
+</kw>
+<doc>✅ Compare VM datastore assignments against cluster standards</doc>
+<tag>compliance</tag>
+<tag>critical</tag>
+<tag>validation</tag>
+<tag>vm_placement</tag>
+<status status="PASS" start="2025-10-06T20:32:53.053221" elapsed="0.002928"/>
+</test>
+<test id="s1-t8" name="Critical - Validate Available Capacity" line="157">
+<kw name="Log Test Start" owner="datastore_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.056701" elapsed="0.000063"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.056578" elapsed="0.000219"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Validating datastore available capacity...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.056864" elapsed="0.000068"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 Minimum required free capacity: ${MIN_FREE_CAPACITY_PERCENT}%</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.056998" elapsed="0.000047"/>
+</kw>
+<kw name="Validate Datastore Capacity" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Validating datastore capacity...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.057261" elapsed="0.000044"/>
+</kw>
+<kw name="Datastore Validator Validate Capacity" owner="DatastoreValidator">
+<var>${results}</var>
+<arg>${capacity_data}</arg>
+<arg>${MIN_FREE_CAPACITY_PERCENT}</arg>
+<doc>Validate datastores have sufficient available capacity</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.057376" elapsed="0.000029"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${warnings}</var>
+<arg>${results}</arg>
+<arg>warnings</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.057472" elapsed="0.000035"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${warning_count}</var>
+<arg>${warnings}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.057575" elapsed="0.000025"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Validation complete: ${warning_count} warnings found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.057664" elapsed="0.000047"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="PASS" start="2025-10-06T20:32:53.057742" elapsed="0.000013"/>
+</return>
+<var>${capacity_results}</var>
+<arg>${CAPACITY_DATA}</arg>
+<doc>Validate datastores have sufficient available capacity</doc>
+<status status="PASS" start="2025-10-06T20:32:53.057147" elapsed="0.000635"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${warnings}</var>
+<arg>${capacity_results}</arg>
+<arg>warnings</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.057845" elapsed="0.000036"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${warning_count}</var>
+<arg>${warnings}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.057959" elapsed="0.000039"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Capacity validation results: ${warning_count} warnings found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.058105" elapsed="0.000063"/>
+</kw>
+<if>
+<branch type="IF" condition="${warning_count} &gt; 0">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ Warning: Datastore ${warning['name']} - Free: ${warning['free_percent']}% (Below threshold: ${MIN_FREE_CAPACITY_PERCENT}%)</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.058440" elapsed="0.000052"/>
+</kw>
+<var name="${warning}"/>
+<status status="PASS" start="2025-10-06T20:32:53.058368" elapsed="0.000150"/>
+</iter>
+<var>${warning}</var>
+<value>@{warnings}</value>
+<status status="PASS" start="2025-10-06T20:32:53.058314" elapsed="0.000229"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Datastore capacity validation failed: ${warning_count} datastores below minimum threshold</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.058620" elapsed="0.000036"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.058278" elapsed="0.000553"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.058263" elapsed="0.000594"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Available capacity validated: All datastores meet minimum requirements</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.058947" elapsed="0.000054"/>
+</kw>
+<kw name="Log Test End" owner="datastore_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.059419" elapsed="0.000054"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.059351" elapsed="0.000150"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.059580" elapsed="0.000047"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.059519" elapsed="0.000135"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.059336" elapsed="0.000333"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.059202" elapsed="0.000492"/>
+</kw>
+<doc>✅ Validate datastores have sufficient available capacity</doc>
+<tag>capacity</tag>
+<tag>critical</tag>
+<tag>storage</tag>
+<tag>validation</tag>
+<status status="PASS" start="2025-10-06T20:32:53.056295" elapsed="0.003431"/>
+</test>
+<test id="s1-t9" name="Critical - Validate Performance Tier Assignment" line="182">
+<kw name="Log Test Start" owner="datastore_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.060369" elapsed="0.000054"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.060224" elapsed="0.000233"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Validating performance tier assignments...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.060528" elapsed="0.000045"/>
+</kw>
+<kw name="Validate Performance Tier Assignment" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Validating performance tier assignments...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.060833" elapsed="0.000045"/>
+</kw>
+<kw name="Datastore Validator Validate Performance Tiers" owner="DatastoreValidator">
+<var>${results}</var>
+<arg>${vm_assignments}</arg>
+<arg>${performance_tiers}</arg>
+<arg>${VM_APP_CATEGORIES}</arg>
+<doc>Validate VMs are on appropriate performance tiers</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.060960" elapsed="0.000031"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${mismatches}</var>
+<arg>${results}</arg>
+<arg>mismatches</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.061067" elapsed="0.000044"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${mismatch_count}</var>
+<arg>${mismatches}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.061178" elapsed="0.000025"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Validation complete: ${mismatch_count} mismatches found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.061267" elapsed="0.000048"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="PASS" start="2025-10-06T20:32:53.061350" elapsed="0.000012"/>
+</return>
+<var>${tier_results}</var>
+<arg>${VM_ASSIGNMENTS}</arg>
+<arg>${PERFORMANCE_TIERS}</arg>
+<doc>Validate VMs are on appropriate performance tiers</doc>
+<status status="PASS" start="2025-10-06T20:32:53.060687" elapsed="0.000702"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${mismatches}</var>
+<arg>${tier_results}</arg>
+<arg>mismatches</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.061471" elapsed="0.000036"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${mismatch_count}</var>
+<arg>${mismatches}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.061574" elapsed="0.000024"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Performance tier validation results: ${mismatch_count} mismatches found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.061661" elapsed="0.000050"/>
+</kw>
+<if>
+<branch type="IF" condition="${mismatch_count} &gt; 0">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ Mismatch: VM ${mismatch['vm_name']} - Current tier: ${mismatch['current_tier']}, Required: ${mismatch['required_tier']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.061905" elapsed="0.000072"/>
+</kw>
+<var name="${mismatch}"/>
+<status status="PASS" start="2025-10-06T20:32:53.061851" elapsed="0.000152"/>
+</iter>
+<var>${mismatch}</var>
+<value>@{mismatches}</value>
+<status status="PASS" start="2025-10-06T20:32:53.061803" elapsed="0.000221"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Performance tier validation failed: ${mismatch_count} VMs on incorrect storage tier</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.062091" elapsed="0.000036"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.061770" elapsed="0.000379"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.061758" elapsed="0.000407"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Performance tier validated: All VMs on appropriate storage tiers</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.062225" elapsed="0.000043"/>
+</kw>
+<kw name="Log Test End" owner="datastore_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.062630" elapsed="0.000051"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.062560" elapsed="0.000148"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.062797" elapsed="0.000049"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.062725" elapsed="0.000146"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.062546" elapsed="0.000340"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.062430" elapsed="0.000480"/>
+</kw>
+<doc>✅ Validate VMs are assigned to appropriate performance tiers</doc>
+<tag>application_requirements</tag>
+<tag>critical</tag>
+<tag>performance</tag>
+<tag>validation</tag>
+<status status="PASS" start="2025-10-06T20:32:53.059894" elapsed="0.003047"/>
+</test>
+<test id="s1-t10" name="Critical - Validate Subscription Ratios" line="206">
+<kw name="Log Test Start" owner="datastore_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.063581" elapsed="0.000053"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.063452" elapsed="0.000215"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Validating datastore subscription ratios...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.063735" elapsed="0.000044"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 Maximum allowed subscription ratio: ${MAX_SUBSCRIPTION_RATIO}:1</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.063844" elapsed="0.000048"/>
+</kw>
+<kw name="Validate Subscription Ratios" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Validating subscription ratios...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.064122" elapsed="0.000047"/>
+</kw>
+<kw name="Datastore Validator Validate Subscription" owner="DatastoreValidator">
+<var>${results}</var>
+<arg>${subscription_data}</arg>
+<arg>${MAX_SUBSCRIPTION_RATIO}</arg>
+<doc>Validate datastore subscription ratios</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.064239" elapsed="0.000029"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${oversubscribed}</var>
+<arg>${results}</arg>
+<arg>oversubscribed</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.064336" elapsed="0.000035"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${oversub_count}</var>
+<arg>${oversubscribed}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.064438" elapsed="0.000025"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Validation complete: ${oversub_count} oversubscribed datastores found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.064527" elapsed="0.000047"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="PASS" start="2025-10-06T20:32:53.064608" elapsed="0.000012"/>
+</return>
+<var>${sub_results}</var>
+<arg>${SUBSCRIPTION_DATA}</arg>
+<doc>Validate datastore subscription ratios</doc>
+<status status="PASS" start="2025-10-06T20:32:53.063999" elapsed="0.000647"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${oversubscribed}</var>
+<arg>${sub_results}</arg>
+<arg>oversubscribed</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.064712" elapsed="0.000045"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${oversub_count}</var>
+<arg>${oversubscribed}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.064826" elapsed="0.000026"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Subscription validation results: ${oversub_count} oversubscribed datastores found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.064916" elapsed="0.000047"/>
+</kw>
+<if>
+<branch type="IF" condition="${oversub_count} &gt; 0">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ Oversubscribed: Datastore ${oversub['name']} - Ratio: ${oversub['ratio']}:1 (Max: ${MAX_SUBSCRIPTION_RATIO}:1)</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.065152" elapsed="0.000052"/>
+</kw>
+<var name="${oversub}"/>
+<status status="PASS" start="2025-10-06T20:32:53.065098" elapsed="0.000132"/>
+</iter>
+<var>${oversub}</var>
+<value>@{oversubscribed}</value>
+<status status="PASS" start="2025-10-06T20:32:53.065053" elapsed="0.000197"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Subscription validation failed: ${oversub_count} datastores exceed maximum ratio</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.065314" elapsed="0.000035"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.065022" elapsed="0.000351"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.065008" elapsed="0.000382"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Subscription ratios validated: All datastores within acceptable limits</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.065451" elapsed="0.000045"/>
+</kw>
+<kw name="Log Test End" owner="datastore_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.065847" elapsed="0.000050"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.065784" elapsed="0.000141"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.066003" elapsed="0.000047"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.065943" elapsed="0.000132"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.065772" elapsed="0.000317"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.065654" elapsed="0.000458"/>
+</kw>
+<doc>✅ Validate datastore subscription ratios meet cluster standards</doc>
+<tag>capacity_planning</tag>
+<tag>critical</tag>
+<tag>subscription</tag>
+<tag>validation</tag>
+<status status="PASS" start="2025-10-06T20:32:53.063148" elapsed="0.002993"/>
+</test>
+<test id="s1-t11" name="Normal - Comprehensive Datastore Configuration Validation" line="231">
+<kw name="Log Test Start" owner="datastore_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.066776" elapsed="0.000053"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.066644" elapsed="0.000224"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Performing comprehensive datastore configuration validation...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.066940" elapsed="0.000044"/>
+</kw>
+<kw name="Validate Complete Datastore Configuration" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>🔍 Performing comprehensive datastore configuration validation...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.067247" elapsed="0.000047"/>
+</kw>
+<kw name="Validate VM Datastore Placement" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Validating VM datastore placement...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.067517" elapsed="0.000047"/>
+</kw>
+<kw name="Datastore Validator Validate Vm Placement" owner="DatastoreValidator">
+<var>${results}</var>
+<arg>${vm_assignments}</arg>
+<arg>${CLUSTER_NAME}</arg>
+<doc>Validate VM datastore placement against cluster standards</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.067684" elapsed="0.000033"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${violations}</var>
+<arg>${results}</arg>
+<arg>violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.067786" elapsed="0.000037"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${violation_count}</var>
+<arg>${violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.067890" elapsed="0.000026"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Validation complete: ${violation_count} violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.067998" elapsed="0.000050"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="PASS" start="2025-10-06T20:32:53.068082" elapsed="0.000012"/>
+</return>
+<var>${vm_placement}</var>
+<arg>${VM_ASSIGNMENTS}</arg>
+<doc>Validate VM datastore assignments against cluster standards</doc>
+<status status="PASS" start="2025-10-06T20:32:53.067397" elapsed="0.000724"/>
+</kw>
+<kw name="Validate Datastore Capacity" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Validating datastore capacity...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.068356" elapsed="0.000047"/>
+</kw>
+<kw name="Datastore Validator Validate Capacity" owner="DatastoreValidator">
+<var>${results}</var>
+<arg>${capacity_data}</arg>
+<arg>${MIN_FREE_CAPACITY_PERCENT}</arg>
+<doc>Validate datastores have sufficient available capacity</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.068474" elapsed="0.000030"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${warnings}</var>
+<arg>${results}</arg>
+<arg>warnings</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.068571" elapsed="0.000036"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${warning_count}</var>
+<arg>${warnings}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.068674" elapsed="0.000026"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Validation complete: ${warning_count} warnings found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.068772" elapsed="0.000048"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="PASS" start="2025-10-06T20:32:53.068854" elapsed="0.000015"/>
+</return>
+<var>${capacity}</var>
+<arg>${CAPACITY_DATA}</arg>
+<doc>Validate datastores have sufficient available capacity</doc>
+<status status="PASS" start="2025-10-06T20:32:53.068220" elapsed="0.000674"/>
+</kw>
+<kw name="Validate Performance Tier Assignment" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Validating performance tier assignments...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.069112" elapsed="0.000045"/>
+</kw>
+<kw name="Datastore Validator Validate Performance Tiers" owner="DatastoreValidator">
+<var>${results}</var>
+<arg>${vm_assignments}</arg>
+<arg>${performance_tiers}</arg>
+<arg>${VM_APP_CATEGORIES}</arg>
+<doc>Validate VMs are on appropriate performance tiers</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.069226" elapsed="0.000031"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${mismatches}</var>
+<arg>${results}</arg>
+<arg>mismatches</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.069325" elapsed="0.000034"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${mismatch_count}</var>
+<arg>${mismatches}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.069424" elapsed="0.000025"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Validation complete: ${mismatch_count} mismatches found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.069511" elapsed="0.000047"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="PASS" start="2025-10-06T20:32:53.069588" elapsed="0.000010"/>
+</return>
+<var>${performance}</var>
+<arg>${VM_ASSIGNMENTS}</arg>
+<arg>${PERFORMANCE_TIERS}</arg>
+<doc>Validate VMs are on appropriate performance tiers</doc>
+<status status="PASS" start="2025-10-06T20:32:53.068991" elapsed="0.000632"/>
+</kw>
+<kw name="Validate Subscription Ratios" owner="datastore_keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Validating subscription ratios...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.069837" elapsed="0.000045"/>
+</kw>
+<kw name="Datastore Validator Validate Subscription" owner="DatastoreValidator">
+<var>${results}</var>
+<arg>${subscription_data}</arg>
+<arg>${MAX_SUBSCRIPTION_RATIO}</arg>
+<doc>Validate datastore subscription ratios</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.069952" elapsed="0.000029"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${oversubscribed}</var>
+<arg>${results}</arg>
+<arg>oversubscribed</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.070047" elapsed="0.000035"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${oversub_count}</var>
+<arg>${oversubscribed}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.070146" elapsed="0.000025"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Validation complete: ${oversub_count} oversubscribed datastores found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.070233" elapsed="0.000047"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="PASS" start="2025-10-06T20:32:53.070312" elapsed="0.000010"/>
+</return>
+<var>${subscription}</var>
+<arg>${SUBSCRIPTION_DATA}</arg>
+<doc>Validate datastore subscription ratios</doc>
+<status status="PASS" start="2025-10-06T20:32:53.069719" elapsed="0.000626"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${total_violations}</var>
+<arg>${vm_placement}['violations'].__len__() + ${capacity}['warnings'].__len__() + ${performance}['mismatches'].__len__() + ${subscription}['oversubscribed'].__len__()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.070414" elapsed="0.000038"/>
+</kw>
+<if>
+<branch type="IF" condition="${total_violations} &gt; 0">
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ Comprehensive validation found ${total_violations} total issues</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.070565" elapsed="0.000049"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.070504" elapsed="0.000136"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Comprehensive validation: All checks passed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.070716" elapsed="0.000050"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.070658" elapsed="0.000133"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.070493" elapsed="0.000351"/>
+</if>
+<return>
+<value>${total_violations}</value>
+<status status="PASS" start="2025-10-06T20:32:53.070873" elapsed="0.000011"/>
+</return>
+<doc>Perform comprehensive datastore configuration validation</doc>
+<status status="PASS" start="2025-10-06T20:32:53.067131" elapsed="0.003777"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Comprehensive validation summary:</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.070972" elapsed="0.000046"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - vCenter connection: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.071085" elapsed="0.000042"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - VM datastore assignments: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.071192" elapsed="0.000042"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - Available capacity: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.071299" elapsed="0.000041"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - Performance tier placement: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.071404" elapsed="0.000041"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - Subscription ratios: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.071510" elapsed="0.000041"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - Configuration screenshot: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.071614" elapsed="0.000040"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Comprehensive datastore configuration validation: PASSED</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.071717" elapsed="0.000040"/>
+</kw>
+<kw name="Log Test End" owner="datastore_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.072107" elapsed="0.000049"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.072044" elapsed="0.000139"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.072262" elapsed="0.000048"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.072203" elapsed="0.000131"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.072031" elapsed="0.000317"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-06T20:32:53.071917" elapsed="0.000454"/>
+</kw>
+<doc>🔗 Perform comprehensive validation of all datastore configuration aspects</doc>
+<tag>comprehensive</tag>
+<tag>normal</tag>
+<tag>validation</tag>
+<status status="PASS" start="2025-10-06T20:32:53.066288" elapsed="0.006110"/>
+</test>
+<kw name="Generate Datastore Configuration Executive Summary" owner="datastore_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Generating Datastore Configuration Executive Summary...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.072944" elapsed="0.000048"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<var>${end_time}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.073069" elapsed="0.000045"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${TEST_END_TIME}</arg>
+<arg>${end_time}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.073194" elapsed="0.000036"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${summary_file}</var>
+<arg>${EXECDIR}/test_results/test9_datastore_executive_summary.html</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.073298" elapsed="0.000027"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<arg>${summary_file}</arg>
+<arg>&lt;html&gt;&lt;head&gt;&lt;title&gt;Datastore Configuration Test Summary&lt;/title&gt;&lt;/head&gt;&lt;body&gt;</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.073400" elapsed="0.000053"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${summary_file}</arg>
+<arg>&lt;h1&gt;🎯 Datastore Configuration Validation - Executive Summary&lt;/h1&gt;</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.073519" elapsed="0.000035"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${summary_file}</arg>
+<arg>&lt;p&gt;&lt;strong&gt;Test Period:&lt;/strong&gt; ${TEST_START_TIME} to ${TEST_END_TIME}&lt;/p&gt;</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.073619" elapsed="0.000038"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${summary_file}</arg>
+<arg>&lt;p&gt;&lt;strong&gt;vCenter Server:&lt;/strong&gt; ${VCENTER_SERVER}&lt;/p&gt;</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.073720" elapsed="0.000037"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${summary_file}</arg>
+<arg>&lt;p&gt;&lt;strong&gt;Target Host:&lt;/strong&gt; ${VCENTER_HOST}&lt;/p&gt;</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.073830" elapsed="0.000036"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${summary_file}</arg>
+<arg>&lt;p&gt;&lt;strong&gt;Cluster:&lt;/strong&gt; ${CLUSTER_NAME}&lt;/p&gt;</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.074044" elapsed="0.000079"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${summary_file}</arg>
+<arg>&lt;p&gt;&lt;strong&gt;Screenshot:&lt;/strong&gt; ${SCREENSHOT_PATH}&lt;/p&gt;</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.074224" elapsed="0.000055"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>${summary_file}</arg>
+<arg>&lt;/body&gt;&lt;/html&gt;</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.074373" elapsed="0.000053"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Executive summary generated: ${summary_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.074521" elapsed="0.000073"/>
+</kw>
+<if>
+<branch type="IF" condition="${VCENTER_CONN}">
+<kw name="Vcenter Disconnect" owner="VCenterLibrary">
+<arg>${VCENTER_CONN}</arg>
+<doc>Disconnect from vCenter server</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.078925" elapsed="0.000076"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔌 Disconnected from vCenter</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-06T20:32:53.079094" elapsed="0.000072"/>
+</kw>
+<status status="PASS" start="2025-10-06T20:32:53.078755" elapsed="0.000500"/>
+</branch>
+<status status="PASS" start="2025-10-06T20:32:53.074656" elapsed="0.004624"/>
+</if>
+<doc>Generate executive summary report for datastore configuration test</doc>
+<status status="PASS" start="2025-10-06T20:32:53.072852" elapsed="0.006461"/>
+</kw>
+<doc>💾 Datastore Configuration Validation Test Suite - Test-9
+🔍 Process: Connect to vCenter → Collect Datastore Information → Validate Datastore Configuration
+✅ Pass if datastore configuration meets cluster standards and application requirements
+📊 Validates: VM assignments, available capacity, performance tiers, subscription levels</doc>
+<status status="PASS" start="2025-10-06T20:32:52.840035" elapsed="0.239304"/>
+</suite>
+<statistics>
+<total>
+<stat pass="11" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">application_requirements</stat>
+<stat pass="2" fail="0" skip="0">capacity</stat>
+<stat pass="2" fail="0" skip="0">capacity_planning</stat>
+<stat pass="2" fail="0" skip="0">collection</stat>
+<stat pass="1" fail="0" skip="0">compliance</stat>
+<stat pass="1" fail="0" skip="0">comprehensive</stat>
+<stat pass="1" fail="0" skip="0">connection</stat>
+<stat pass="10" fail="0" skip="0">critical</stat>
+<stat pass="4" fail="0" skip="0">datastore</stat>
+<stat pass="1" fail="0" skip="0">documentation</stat>
+<stat pass="1" fail="0" skip="0">host_status</stat>
+<stat pass="1" fail="0" skip="0">infrastructure</stat>
+<stat pass="1" fail="0" skip="0">normal</stat>
+<stat pass="2" fail="0" skip="0">performance</stat>
+<stat pass="1" fail="0" skip="0">screenshot</stat>
+<stat pass="1" fail="0" skip="0">storage</stat>
+<stat pass="2" fail="0" skip="0">subscription</stat>
+<stat pass="1" fail="0" skip="0">tiers</stat>
+<stat pass="5" fail="0" skip="0">validation</stat>
+<stat pass="1" fail="0" skip="0">vcenter</stat>
+<stat pass="1" fail="0" skip="0">vm_assignments</stat>
+<stat pass="1" fail="0" skip="0">vm_placement</stat>
+</tag>
+<suite>
+<stat name="Datastore Configuration" id="s1" pass="11" fail="0" skip="0">Datastore Configuration</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
