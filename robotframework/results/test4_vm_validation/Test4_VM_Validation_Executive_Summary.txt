@@ -3,7 +3,7 @@ VM VALIDATION TEST - EXECUTIVE SUMMARY
 ========================================
 
 Test Suite: Test-4 VM Validation
-Target VM: alhxdvitap01
+Target VM: allxdvitap01
 
 EDS CONFIGURATION:
 - VxRail Cluster: 

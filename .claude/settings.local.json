@@ -31,7 +31,8 @@
       "Read(//tmp/system_info/**)",
       "Bash(for:*)",
       "Bash(if [ -f \"robotframework/results/$test/output.xml\" ])",
-      "Bash(then grep -E \"<suite.*name=|<stat \" \"robotframework/results/$test/output.xml\")"
+      "Bash(then grep -E \"<suite.*name=|<stat \" \"robotframework/results/$test/output.xml\")",
+      "Read(//c/Users/write/Project_2025/**)"
     ],
     "deny": [],
     "ask": []
