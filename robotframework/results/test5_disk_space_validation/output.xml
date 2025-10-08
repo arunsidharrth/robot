@@ -1,168 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-06T20:33:50.266810" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.8 on win32)" generated="2025-10-07T19:57:02.409259" rpa="false" schemaversion="5">
 <suite id="s1" name="Disk Space Validation" source="C:\Users\write\project_2025\robot\robotframework\tests\test5_disk_space_validation\disk_space_validation.robot">
 <kw name="Initialize Storage Test Environment And Lookup Configuration" owner="storage_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-06T20:33:50.881226" level="INFO">🚀 Initializing Test-5: Storage &amp; System Validation Environment...</msg>
+<msg time="2025-10-07T19:57:03.268433" level="INFO">🚀 Initializing Test-5: Storage &amp; System Validation Environment...</msg>
 <arg>🚀 Initializing Test-5: Storage &amp; System Validation Environment...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-06T20:33:50.881034" elapsed="0.000347"/>
+<status status="PASS" start="2025-10-07T19:57:03.268244" elapsed="0.000417"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-10-06T20:33:50.881654" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\write\project_2025\robot\robotframework\results\test5_disk_space_validation\data"&gt;C:\Users\write\project_2025\robot\robotframework\results\test5_disk_space_validation\data&lt;/a&gt;' already exists.</msg>
+<msg time="2025-10-07T19:57:03.269026" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\write\project_2025\robot\robotframework\results\test5_disk_space_validation\data"&gt;C:\Users\write\project_2025\robot\robotframework\results\test5_disk_space_validation\data&lt;/a&gt;' already exists.</msg>
 <arg>${DATA_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-10-06T20:33:50.881508" elapsed="0.000191"/>
+<status status="PASS" start="2025-10-07T19:57:03.268836" elapsed="0.000247"/>
 </kw>
 <kw name="Lookup Server Config" owner="EDSLookup">
-<msg time="2025-10-06T20:33:50.893800" level="ERROR">Hostname 'allxdvitap01' not found in EDS sheet</msg>
-<msg time="2025-10-06T20:33:50.894189" level="INFO">Available hostnames: ['alhxvdvitap01', 'alhxvdvitag01', 'alhxvqaitiap01', 'alhxvqaitiap02', 'alhxvqaitred01', 'alhxvqaitred02', 'alhxvqaitred03', 'alhxvqaitmdb01', 'alhxvqaitmdb02', 'alhxvqaitmdb03', 'alhxvqaitag01', 'alhxvqaitag02', 'alhxvpritiap01', 'alhxvpritiap02']</msg>
-<msg time="2025-10-06T20:33:50.894346" level="FAIL">ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</msg>
+<msg time="2025-10-07T19:57:03.286390" level="ERROR">Hostname 'allxdvitap01' not found in EDS sheet</msg>
+<msg time="2025-10-07T19:57:03.286746" level="INFO">Available hostnames: ['alhxvdvitap01', 'alhxvdvitag01', 'alhxvqaitiap01', 'alhxvqaitiap02', 'alhxvqaitred01', 'alhxvqaitred02', 'alhxvqaitred03', 'alhxvqaitmdb01', 'alhxvqaitmdb02', 'alhxvqaitmdb03', 'alhxvqaitag01', 'alhxvqaitag02', 'alhxvpritiap01', 'alhxvpritiap02']</msg>
+<msg time="2025-10-07T19:57:03.286959" level="FAIL">ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</msg>
 <var>${eds_config}</var>
 <arg>${TARGET_HOSTNAME}</arg>
 <doc>Lookup server configuration from EDS sheet based on hostname</doc>
-<status status="FAIL" start="2025-10-06T20:33:50.881782" elapsed="0.013454">ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
+<status status="FAIL" start="2025-10-07T19:57:03.269184" elapsed="0.019063">ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_IP}</arg>
 <arg>${eds_config['ip']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.895487" elapsed="0.000025"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.288567" elapsed="0.000042"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_CPU_CORES}</arg>
 <arg>${eds_config['cpu_cores']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.895591" elapsed="0.000014"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.288780" elapsed="0.000029"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_RAM}</arg>
 <arg>${eds_config['ram']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.895682" elapsed="0.000013"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.288975" elapsed="0.000026"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_STORAGE_TYPE}</arg>
 <arg>${eds_config['storage_type']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.895769" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.289149" elapsed="0.000029"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_STORAGE_TOTAL_TB}</arg>
 <arg>${eds_config['storage_total_tb']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.895845" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.289337" elapsed="0.000031"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_DRIVE_VOLUME_GROUP}</arg>
 <arg>${eds_config['drive_volume_group']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.895941" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.289535" elapsed="0.000033"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_FILE_SYSTEM}</arg>
 <arg>${eds_config['file_system']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896017" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.289691" elapsed="0.000020"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_LOGICAL_VOLUME}</arg>
 <arg>${eds_config['logical_volume_partition']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896093" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.289865" elapsed="0.000022"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_STORAGE_ALLOC_GB}</arg>
 <arg>${eds_config['storage_allocation_gb']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896167" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.290036" elapsed="0.000026"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_RECOMMENDED_GB}</arg>
 <arg>${eds_config['recommended_storage_gb']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896241" elapsed="0.000011"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.290271" elapsed="0.000025"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_DRIVE_PURPOSE}</arg>
 <arg>${eds_config['drive_purpose']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896320" elapsed="0.000011"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.290415" elapsed="0.000022"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_OS_TYPE}</arg>
 <arg>${eds_config['os_type']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896392" elapsed="0.000011"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.290549" elapsed="0.000019"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 EDS Target IP: ${TARGET_IP}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896469" elapsed="0.000011"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.290666" elapsed="0.000018"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 EDS CPU Cores: ${TARGET_CPU_CORES}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896541" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.290780" elapsed="0.000017"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 EDS RAM: ${TARGET_RAM} GB</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896622" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.290904" elapsed="0.000045"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 EDS Storage Type: ${TARGET_STORAGE_TYPE}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896741" elapsed="0.000013"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.291097" elapsed="0.000024"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 EDS Storage Total: ${TARGET_STORAGE_TOTAL_TB} TB</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896815" elapsed="0.000013"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.291228" elapsed="0.000018"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 EDS OS Type: ${TARGET_OS_TYPE}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896909" elapsed="0.000013"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.291336" elapsed="0.000016"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.896991" elapsed="0.000011"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.291429" elapsed="0.000014"/>
 </kw>
 <kw name="Open Connection" owner="SSHLibrary">
 <arg>${TARGET_IP}</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.897074" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.291577" elapsed="0.000032"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
 <arg>${SSH_USERNAME}</arg>
 <arg>${SSH_PASSWORD}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.897154" elapsed="0.000011"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.291761" elapsed="0.000021"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ SSH connection established successfully</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.897446" elapsed="0.000016"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.292032" elapsed="0.000019"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Test-5 environment initialized</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-06T20:33:50.897529" elapsed="0.000013"/>
+<status status="NOT RUN" start="2025-10-07T19:57:03.292151" elapsed="0.000016"/>
 </kw>
 <doc>🏗️ Set up test environment and lookup EDS configuration</doc>
-<status status="FAIL" start="2025-10-06T20:33:50.880534" elapsed="0.017123">ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
+<status status="FAIL" start="2025-10-07T19:57:03.267540" elapsed="0.024765">ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </kw>
 <test id="s1-t1" name="Critical - CPU Cores Validation" line="18">
 <doc>💻 SSH to server and validate CPU core count matches EDS specification</doc>
@@ -170,7 +170,7 @@
 <tag>cpu</tag>
 <tag>critical</tag>
 <tag>hardware</tag>
-<status status="FAIL" start="2025-10-06T20:33:50.897767" elapsed="0.000531">Parent suite setup failed:
+<status status="FAIL" start="2025-10-07T19:57:03.292417" elapsed="0.000655">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t2" name="Critical - Memory Allocation Validation" line="35">
@@ -179,7 +179,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>critical</tag>
 <tag>hardware</tag>
 <tag>memory</tag>
-<status status="FAIL" start="2025-10-06T20:33:50.898790" elapsed="0.000391">Parent suite setup failed:
+<status status="FAIL" start="2025-10-07T19:57:03.293854" elapsed="0.000660">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t3" name="Critical - Disk Space Allocation Validation" line="52">
@@ -188,7 +188,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>critical</tag>
 <tag>disk</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-10-06T20:33:50.899649" elapsed="0.000465">Parent suite setup failed:
+<status status="FAIL" start="2025-10-07T19:57:03.295174" elapsed="0.000449">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t4" name="Critical - Storage Type Validation" line="69">
@@ -197,7 +197,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>critical</tag>
 <tag>infrastructure</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-10-06T20:33:50.900483" elapsed="0.000325">Parent suite setup failed:
+<status status="FAIL" start="2025-10-07T19:57:03.296284" elapsed="0.000553">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t5" name="Critical - Root Filesystem Validation" line="86">
@@ -206,7 +206,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>critical</tag>
 <tag>filesystem</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-10-06T20:33:50.901243" elapsed="0.000427">Parent suite setup failed:
+<status status="FAIL" start="2025-10-07T19:57:03.297450" elapsed="0.000706">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t6" name="Normal - Storage Capacity Analysis" line="106">
@@ -215,7 +215,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>capacity</tag>
 <tag>normal</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-10-06T20:33:50.902074" elapsed="0.000370">Parent suite setup failed:
+<status status="FAIL" start="2025-10-07T19:57:03.298804" elapsed="0.000642">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t7" name="Normal - Volume Group Analysis" line="126">
@@ -224,7 +224,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>lvm</tag>
 <tag>normal</tag>
 <tag>volumes</tag>
-<status status="FAIL" start="2025-10-06T20:33:50.902833" elapsed="0.000472">Parent suite setup failed:
+<status status="FAIL" start="2025-10-07T19:57:03.300040" elapsed="0.000549">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t8" name="Normal - Operating System Validation" line="145">
@@ -233,34 +233,34 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>normal</tag>
 <tag>os</tag>
 <tag>system</tag>
-<status status="FAIL" start="2025-10-06T20:33:50.903717" elapsed="0.000474">Parent suite setup failed:
+<status status="FAIL" start="2025-10-07T19:57:03.301127" elapsed="0.000438">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <kw name="Generate Storage Executive Summary" owner="storage_keywords" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-06T20:33:50.905203" level="INFO">📊 Generating Test-5 Storage Validation Executive Summary...</msg>
+<msg time="2025-10-07T19:57:03.302948" level="INFO">📊 Generating Test-5 Storage Validation Executive Summary...</msg>
 <arg>📊 Generating Test-5 Storage Validation Executive Summary...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-06T20:33:50.905059" elapsed="0.000250"/>
+<status status="PASS" start="2025-10-07T19:57:03.302768" elapsed="0.000384"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-06T20:33:50.905560" level="INFO">${timestamp} = 2025-10-06 20:33:50</msg>
+<msg time="2025-10-07T19:57:03.303544" level="INFO">${timestamp} = 2025-10-07 19:57:03</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-06T20:33:50.905399" elapsed="0.000181"/>
+<status status="PASS" start="2025-10-07T19:57:03.303304" elapsed="0.000266"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-06T20:33:50.905742" level="INFO">${summary_file} = results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
+<msg time="2025-10-07T19:57:03.303779" level="INFO">${summary_file} = results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
 <var>${summary_file}</var>
 <arg>results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-06T20:33:50.905657" elapsed="0.000102"/>
+<status status="PASS" start="2025-10-07T19:57:03.303668" elapsed="0.000133"/>
 </kw>
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2025-10-06T20:33:50.906843" level="INFO">${summary_content} = None</msg>
-<msg time="2025-10-06T20:33:50.906867" level="FAIL">Variable '${TARGET_IP}' not found.</msg>
+<msg time="2025-10-07T19:57:03.305312" level="INFO">${summary_content} = None</msg>
+<msg time="2025-10-07T19:57:03.305355" level="FAIL">Variable '${TARGET_IP}' not found.</msg>
 <var>${summary_content}</var>
 <arg>SEPARATOR=\n</arg>
 <arg>========================================</arg>
@@ -299,31 +299,31 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <arg>End of Executive Summary</arg>
 <arg>========================================</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="FAIL" start="2025-10-06T20:33:50.905827" elapsed="0.001063">Variable '${TARGET_IP}' not found.</status>
+<status status="FAIL" start="2025-10-07T19:57:03.303885" elapsed="0.001514">Variable '${TARGET_IP}' not found.</status>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-10-06T20:33:50.907724" level="FAIL">TypeError: write() argument must be str, not None</msg>
+<msg time="2025-10-07T19:57:03.306464" level="FAIL">TypeError: write() argument must be str, not None</msg>
 <arg>${summary_file}</arg>
 <arg>${summary_content}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="FAIL" start="2025-10-06T20:33:50.907168" elapsed="0.000629">TypeError: write() argument must be str, not None</status>
+<status status="FAIL" start="2025-10-07T19:57:03.305776" elapsed="0.000790">TypeError: write() argument must be str, not None</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-06T20:33:50.908002" level="INFO">📊 Executive summary generated: results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
+<msg time="2025-10-07T19:57:03.306880" level="INFO">📊 Executive summary generated: results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
 <arg>📊 Executive summary generated: ${summary_file}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-06T20:33:50.907884" elapsed="0.000235"/>
+<status status="PASS" start="2025-10-07T19:57:03.306690" elapsed="0.000431"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-06T20:33:50.908338" level="INFO">✅ Test-5 Storage Validation completed successfully!</msg>
+<msg time="2025-10-07T19:57:03.307566" level="INFO">✅ Test-5 Storage Validation completed successfully!</msg>
 <arg>✅ Test-5 Storage Validation completed successfully!</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-06T20:33:50.908231" elapsed="0.000254"/>
+<status status="PASS" start="2025-10-07T19:57:03.307310" elapsed="0.000421"/>
 </kw>
 <doc>📊 Generate executive summary for storage validation results</doc>
-<status status="FAIL" start="2025-10-06T20:33:50.904858" elapsed="0.003809">Several failures occurred:
+<status status="FAIL" start="2025-10-07T19:57:03.302523" elapsed="0.005395">Several failures occurred:
 
 1) Variable '${TARGET_IP}' not found.
 
@@ -333,7 +333,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 🔍 Process: Find hostname in EDS → SSH to server → Collect disk/CPU/memory data → Compare server vs EDS
 ✅ Pass if server resources match EDS requirements, ❌ Fail if mismatch
 📊 Validates: CPU cores, RAM, disk space allocation, filesystem types, storage configuration</doc>
-<status status="FAIL" start="2025-10-06T20:33:50.268266" elapsed="0.640477">Suite setup failed:
+<status status="FAIL" start="2025-10-07T19:57:02.411150" elapsed="0.896885">Suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.
 
 Also suite teardown failed:
@@ -370,6 +370,6 @@ Several failures occurred:
 </suite>
 </statistics>
 <errors>
-<msg time="2025-10-06T20:33:50.893800" level="ERROR">Hostname 'allxdvitap01' not found in EDS sheet</msg>
+<msg time="2025-10-07T19:57:03.286390" level="ERROR">Hostname 'allxdvitap01' not found in EDS sheet</msg>
 </errors>
 </robot>

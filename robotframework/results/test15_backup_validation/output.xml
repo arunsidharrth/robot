@@ -1,0 +1,2878 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.8 on win32)" generated="2025-10-07T19:56:45.344764" rpa="false" schemaversion="5">
+<suite id="s1" name="Backup Validation" source="C:\Users\write\project_2025\robot\robotframework\tests\test15_backup_validation\backup_validation.robot">
+<kw name="Initialize Backup Validation Test Environment" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.590593" level="INFO">🚀 Initializing Backup Validation Test Environment...</msg>
+<arg>🚀 Initializing Backup Validation Test Environment...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.590389" elapsed="0.000407"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.592234" level="INFO">${VCENTER_API_CONN} = None</msg>
+<arg>${VCENTER_API_CONN}</arg>
+<arg>${None}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.591032" elapsed="0.001282"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.594335" level="INFO">${TEST_START_TIME} = </msg>
+<arg>${TEST_START_TIME}</arg>
+<arg>${EMPTY}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.592469" elapsed="0.001923"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-07T19:56:45.594825" level="INFO">${start_time} = 2025-10-07 19:56:45</msg>
+<var>${start_time}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.594528" elapsed="0.000331"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.595208" level="INFO">${TEST_START_TIME} = 2025-10-07 19:56:45</msg>
+<arg>${TEST_START_TIME}</arg>
+<arg>${start_time}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.594988" elapsed="0.000268"/>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-07T19:56:45.595595" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\write\project_2025\robot\robotframework\results\test15_backup_validation"&gt;C:\Users\write\project_2025\robot\robotframework\results\test15_backup_validation&lt;/a&gt;' already exists.</msg>
+<arg>results/test15_backup_validation</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.595400" elapsed="0.000263"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.595987" level="INFO">✅ Test environment initialized at 2025-10-07 19:56:45</msg>
+<arg>✅ Test environment initialized at ${TEST_START_TIME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.595787" elapsed="0.000409"/>
+</kw>
+<doc>Initialize test environment for backup validation</doc>
+<status status="PASS" start="2025-10-07T19:56:45.589430" elapsed="0.006860"/>
+</kw>
+<test id="s1-t1" name="Critical - Connect to vCenter API" line="18">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.598127" level="INFO">🏁 Starting: Critical - Connect to vCenter API</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.597910" elapsed="0.000409"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.597381" elapsed="0.001063"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.598881" level="INFO">🔍 Establishing API connection to vCenter...</msg>
+<arg>🔍 Establishing API connection to vCenter...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.598723" elapsed="0.000336"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.599488" level="INFO">📋 vCenter Server: vcenter.example.com</msg>
+<arg>📋 vCenter Server: ${VCENTER_SERVER}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.599323" elapsed="0.000397"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.600247" level="INFO">📋 API Endpoint: https://vcenter.example.com/api</msg>
+<arg>📋 API Endpoint: ${VCENTER_API_ENDPOINT}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.600015" elapsed="0.000456"/>
+</kw>
+<kw name="Connect To vCenter API" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.606909" level="INFO">🔗 Connecting to vCenter API: https://vcenter.example.com/api</msg>
+<arg>🔗 Connecting to vCenter API: ${VCENTER_API_ENDPOINT}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.606473" elapsed="0.000679"/>
+</kw>
+<kw name="Vcenter Api Connect" owner="VCenterAPILibrary">
+<msg time="2025-10-07T19:56:45.608211" level="INFO">${connection} = {'endpoint': 'https://vcenter.example.com/api', 'username': 'administrator@vsphere.local', 'authenticated': True, 'timeout': 30, 'verify_ssl': True, 'session_token': 'mock-session-token-12345'}</msg>
+<var>${connection}</var>
+<arg>${VCENTER_API_ENDPOINT}</arg>
+<arg>${VCENTER_USERNAME}</arg>
+<arg>${VCENTER_PASSWORD}</arg>
+<arg>${API_TIMEOUT}</arg>
+<arg>${API_VERIFY_SSL}</arg>
+<doc>Establish connection to vCenter REST API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.607455" elapsed="0.000798"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.609039" level="INFO">${VCENTER_API_CONN} = {'endpoint': 'https://vcenter.example.com/api', 'username': 'administrator@vsphere.local', 'authenticated': True, 'timeout': 30, 'verify_ssl': True, 'session_token': 'mock-session-token-12345'}</msg>
+<arg>${VCENTER_API_CONN}</arg>
+<arg>${connection}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.608416" elapsed="0.000688"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.609466" level="INFO">✅ Connected to vCenter API: https://vcenter.example.com/api</msg>
+<arg>✅ Connected to vCenter API: ${VCENTER_API_ENDPOINT}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.609248" elapsed="0.000398"/>
+</kw>
+<return>
+<value>${connection}</value>
+<status status="PASS" start="2025-10-07T19:56:45.609768" elapsed="0.000070"/>
+</return>
+<doc>Establish connection to vCenter REST API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.600824" elapsed="0.009134"/>
+</kw>
+<kw name="Verify vCenter API Connection" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.610541" level="INFO">🔍 Verifying vCenter API connection status...</msg>
+<arg>🔍 Verifying vCenter API connection status...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.610436" elapsed="0.000291"/>
+</kw>
+<kw name="Vcenter Api Verify Connection" owner="VCenterAPILibrary">
+<msg time="2025-10-07T19:56:45.611182" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>${VCENTER_API_CONN}</arg>
+<doc>Verify vCenter API connection is active</doc>
+<status status="PASS" start="2025-10-07T19:56:45.610945" elapsed="0.000282"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.611590" level="INFO">✅ vCenter API connection verified: True</msg>
+<arg>✅ vCenter API connection verified: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.611399" elapsed="0.000586"/>
+</kw>
+<return>
+<value>${status}</value>
+<status status="PASS" start="2025-10-07T19:56:45.612052" elapsed="0.000046"/>
+</return>
+<msg time="2025-10-07T19:56:45.612246" level="INFO">${connection_status} = True</msg>
+<var>${connection_status}</var>
+<doc>Verify vCenter API connection is active</doc>
+<status status="PASS" start="2025-10-07T19:56:45.610216" elapsed="0.002057"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${connection_status}</arg>
+<arg>msg=Failed to establish vCenter API connection</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.612490" elapsed="0.000194"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.613009" level="INFO">✅ vCenter API connection established successfully</msg>
+<arg>✅ vCenter API connection established successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.612875" elapsed="0.000275"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.614343" level="INFO">✅ Completed: Critical - Connect to vCenter API - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.614151" elapsed="0.000349"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.613916" elapsed="0.000631"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.614691" elapsed="0.000020"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.614582" elapsed="0.000243"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.613887" elapsed="0.000975"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.613572" elapsed="0.001357"/>
+</kw>
+<doc>🔗 Establish API connection to VMware vCenter for backup policy queries</doc>
+<tag>connection</tag>
+<tag>critical</tag>
+<tag>infrastructure</tag>
+<tag>vcenter_api</tag>
+<status status="PASS" start="2025-10-07T19:56:45.596369" elapsed="0.018795"/>
+</test>
+<test id="s1-t2" name="Critical - Collect VM Backup Policy Configuration" line="35">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.616938" level="INFO">🏁 Starting: Critical - Collect VM Backup Policy Configuration</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.616803" elapsed="0.000290"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.616549" elapsed="0.000653"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.617550" level="INFO">🔍 Collecting VM backup policy configuration...</msg>
+<arg>🔍 Collecting VM backup policy configuration...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.617424" elapsed="0.000325"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.618084" level="INFO">📋 Target VMs: ['production-db-01', 'production-web-01', 'production-app-01', 'file-server-01']</msg>
+<arg>📋 Target VMs: ${TARGET_VMS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.617941" elapsed="0.000356"/>
+</kw>
+<kw name="Collect Backup Policy Configuration" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.618898" level="INFO">📊 Collecting backup policy configuration via API...</msg>
+<arg>📊 Collecting backup policy configuration via API...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.618793" elapsed="0.000248"/>
+</kw>
+<kw name="Vcenter Api Get Backup Policies" owner="VCenterAPILibrary">
+<msg time="2025-10-07T19:56:45.619398" level="INFO">${policies} = [{'vm_name': 'production-db-01', 'policy_name': 'Critical-DB-Policy', 'policy_id': 'policy-001', 'policy_applied': True}, {'vm_name': 'production-web-01', 'policy_name': 'High-Priority-Policy', 'polic...</msg>
+<var>${policies}</var>
+<arg>${VCENTER_API_CONN}</arg>
+<arg>${TARGET_VMS}</arg>
+<doc>Get backup policy configuration for VMs via API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.619201" elapsed="0.000223"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.619613" level="INFO">Length is 4.</msg>
+<msg time="2025-10-07T19:56:45.619672" level="INFO">${count} = 4</msg>
+<var>${count}</var>
+<arg>${policies}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.619521" elapsed="0.000170"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.619920" level="INFO">📊 Collected backup policies for 4 VMs</msg>
+<arg>📊 Collected backup policies for ${count} VMs</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.619783" elapsed="0.000280"/>
+</kw>
+<return>
+<value>${policies}</value>
+<status status="PASS" start="2025-10-07T19:56:45.620129" elapsed="0.000043"/>
+</return>
+<msg time="2025-10-07T19:56:45.620595" level="INFO">${policy_data} = [{'vm_name': 'production-db-01', 'policy_name': 'Critical-DB-Policy', 'policy_id': 'policy-001', 'policy_applied': True}, {'vm_name': 'production-web-01', 'policy_name': 'High-Priority-Policy', 'polic...</msg>
+<var>${policy_data}</var>
+<doc>Collect VM backup policy configuration via API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.618590" elapsed="0.002053"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.621102" level="INFO">${POLICY_DATA} = [{'vm_name': 'production-db-01', 'policy_name': 'Critical-DB-Policy', 'policy_id': 'policy-001', 'policy_applied': True}, {'vm_name': 'production-web-01', 'policy_name': 'High-Priority-Policy', 'polic...</msg>
+<arg>${POLICY_DATA}</arg>
+<arg>${policy_data}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.620846" elapsed="0.000300"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.621491" level="INFO">Length is 4.</msg>
+<msg time="2025-10-07T19:56:45.621554" level="INFO">${vm_count} = 4</msg>
+<var>${vm_count}</var>
+<arg>${policy_data}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.621380" elapsed="0.000195"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${vm_count} &gt; 0</arg>
+<arg>msg=No backup policies found for target VMs</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.621765" elapsed="0.000222"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.622323" level="INFO">📊 Backup policies collected for 4 VMs</msg>
+<arg>📊 Backup policies collected for ${vm_count} VMs</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.622160" elapsed="0.000364"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.624897" level="INFO">📊 VM: production-db-01 - Policy: Critical-DB-Policy</msg>
+<arg>📊 VM: ${policy['vm_name']} - Policy: ${policy['policy_name']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.623317" elapsed="0.001826"/>
+</kw>
+<var name="${policy}">{'vm_name': 'production-db-01', 'policy_name': 'Critical-DB-Policy', 'policy_id': 'policy-001', 'policy_applied': True}</var>
+<status status="PASS" start="2025-10-07T19:56:45.623180" elapsed="0.002023"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.626527" level="INFO">📊 VM: production-web-01 - Policy: High-Priority-Policy</msg>
+<arg>📊 VM: ${policy['vm_name']} - Policy: ${policy['policy_name']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.625436" elapsed="0.001278"/>
+</kw>
+<var name="${policy}">{'vm_name': 'production-web-01', 'policy_name': 'High-Priority-Policy', 'policy_id': 'policy-002', 'policy_applied': True}</var>
+<status status="PASS" start="2025-10-07T19:56:45.625320" elapsed="0.001448"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.628416" level="INFO">📊 VM: production-app-01 - Policy: High-Priority-Policy</msg>
+<arg>📊 VM: ${policy['vm_name']} - Policy: ${policy['policy_name']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.626996" elapsed="0.001602"/>
+</kw>
+<var name="${policy}">{'vm_name': 'production-app-01', 'policy_name': 'High-Priority-Policy', 'policy_id': 'policy-002', 'policy_applied': True}</var>
+<status status="PASS" start="2025-10-07T19:56:45.626892" elapsed="0.001766"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.630179" level="INFO">📊 VM: file-server-01 - Policy: Standard-Policy</msg>
+<arg>📊 VM: ${policy['vm_name']} - Policy: ${policy['policy_name']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.628896" elapsed="0.001486"/>
+</kw>
+<var name="${policy}">{'vm_name': 'file-server-01', 'policy_name': 'Standard-Policy', 'policy_id': 'policy-003', 'policy_applied': True}</var>
+<status status="PASS" start="2025-10-07T19:56:45.628796" elapsed="0.001634"/>
+</iter>
+<var>${policy}</var>
+<value>@{policy_data}</value>
+<status status="PASS" start="2025-10-07T19:56:45.622721" elapsed="0.007742"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.630963" level="INFO">✅ Backup policy configuration collection complete</msg>
+<arg>✅ Backup policy configuration collection complete</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.630825" elapsed="0.000300"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.632518" level="INFO">✅ Completed: Critical - Collect VM Backup Policy Configuration - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.632128" elapsed="0.000595"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.631912" elapsed="0.000899"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.632973" elapsed="0.000019"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.632859" elapsed="0.000166"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.631886" elapsed="0.001159"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.631560" elapsed="0.001532"/>
+</kw>
+<doc>📊 Retrieve VM backup policy details via vCenter REST API</doc>
+<tag>api_collection</tag>
+<tag>backup_policy</tag>
+<tag>critical</tag>
+<status status="PASS" start="2025-10-07T19:56:45.616056" elapsed="0.017217"/>
+</test>
+<test id="s1-t3" name="Critical - Collect Backup Schedule Settings" line="56">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.634976" level="INFO">🏁 Starting: Critical - Collect Backup Schedule Settings</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.634837" elapsed="0.000351"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.634539" elapsed="0.000750"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.635633" level="INFO">🔍 Collecting backup schedule settings...</msg>
+<arg>🔍 Collecting backup schedule settings...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.635523" elapsed="0.000306"/>
+</kw>
+<kw name="Collect Backup Schedule Settings" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.636487" level="INFO">📊 Collecting backup schedule settings via API...</msg>
+<arg>📊 Collecting backup schedule settings via API...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.636377" elapsed="0.000298"/>
+</kw>
+<kw name="Vcenter Api Get Backup Schedules" owner="VCenterAPILibrary">
+<msg time="2025-10-07T19:56:45.637311" level="INFO">${schedules} = [{'vm_name': 'production-db-01', 'frequency': 'Every 4 hours', 'rpo_hours': 4, 'next_run': '2025-10-07 23:56:45'}, {'vm_name': 'production-web-01', 'frequency': 'Every 12 hours', 'rpo_hours': 12, 'nex...</msg>
+<var>${schedules}</var>
+<arg>${VCENTER_API_CONN}</arg>
+<arg>${TARGET_VMS}</arg>
+<doc>Get backup schedule settings for VMs via API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.636830" elapsed="0.000516"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.637618" level="INFO">Length is 4.</msg>
+<msg time="2025-10-07T19:56:45.637704" level="INFO">${count} = 4</msg>
+<var>${count}</var>
+<arg>${schedules}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.637499" elapsed="0.000234"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.638049" level="INFO">📊 Collected backup schedules for 4 VMs</msg>
+<arg>📊 Collected backup schedules for ${count} VMs</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.637872" elapsed="0.000372"/>
+</kw>
+<return>
+<value>${schedules}</value>
+<status status="PASS" start="2025-10-07T19:56:45.638399" elapsed="0.000050"/>
+</return>
+<msg time="2025-10-07T19:56:45.638608" level="INFO">${schedule_data} = [{'vm_name': 'production-db-01', 'frequency': 'Every 4 hours', 'rpo_hours': 4, 'next_run': '2025-10-07 23:56:45'}, {'vm_name': 'production-web-01', 'frequency': 'Every 12 hours', 'rpo_hours': 12, 'nex...</msg>
+<var>${schedule_data}</var>
+<doc>Collect backup schedule settings via API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.636158" elapsed="0.002475"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.639336" level="INFO">${SCHEDULE_DATA} = [{'vm_name': 'production-db-01', 'frequency': 'Every 4 hours', 'rpo_hours': 4, 'next_run': '2025-10-07 23:56:45'}, {'vm_name': 'production-web-01', 'frequency': 'Every 12 hours', 'rpo_hours': 12, 'nex...</msg>
+<arg>${SCHEDULE_DATA}</arg>
+<arg>${schedule_data}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.638849" elapsed="0.000627"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.639829" level="INFO">Length is 4.</msg>
+<msg time="2025-10-07T19:56:45.639902" level="INFO">${schedule_count} = 4</msg>
+<var>${schedule_count}</var>
+<arg>${schedule_data}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.639716" elapsed="0.000219"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${schedule_count} &gt; 0</arg>
+<arg>msg=No backup schedules found</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.640109" elapsed="0.000237"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.640705" level="INFO">📊 Backup schedules collected for 4 VMs</msg>
+<arg>📊 Backup schedules collected for ${schedule_count} VMs</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.640538" elapsed="0.000341"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.642875" level="INFO">📊 VM: production-db-01 - Frequency: Every 4 hours, RPO: 4h</msg>
+<arg>📊 VM: ${schedule['vm_name']} - Frequency: ${schedule['frequency']}, RPO: ${schedule['rpo_hours']}h</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.641342" elapsed="0.001736"/>
+</kw>
+<var name="${schedule}">{'vm_name': 'production-db-01', 'frequency': 'Every 4 hours', 'rpo_hours': 4, 'next_run': '2025-10-07 23:56:45'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.641262" elapsed="0.001920"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.645567" level="INFO">📊 VM: production-web-01 - Frequency: Every 12 hours, RPO: 12h</msg>
+<arg>📊 VM: ${schedule['vm_name']} - Frequency: ${schedule['frequency']}, RPO: ${schedule['rpo_hours']}h</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.643424" elapsed="0.002307"/>
+</kw>
+<var name="${schedule}">{'vm_name': 'production-web-01', 'frequency': 'Every 12 hours', 'rpo_hours': 12, 'next_run': '2025-10-08 07:56:45'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.643309" elapsed="0.002485"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.647638" level="INFO">📊 VM: production-app-01 - Frequency: Every 12 hours, RPO: 12h</msg>
+<arg>📊 VM: ${schedule['vm_name']} - Frequency: ${schedule['frequency']}, RPO: ${schedule['rpo_hours']}h</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.645989" elapsed="0.001854"/>
+</kw>
+<var name="${schedule}">{'vm_name': 'production-app-01', 'frequency': 'Every 12 hours', 'rpo_hours': 12, 'next_run': '2025-10-08 07:56:45'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.645897" elapsed="0.001993"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.649553" level="INFO">📊 VM: file-server-01 - Frequency: Daily, RPO: 24h</msg>
+<arg>📊 VM: ${schedule['vm_name']} - Frequency: ${schedule['frequency']}, RPO: ${schedule['rpo_hours']}h</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.648091" elapsed="0.001668"/>
+</kw>
+<var name="${schedule}">{'vm_name': 'file-server-01', 'frequency': 'Daily', 'rpo_hours': 24, 'next_run': '2025-10-08 19:56:45'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.647988" elapsed="0.001819"/>
+</iter>
+<var>${schedule}</var>
+<value>@{schedule_data}</value>
+<status status="PASS" start="2025-10-07T19:56:45.641065" elapsed="0.008787"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.650223" level="INFO">✅ Backup schedule settings collection complete</msg>
+<arg>✅ Backup schedule settings collection complete</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.650112" elapsed="0.000302"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.651685" level="INFO">✅ Completed: Critical - Collect Backup Schedule Settings - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.651522" elapsed="0.000362"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.651339" elapsed="0.000592"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.652066" elapsed="0.000018"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.651969" elapsed="0.000146"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.651319" elapsed="0.000815"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.651038" elapsed="0.001140"/>
+</kw>
+<doc>📅 Retrieve backup schedule settings and RPO configuration via API</doc>
+<tag>api_collection</tag>
+<tag>backup_schedule</tag>
+<tag>critical</tag>
+<tag>rpo</tag>
+<status status="PASS" start="2025-10-07T19:56:45.634001" elapsed="0.018371"/>
+</test>
+<test id="s1-t4" name="Critical - Collect Recent Backup Job Status" line="76">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.653937" level="INFO">🏁 Starting: Critical - Collect Recent Backup Job Status</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.653771" elapsed="0.000361"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.653361" elapsed="0.000848"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.654590" level="INFO">🔍 Collecting recent backup job status...</msg>
+<arg>🔍 Collecting recent backup job status...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.654474" elapsed="0.000268"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.655244" level="INFO">📋 Looking back 7 days</msg>
+<arg>📋 Looking back ${BACKUP_LOOKBACK_DAYS} days</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.654992" elapsed="0.000425"/>
+</kw>
+<kw name="Collect Recent Backup Job Status" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.656060" level="INFO">📊 Collecting recent backup job status via API...</msg>
+<arg>📊 Collecting recent backup job status via API...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.655923" elapsed="0.000328"/>
+</kw>
+<kw name="Vcenter Api Get Recent Backup Jobs" owner="VCenterAPILibrary">
+<msg time="2025-10-07T19:56:45.656924" level="INFO">${jobs} = [{'vm_name': 'production-db-01', 'job_id': 'job-production-db-01-0', 'status': 'Success', 'start_time': '2025-10-07 19:26:45', 'end_time': '2025-10-07 19:56:45', 'data_transferred_gb': 50, 'error_mess...</msg>
+<var>${jobs}</var>
+<arg>${VCENTER_API_CONN}</arg>
+<arg>${TARGET_VMS}</arg>
+<arg>${BACKUP_LOOKBACK_DAYS}</arg>
+<doc>Get recent backup job status for VMs via API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.656442" elapsed="0.000648"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.657333" level="INFO">Length is 12.</msg>
+<msg time="2025-10-07T19:56:45.657398" level="INFO">${count} = 12</msg>
+<var>${count}</var>
+<arg>${jobs}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.657217" elapsed="0.000211"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.657652" level="INFO">📊 Collected 12 recent backup jobs</msg>
+<arg>📊 Collected ${count} recent backup jobs</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.657519" elapsed="0.000315"/>
+</kw>
+<return>
+<value>${jobs}</value>
+<status status="PASS" start="2025-10-07T19:56:45.657912" elapsed="0.000039"/>
+</return>
+<msg time="2025-10-07T19:56:45.658119" level="INFO">${job_status} = [{'vm_name': 'production-db-01', 'job_id': 'job-production-db-01-0', 'status': 'Success', 'start_time': '2025-10-07 19:26:45', 'end_time': '2025-10-07 19:56:45', 'data_transferred_gb': 50, 'error_mess...</msg>
+<var>${job_status}</var>
+<doc>Collect recent backup job status via API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.655680" elapsed="0.002463"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.658603" level="INFO">${JOB_STATUS} = [{'vm_name': 'production-db-01', 'job_id': 'job-production-db-01-0', 'status': 'Success', 'start_time': '2025-10-07 19:26:45', 'end_time': '2025-10-07 19:56:45', 'data_transferred_gb': 50, 'error_mess...</msg>
+<arg>${JOB_STATUS}</arg>
+<arg>${job_status}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.658396" elapsed="0.000247"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.659021" level="INFO">Length is 12.</msg>
+<msg time="2025-10-07T19:56:45.659087" level="INFO">${job_count} = 12</msg>
+<var>${job_count}</var>
+<arg>${job_status}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.658899" elapsed="0.000223"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${job_count} &gt; 0</arg>
+<arg>msg=No recent backup jobs found</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.659319" elapsed="0.000215"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.659861" level="INFO">📊 Recent backup jobs collected: 12 jobs</msg>
+<arg>📊 Recent backup jobs collected: ${job_count} jobs</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.659726" elapsed="0.000321"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.662244" level="INFO">📊 VM: production-db-01 - Status: Success, Completion: 2025-10-07 19:56:45</msg>
+<arg>📊 VM: ${job['vm_name']} - Status: ${job['status']}, Completion: ${job['end_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.660547" elapsed="0.001919"/>
+</kw>
+<var name="${job}">{'vm_name': 'production-db-01', 'job_id': 'job-production-db-01-0', 'status': 'Success', 'start_time': '2025-10-07 19:26:45', 'end_time': '2025-10-07 19:56:45', 'data_transferred_gb': 50, 'error_messa...</var>
+<status status="PASS" start="2025-10-07T19:56:45.660436" elapsed="0.002101"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.664369" level="INFO">📊 VM: production-db-01 - Status: Success, Completion: 2025-10-05 19:56:45</msg>
+<arg>📊 VM: ${job['vm_name']} - Status: ${job['status']}, Completion: ${job['end_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.662771" elapsed="0.001804"/>
+</kw>
+<var name="${job}">{'vm_name': 'production-db-01', 'job_id': 'job-production-db-01-1', 'status': 'Success', 'start_time': '2025-10-05 19:26:45', 'end_time': '2025-10-05 19:56:45', 'data_transferred_gb': 60, 'error_messa...</var>
+<status status="PASS" start="2025-10-07T19:56:45.662650" elapsed="0.001972"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.666383" level="INFO">📊 VM: production-db-01 - Status: Success, Completion: 2025-10-03 19:56:45</msg>
+<arg>📊 VM: ${job['vm_name']} - Status: ${job['status']}, Completion: ${job['end_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.664833" elapsed="0.001761"/>
+</kw>
+<var name="${job}">{'vm_name': 'production-db-01', 'job_id': 'job-production-db-01-2', 'status': 'Success', 'start_time': '2025-10-03 19:26:45', 'end_time': '2025-10-03 19:56:45', 'data_transferred_gb': 70, 'error_messa...</var>
+<status status="PASS" start="2025-10-07T19:56:45.664731" elapsed="0.001911"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.668948" level="INFO">📊 VM: production-web-01 - Status: Success, Completion: 2025-10-07 19:56:45</msg>
+<arg>📊 VM: ${job['vm_name']} - Status: ${job['status']}, Completion: ${job['end_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.666825" elapsed="0.002292"/>
+</kw>
+<var name="${job}">{'vm_name': 'production-web-01', 'job_id': 'job-production-web-01-0', 'status': 'Success', 'start_time': '2025-10-07 19:26:45', 'end_time': '2025-10-07 19:56:45', 'data_transferred_gb': 50, 'error_mes...</var>
+<status status="PASS" start="2025-10-07T19:56:45.666748" elapsed="0.002433"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.671273" level="INFO">📊 VM: production-web-01 - Status: Success, Completion: 2025-10-05 19:56:45</msg>
+<arg>📊 VM: ${job['vm_name']} - Status: ${job['status']}, Completion: ${job['end_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.669404" elapsed="0.002030"/>
+</kw>
+<var name="${job}">{'vm_name': 'production-web-01', 'job_id': 'job-production-web-01-1', 'status': 'Success', 'start_time': '2025-10-05 19:26:45', 'end_time': '2025-10-05 19:56:45', 'data_transferred_gb': 60, 'error_mes...</var>
+<status status="PASS" start="2025-10-07T19:56:45.669291" elapsed="0.002198"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.674013" level="INFO">📊 VM: production-web-01 - Status: Success, Completion: 2025-10-03 19:56:45</msg>
+<arg>📊 VM: ${job['vm_name']} - Status: ${job['status']}, Completion: ${job['end_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.671721" elapsed="0.002578"/>
+</kw>
+<var name="${job}">{'vm_name': 'production-web-01', 'job_id': 'job-production-web-01-2', 'status': 'Success', 'start_time': '2025-10-03 19:26:45', 'end_time': '2025-10-03 19:56:45', 'data_transferred_gb': 70, 'error_mes...</var>
+<status status="PASS" start="2025-10-07T19:56:45.671605" elapsed="0.002751"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.676165" level="INFO">📊 VM: production-app-01 - Status: Success, Completion: 2025-10-07 19:56:45</msg>
+<arg>📊 VM: ${job['vm_name']} - Status: ${job['status']}, Completion: ${job['end_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.674590" elapsed="0.001787"/>
+</kw>
+<var name="${job}">{'vm_name': 'production-app-01', 'job_id': 'job-production-app-01-0', 'status': 'Success', 'start_time': '2025-10-07 19:26:45', 'end_time': '2025-10-07 19:56:45', 'data_transferred_gb': 50, 'error_mes...</var>
+<status status="PASS" start="2025-10-07T19:56:45.674480" elapsed="0.001957"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.678756" level="INFO">📊 VM: production-app-01 - Status: Success, Completion: 2025-10-05 19:56:45</msg>
+<arg>📊 VM: ${job['vm_name']} - Status: ${job['status']}, Completion: ${job['end_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.676727" elapsed="0.002237"/>
+</kw>
+<var name="${job}">{'vm_name': 'production-app-01', 'job_id': 'job-production-app-01-1', 'status': 'Success', 'start_time': '2025-10-05 19:26:45', 'end_time': '2025-10-05 19:56:45', 'data_transferred_gb': 60, 'error_mes...</var>
+<status status="PASS" start="2025-10-07T19:56:45.676644" elapsed="0.002367"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.680962" level="INFO">📊 VM: production-app-01 - Status: Success, Completion: 2025-10-03 19:56:45</msg>
+<arg>📊 VM: ${job['vm_name']} - Status: ${job['status']}, Completion: ${job['end_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.679218" elapsed="0.001929"/>
+</kw>
+<var name="${job}">{'vm_name': 'production-app-01', 'job_id': 'job-production-app-01-2', 'status': 'Success', 'start_time': '2025-10-03 19:26:45', 'end_time': '2025-10-03 19:56:45', 'data_transferred_gb': 70, 'error_mes...</var>
+<status status="PASS" start="2025-10-07T19:56:45.679123" elapsed="0.002070"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.683116" level="INFO">📊 VM: file-server-01 - Status: Success, Completion: 2025-10-07 19:56:45</msg>
+<arg>📊 VM: ${job['vm_name']} - Status: ${job['status']}, Completion: ${job['end_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.681375" elapsed="0.001915"/>
+</kw>
+<var name="${job}">{'vm_name': 'file-server-01', 'job_id': 'job-file-server-01-0', 'status': 'Success', 'start_time': '2025-10-07 19:26:45', 'end_time': '2025-10-07 19:56:45', 'data_transferred_gb': 50, 'error_message':...</var>
+<status status="PASS" start="2025-10-07T19:56:45.681298" elapsed="0.002052"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.685058" level="INFO">📊 VM: file-server-01 - Status: Success, Completion: 2025-10-05 19:56:45</msg>
+<arg>📊 VM: ${job['vm_name']} - Status: ${job['status']}, Completion: ${job['end_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.683536" elapsed="0.001734"/>
+</kw>
+<var name="${job}">{'vm_name': 'file-server-01', 'job_id': 'job-file-server-01-1', 'status': 'Success', 'start_time': '2025-10-05 19:26:45', 'end_time': '2025-10-05 19:56:45', 'data_transferred_gb': 60, 'error_message':...</var>
+<status status="PASS" start="2025-10-07T19:56:45.683459" elapsed="0.001857"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.687288" level="INFO">📊 VM: file-server-01 - Status: Success, Completion: 2025-10-03 19:56:45</msg>
+<arg>📊 VM: ${job['vm_name']} - Status: ${job['status']}, Completion: ${job['end_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.685522" elapsed="0.001971"/>
+</kw>
+<var name="${job}">{'vm_name': 'file-server-01', 'job_id': 'job-file-server-01-2', 'status': 'Success', 'start_time': '2025-10-03 19:26:45', 'end_time': '2025-10-03 19:56:45', 'data_transferred_gb': 70, 'error_message':...</var>
+<status status="PASS" start="2025-10-07T19:56:45.685423" elapsed="0.002150"/>
+</iter>
+<var>${job}</var>
+<value>@{job_status}</value>
+<status status="PASS" start="2025-10-07T19:56:45.660205" elapsed="0.027422"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.688273" level="INFO">✅ Recent backup job status collection complete</msg>
+<arg>✅ Recent backup job status collection complete</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.688052" elapsed="0.000446"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.689944" level="INFO">✅ Completed: Critical - Collect Recent Backup Job Status - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.689722" elapsed="0.000440"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.689417" elapsed="0.000815"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.690419" elapsed="0.000022"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.690278" elapsed="0.000197"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.689387" elapsed="0.001108"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.688949" elapsed="0.001596"/>
+</kw>
+<doc>✅ Retrieve recent backup job execution status via API</doc>
+<tag>api_collection</tag>
+<tag>backup_jobs</tag>
+<tag>critical</tag>
+<tag>job_status</tag>
+<status status="PASS" start="2025-10-07T19:56:45.652835" elapsed="0.037868"/>
+</test>
+<test id="s1-t5" name="Critical - Collect Retention Policy Settings" line="97">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.693713" level="INFO">🏁 Starting: Critical - Collect Retention Policy Settings</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.693529" elapsed="0.000374"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.693188" elapsed="0.000832"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.694417" level="INFO">🔍 Collecting retention policy settings...</msg>
+<arg>🔍 Collecting retention policy settings...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.694281" elapsed="0.000372"/>
+</kw>
+<kw name="Collect Retention Policy Settings" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.695855" level="INFO">📊 Collecting retention policy settings via API...</msg>
+<arg>📊 Collecting retention policy settings via API...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.695712" elapsed="0.000317"/>
+</kw>
+<kw name="Vcenter Api Get Retention Policies" owner="VCenterAPILibrary">
+<msg time="2025-10-07T19:56:45.696412" level="INFO">${retention} = [{'vm_name': 'production-db-01', 'daily_retention': 14, 'weekly_retention': 8, 'monthly_retention': 6, 'retention_unit': 'snapshots'}, {'vm_name': 'production-web-01', 'daily_retention': 7, 'weekly_re...</msg>
+<var>${retention}</var>
+<arg>${VCENTER_API_CONN}</arg>
+<arg>${TARGET_VMS}</arg>
+<doc>Get retention policy settings for VMs via API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.696198" elapsed="0.000239"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.696636" level="INFO">Length is 4.</msg>
+<msg time="2025-10-07T19:56:45.696714" level="INFO">${count} = 4</msg>
+<var>${count}</var>
+<arg>${retention}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.696537" elapsed="0.000202"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.697185" level="INFO">📊 Collected retention policies for 4 VMs</msg>
+<arg>📊 Collected retention policies for ${count} VMs</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.696997" elapsed="0.000340"/>
+</kw>
+<return>
+<value>${retention}</value>
+<status status="PASS" start="2025-10-07T19:56:45.697406" elapsed="0.000048"/>
+</return>
+<msg time="2025-10-07T19:56:45.697622" level="INFO">${retention_data} = [{'vm_name': 'production-db-01', 'daily_retention': 14, 'weekly_retention': 8, 'monthly_retention': 6, 'retention_unit': 'snapshots'}, {'vm_name': 'production-web-01', 'daily_retention': 7, 'weekly_re...</msg>
+<var>${retention_data}</var>
+<doc>Collect retention policy settings via API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.695383" elapsed="0.002267"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.698097" level="INFO">${RETENTION_DATA} = [{'vm_name': 'production-db-01', 'daily_retention': 14, 'weekly_retention': 8, 'monthly_retention': 6, 'retention_unit': 'snapshots'}, {'vm_name': 'production-web-01', 'daily_retention': 7, 'weekly_re...</msg>
+<arg>${RETENTION_DATA}</arg>
+<arg>${retention_data}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.697850" elapsed="0.000299"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.698501" level="INFO">Length is 4.</msg>
+<msg time="2025-10-07T19:56:45.698568" level="INFO">${retention_count} = 4</msg>
+<var>${retention_count}</var>
+<arg>${retention_data}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.698391" elapsed="0.000210"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${retention_count} &gt; 0</arg>
+<arg>msg=No retention policies found</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.698797" elapsed="0.000203"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.699500" level="INFO">📊 Retention policies collected for 4 VMs</msg>
+<arg>📊 Retention policies collected for ${retention_count} VMs</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.699297" elapsed="0.000397"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.701542" level="INFO">📊 VM: production-db-01 - Daily: 14d, Weekly: 8w</msg>
+<arg>📊 VM: ${retention['vm_name']} - Daily: ${retention['daily_retention']}d, Weekly: ${retention['weekly_retention']}w</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.700103" elapsed="0.001611"/>
+</kw>
+<var name="${retention}">{'vm_name': 'production-db-01', 'daily_retention': 14, 'weekly_retention': 8, 'monthly_retention': 6, 'retention_unit': 'snapshots'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.700011" elapsed="0.001759"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.703292" level="INFO">📊 VM: production-web-01 - Daily: 7d, Weekly: 4w</msg>
+<arg>📊 VM: ${retention['vm_name']} - Daily: ${retention['daily_retention']}d, Weekly: ${retention['weekly_retention']}w</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.701960" elapsed="0.001698"/>
+</kw>
+<var name="${retention}">{'vm_name': 'production-web-01', 'daily_retention': 7, 'weekly_retention': 4, 'monthly_retention': 3, 'retention_unit': 'snapshots'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.701881" elapsed="0.001913"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.706213" level="INFO">📊 VM: production-app-01 - Daily: 7d, Weekly: 4w</msg>
+<arg>📊 VM: ${retention['vm_name']} - Daily: ${retention['daily_retention']}d, Weekly: ${retention['weekly_retention']}w</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.704032" elapsed="0.002428"/>
+</kw>
+<var name="${retention}">{'vm_name': 'production-app-01', 'daily_retention': 7, 'weekly_retention': 4, 'monthly_retention': 3, 'retention_unit': 'snapshots'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.703924" elapsed="0.002619"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.708878" level="INFO">📊 VM: file-server-01 - Daily: 7d, Weekly: 4w</msg>
+<arg>📊 VM: ${retention['vm_name']} - Daily: ${retention['daily_retention']}d, Weekly: ${retention['weekly_retention']}w</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.706798" elapsed="0.002300"/>
+</kw>
+<var name="${retention}">{'vm_name': 'file-server-01', 'daily_retention': 7, 'weekly_retention': 4, 'monthly_retention': 3, 'retention_unit': 'snapshots'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.706675" elapsed="0.002483"/>
+</iter>
+<var>${retention}</var>
+<value>@{retention_data}</value>
+<status status="PASS" start="2025-10-07T19:56:45.699861" elapsed="0.009351"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.709648" level="INFO">✅ Retention policy settings collection complete</msg>
+<arg>✅ Retention policy settings collection complete</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.709514" elapsed="0.000331"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.711101" level="INFO">✅ Completed: Critical - Collect Retention Policy Settings - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.710948" elapsed="0.000364"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.710780" elapsed="0.000578"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.711496" elapsed="0.000019"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.711386" elapsed="0.000201"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.710758" elapsed="0.000849"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.710497" elapsed="0.001156"/>
+</kw>
+<doc>🗄️ Retrieve backup retention policy settings via API</doc>
+<tag>api_collection</tag>
+<tag>compliance</tag>
+<tag>critical</tag>
+<tag>retention</tag>
+<status status="PASS" start="2025-10-07T19:56:45.692525" elapsed="0.019372"/>
+</test>
+<test id="s1-t6" name="Critical - Collect Latest Backup Timestamps" line="117">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.713344" level="INFO">🏁 Starting: Critical - Collect Latest Backup Timestamps</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.713214" elapsed="0.000317"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.712977" elapsed="0.000670"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.714125" level="INFO">🔍 Collecting latest backup timestamps...</msg>
+<arg>🔍 Collecting latest backup timestamps...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.713995" elapsed="0.000318"/>
+</kw>
+<kw name="Collect Latest Backup Timestamps" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.715137" level="INFO">📊 Collecting latest backup timestamps via API...</msg>
+<arg>📊 Collecting latest backup timestamps via API...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.714992" elapsed="0.000337"/>
+</kw>
+<kw name="Vcenter Api Get Latest Backup Timestamps" owner="VCenterAPILibrary">
+<msg time="2025-10-07T19:56:45.715900" level="INFO">${timestamps} = [{'vm_name': 'production-db-01', 'last_backup_time': '2025-10-07 16:56:45', 'backup_id': 'backup-production-db-01-latest', 'backup_size_gb': 100, 'backup_type': 'Full'}, {'vm_name': 'production-web-01...</msg>
+<var>${timestamps}</var>
+<arg>${VCENTER_API_CONN}</arg>
+<arg>${TARGET_VMS}</arg>
+<doc>Get latest successful backup timestamps for VMs via API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.715514" elapsed="0.000437"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.716248" level="INFO">Length is 4.</msg>
+<msg time="2025-10-07T19:56:45.716345" level="INFO">${count} = 4</msg>
+<var>${count}</var>
+<arg>${timestamps}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.716107" elapsed="0.000271"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.716654" level="INFO">📊 Collected latest backup timestamps for 4 VMs</msg>
+<arg>📊 Collected latest backup timestamps for ${count} VMs</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.716516" elapsed="0.000306"/>
+</kw>
+<return>
+<value>${timestamps}</value>
+<status status="PASS" start="2025-10-07T19:56:45.716908" elapsed="0.000045"/>
+</return>
+<msg time="2025-10-07T19:56:45.717166" level="INFO">${timestamp_data} = [{'vm_name': 'production-db-01', 'last_backup_time': '2025-10-07 16:56:45', 'backup_id': 'backup-production-db-01-latest', 'backup_size_gb': 100, 'backup_type': 'Full'}, {'vm_name': 'production-web-01...</msg>
+<var>${timestamp_data}</var>
+<doc>Collect latest successful backup timestamps via API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.714648" elapsed="0.002550"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.717719" level="INFO">${TIMESTAMP_DATA} = [{'vm_name': 'production-db-01', 'last_backup_time': '2025-10-07 16:56:45', 'backup_id': 'backup-production-db-01-latest', 'backup_size_gb': 100, 'backup_type': 'Full'}, {'vm_name': 'production-web-01...</msg>
+<arg>${TIMESTAMP_DATA}</arg>
+<arg>${timestamp_data}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.717490" elapsed="0.000277"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.718137" level="INFO">Length is 4.</msg>
+<msg time="2025-10-07T19:56:45.718203" level="INFO">${timestamp_count} = 4</msg>
+<var>${timestamp_count}</var>
+<arg>${timestamp_data}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.718013" elapsed="0.000210"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${timestamp_count} &gt; 0</arg>
+<arg>msg=No backup timestamps found</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.718434" elapsed="0.000196"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.718977" level="INFO">📊 Latest backup timestamps collected for 4 VMs</msg>
+<arg>📊 Latest backup timestamps collected for ${timestamp_count} VMs</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.718841" elapsed="0.000303"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.721593" level="INFO">📊 VM: production-db-01 - Last Backup: 2025-10-07 16:56:45</msg>
+<arg>📊 VM: ${timestamp['vm_name']} - Last Backup: ${timestamp['last_backup_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.719779" elapsed="0.002109"/>
+</kw>
+<var name="${timestamp}">{'vm_name': 'production-db-01', 'last_backup_time': '2025-10-07 16:56:45', 'backup_id': 'backup-production-db-01-latest', 'backup_size_gb': 100, 'backup_type': 'Full'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.719658" elapsed="0.002368"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.724131" level="INFO">📊 VM: production-web-01 - Last Backup: 2025-10-07 11:56:45</msg>
+<arg>📊 VM: ${timestamp['vm_name']} - Last Backup: ${timestamp['last_backup_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.722426" elapsed="0.001914"/>
+</kw>
+<var name="${timestamp}">{'vm_name': 'production-web-01', 'last_backup_time': '2025-10-07 11:56:45', 'backup_id': 'backup-production-web-01-latest', 'backup_size_gb': 100, 'backup_type': 'Full'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.722269" elapsed="0.002130"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.725856" level="INFO">📊 VM: production-app-01 - Last Backup: 2025-10-07 09:56:45</msg>
+<arg>📊 VM: ${timestamp['vm_name']} - Last Backup: ${timestamp['last_backup_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.724704" elapsed="0.001374"/>
+</kw>
+<var name="${timestamp}">{'vm_name': 'production-app-01', 'last_backup_time': '2025-10-07 09:56:45', 'backup_id': 'backup-production-app-01-latest', 'backup_size_gb': 100, 'backup_type': 'Full'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.724577" elapsed="0.001559"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.727509" level="INFO">📊 VM: file-server-01 - Last Backup: 2025-10-07 04:56:45</msg>
+<arg>📊 VM: ${timestamp['vm_name']} - Last Backup: ${timestamp['last_backup_time']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.726373" elapsed="0.001333"/>
+</kw>
+<var name="${timestamp}">{'vm_name': 'file-server-01', 'last_backup_time': '2025-10-07 04:56:45', 'backup_id': 'backup-file-server-01-latest', 'backup_size_gb': 100, 'backup_type': 'Full'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.726241" elapsed="0.001523"/>
+</iter>
+<var>${timestamp}</var>
+<value>@{timestamp_data}</value>
+<status status="PASS" start="2025-10-07T19:56:45.719371" elapsed="0.008428"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.728136" level="INFO">✅ Latest backup timestamps collection complete</msg>
+<arg>✅ Latest backup timestamps collection complete</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.728024" elapsed="0.000314"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.729548" level="INFO">✅ Completed: Critical - Collect Latest Backup Timestamps - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.729395" elapsed="0.000359"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.729226" elapsed="0.000664"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.730062" elapsed="0.000024"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.729940" elapsed="0.000187"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.729206" elapsed="0.000945"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.728891" elapsed="0.001313"/>
+</kw>
+<doc>⏱️ Retrieve latest successful backup timestamps via API</doc>
+<tag>backup_timestamp</tag>
+<tag>critical</tag>
+<tag>recency</tag>
+<status status="PASS" start="2025-10-07T19:56:45.712487" elapsed="0.017898"/>
+</test>
+<test id="s1-t7" name="Critical - Collect Offsite Replication Status" line="137">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.733204" level="INFO">🏁 Starting: Critical - Collect Offsite Replication Status</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.733061" elapsed="0.000330"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.732802" elapsed="0.000689"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.733805" level="INFO">🔍 Collecting offsite replication status...</msg>
+<arg>🔍 Collecting offsite replication status...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.733695" elapsed="0.000268"/>
+</kw>
+<kw name="Collect Offsite Replication Status" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.734809" level="INFO">📊 Collecting offsite replication status via API...</msg>
+<arg>📊 Collecting offsite replication status via API...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.734659" elapsed="0.000328"/>
+</kw>
+<kw name="Vcenter Api Get Offsite Replication Status" owner="VCenterAPILibrary">
+<msg time="2025-10-07T19:56:45.735384" level="INFO">${replication} = [{'vm_name': 'production-db-01', 'offsite_enabled': True, 'offsite_target': 'DR-Site-East', 'last_replication': '2025-10-07 13:56:45', 'replication_status': 'Healthy'}, {'vm_name': 'production-web-01'...</msg>
+<var>${replication}</var>
+<arg>${VCENTER_API_CONN}</arg>
+<arg>${TARGET_VMS}</arg>
+<doc>Get offsite replication status for VMs via API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.735142" elapsed="0.000268"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.735601" level="INFO">Length is 4.</msg>
+<msg time="2025-10-07T19:56:45.735658" level="INFO">${count} = 4</msg>
+<var>${count}</var>
+<arg>${replication}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.735510" elapsed="0.000168"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.735891" level="INFO">📊 Collected offsite replication status for 4 VMs</msg>
+<arg>📊 Collected offsite replication status for ${count} VMs</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.735765" elapsed="0.000280"/>
+</kw>
+<return>
+<value>${replication}</value>
+<status status="PASS" start="2025-10-07T19:56:45.736154" elapsed="0.000060"/>
+</return>
+<msg time="2025-10-07T19:56:45.736428" level="INFO">${replication_data} = [{'vm_name': 'production-db-01', 'offsite_enabled': True, 'offsite_target': 'DR-Site-East', 'last_replication': '2025-10-07 13:56:45', 'replication_status': 'Healthy'}, {'vm_name': 'production-web-01'...</msg>
+<var>${replication_data}</var>
+<doc>Collect offsite replication status via API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.734347" elapsed="0.002117"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.737058" level="INFO">${REPLICATION_DATA} = [{'vm_name': 'production-db-01', 'offsite_enabled': True, 'offsite_target': 'DR-Site-East', 'last_replication': '2025-10-07 13:56:45', 'replication_status': 'Healthy'}, {'vm_name': 'production-web-01'...</msg>
+<arg>${REPLICATION_DATA}</arg>
+<arg>${replication_data}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.736742" elapsed="0.000376"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.737451" level="INFO">Length is 4.</msg>
+<msg time="2025-10-07T19:56:45.737562" level="INFO">${replication_count} = 4</msg>
+<var>${replication_count}</var>
+<arg>${replication_data}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.737335" elapsed="0.000261"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${replication_count} &gt; 0</arg>
+<arg>msg=No offsite replication data found</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.737848" elapsed="0.000321"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.738640" level="INFO">📊 Offsite replication data collected for 4 VMs</msg>
+<arg>📊 Offsite replication data collected for ${replication_count} VMs</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.738432" elapsed="0.000401"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.741103" level="INFO">📊 VM: production-db-01 - Enabled: True, Target: DR-Site-East</msg>
+<arg>📊 VM: ${replication['vm_name']} - Enabled: ${replication['offsite_enabled']}, Target: ${replication['offsite_target']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.739357" elapsed="0.001979"/>
+</kw>
+<var name="${replication}">{'vm_name': 'production-db-01', 'offsite_enabled': True, 'offsite_target': 'DR-Site-East', 'last_replication': '2025-10-07 13:56:45', 'replication_status': 'Healthy'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.739235" elapsed="0.002175"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.743002" level="INFO">📊 VM: production-web-01 - Enabled: True, Target: DR-Site-East</msg>
+<arg>📊 VM: ${replication['vm_name']} - Enabled: ${replication['offsite_enabled']}, Target: ${replication['offsite_target']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.741675" elapsed="0.001560"/>
+</kw>
+<var name="${replication}">{'vm_name': 'production-web-01', 'offsite_enabled': True, 'offsite_target': 'DR-Site-East', 'last_replication': '2025-10-07 13:56:45', 'replication_status': 'Healthy'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.741547" elapsed="0.001757"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.744813" level="INFO">📊 VM: production-app-01 - Enabled: True, Target: DR-Site-East</msg>
+<arg>📊 VM: ${replication['vm_name']} - Enabled: ${replication['offsite_enabled']}, Target: ${replication['offsite_target']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.743518" elapsed="0.001475"/>
+</kw>
+<var name="${replication}">{'vm_name': 'production-app-01', 'offsite_enabled': True, 'offsite_target': 'DR-Site-East', 'last_replication': '2025-10-07 13:56:45', 'replication_status': 'Healthy'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.743413" elapsed="0.001637"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.747416" level="INFO">📊 VM: file-server-01 - Enabled: False, Target: None</msg>
+<arg>📊 VM: ${replication['vm_name']} - Enabled: ${replication['offsite_enabled']}, Target: ${replication['offsite_target']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.745350" elapsed="0.002280"/>
+</kw>
+<var name="${replication}">{'vm_name': 'file-server-01', 'offsite_enabled': False, 'offsite_target': None, 'last_replication': None, 'replication_status': 'Disabled'}</var>
+<status status="PASS" start="2025-10-07T19:56:45.745198" elapsed="0.002499"/>
+</iter>
+<var>${replication}</var>
+<value>@{replication_data}</value>
+<status status="PASS" start="2025-10-07T19:56:45.739008" elapsed="0.008743"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.748149" level="INFO">✅ Offsite replication status collection complete</msg>
+<arg>✅ Offsite replication status collection complete</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.748032" elapsed="0.000274"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.749457" level="INFO">✅ Completed: Critical - Collect Offsite Replication Status - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.749288" elapsed="0.000380"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.749119" elapsed="0.000619"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.749901" elapsed="0.000023"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.749772" elapsed="0.000196"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.749097" elapsed="0.000894"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.748844" elapsed="0.001201"/>
+</kw>
+<doc>🌐 Retrieve offsite replication configuration and status via API</doc>
+<tag>api_collection</tag>
+<tag>critical</tag>
+<tag>dr</tag>
+<tag>offsite_replication</tag>
+<status status="PASS" start="2025-10-07T19:56:45.732266" elapsed="0.017965"/>
+</test>
+<test id="s1-t8" name="Critical - Validate Backup Policy Applied" line="157">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.751624" level="INFO">🏁 Starting: Critical - Validate Backup Policy Applied</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.751479" elapsed="0.000333"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.751229" elapsed="0.000663"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.752229" level="INFO">🔍 Validating backup policy application...</msg>
+<arg>🔍 Validating backup policy application...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.752122" elapsed="0.000280"/>
+</kw>
+<kw name="Validate Backup Policy Applied" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.753079" level="INFO">✅ Validating backup policy application...</msg>
+<arg>✅ Validating backup policy application...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.752959" elapsed="0.000289"/>
+</kw>
+<kw name="Backup Validator Validate Policies" owner="BackupValidator">
+<msg time="2025-10-07T19:56:45.754002" level="INFO">${results} = {'violations': [], 'total_vms': 4, 'compliant_vms': 4}</msg>
+<var>${results}</var>
+<arg>${policy_data}</arg>
+<arg>${TARGET_VMS}</arg>
+<doc>Validate all VMs have backup policies applied</doc>
+<status status="PASS" start="2025-10-07T19:56:45.753595" elapsed="0.000454"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-10-07T19:56:45.754487" level="INFO">${violations} = []</msg>
+<var>${violations}</var>
+<arg>${results}</arg>
+<arg>violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.754249" elapsed="0.000279"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.754793" level="INFO">Length is 0.</msg>
+<msg time="2025-10-07T19:56:45.754871" level="INFO">${violation_count} = 0</msg>
+<var>${violation_count}</var>
+<arg>${violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.754688" elapsed="0.000217"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.755238" level="INFO">📊 Validation complete: 0 violations found</msg>
+<arg>📊 Validation complete: ${violation_count} violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.755055" elapsed="0.000388"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="PASS" start="2025-10-07T19:56:45.755559" elapsed="0.000045"/>
+</return>
+<msg time="2025-10-07T19:56:45.755745" level="INFO">${policy_results} = {'violations': [], 'total_vms': 4, 'compliant_vms': 4}</msg>
+<var>${policy_results}</var>
+<arg>${POLICY_DATA}</arg>
+<doc>Validate all VMs have appropriate backup policies applied</doc>
+<status status="PASS" start="2025-10-07T19:56:45.752713" elapsed="0.003059"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-10-07T19:56:45.757267" level="INFO">${violations} = []</msg>
+<var>${violations}</var>
+<arg>${policy_results}</arg>
+<arg>violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.756251" elapsed="0.001044"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.757721" level="INFO">Length is 0.</msg>
+<msg time="2025-10-07T19:56:45.757799" level="INFO">${violation_count} = 0</msg>
+<var>${violation_count}</var>
+<arg>${violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.757596" elapsed="0.000224"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.758181" level="INFO">📊 Policy validation results: 0 violations found</msg>
+<arg>📊 Policy validation results: ${violation_count} violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.758020" elapsed="0.000368"/>
+</kw>
+<if>
+<branch type="IF" condition="${violation_count} &gt; 0">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ Violation: VM ${violation['vm_name']} - ${violation['reason']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.758960" elapsed="0.000022"/>
+</kw>
+<var name="${violation}"/>
+<status status="NOT RUN" start="2025-10-07T19:56:45.758867" elapsed="0.000159"/>
+</iter>
+<var>${violation}</var>
+<value>@{violations}</value>
+<status status="NOT RUN" start="2025-10-07T19:56:45.758795" elapsed="0.000260"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Backup policy validation failed: ${violation_count} VMs without proper policies</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.759152" elapsed="0.000100"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.758604" elapsed="0.000684"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.758576" elapsed="0.000734"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.759623" level="INFO">✅ Backup policy validation: All VMs have appropriate policies applied</msg>
+<arg>✅ Backup policy validation: All VMs have appropriate policies applied</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.759507" elapsed="0.000301"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.760829" level="INFO">✅ Completed: Critical - Validate Backup Policy Applied - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.760636" elapsed="0.000355"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.760449" elapsed="0.000591"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.761189" elapsed="0.000027"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.761070" elapsed="0.000212"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.760429" elapsed="0.000884"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.760148" elapsed="0.001219"/>
+</kw>
+<doc>✅ Validate all VMs have appropriate backup policies applied</doc>
+<tag>critical</tag>
+<tag>policy_compliance</tag>
+<tag>validation</tag>
+<status status="PASS" start="2025-10-07T19:56:45.750671" elapsed="0.011006"/>
+</test>
+<test id="s1-t9" name="Critical - Validate Schedule Alignment with RPO" line="181">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.763043" level="INFO">🏁 Starting: Critical - Validate Schedule Alignment with RPO</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.762914" elapsed="0.000321"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.762675" elapsed="0.000656"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.763699" level="INFO">🔍 Validating backup schedule alignment with RPO requirements...</msg>
+<arg>🔍 Validating backup schedule alignment with RPO requirements...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.763576" elapsed="0.000296"/>
+</kw>
+<kw name="Validate Schedule Alignment With RPO" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.764598" level="INFO">✅ Validating schedule alignment with RPO requirements...</msg>
+<arg>✅ Validating schedule alignment with RPO requirements...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.764462" elapsed="0.000287"/>
+</kw>
+<kw name="Backup Validator Validate Rpo Alignment" owner="BackupValidator">
+<msg time="2025-10-07T19:56:45.765145" level="FAIL">TypeError: '&gt;' not supported between instances of 'int' and 'str'</msg>
+<var>${results}</var>
+<arg>${schedule_data}</arg>
+<arg>${VM_CRITICALITY}</arg>
+<arg>${RPO_REQUIREMENTS}</arg>
+<doc>Validate backup schedules meet RPO requirements</doc>
+<status status="FAIL" start="2025-10-07T19:56:45.764887" elapsed="0.003075">TypeError: '&gt;' not supported between instances of 'int' and 'str'</status>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${rpo_violations}</var>
+<arg>${results}</arg>
+<arg>rpo_violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.768152" elapsed="0.000027"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${rpo_violation_count}</var>
+<arg>${rpo_violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.768287" elapsed="0.000017"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Validation complete: ${rpo_violation_count} RPO violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.768385" elapsed="0.000016"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="NOT RUN" start="2025-10-07T19:56:45.768443" elapsed="0.000017"/>
+</return>
+<var>${schedule_results}</var>
+<arg>${SCHEDULE_DATA}</arg>
+<doc>Validate backup schedules meet RPO requirements</doc>
+<status status="FAIL" start="2025-10-07T19:56:45.764157" elapsed="0.004409">TypeError: '&gt;' not supported between instances of 'int' and 'str'</status>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${rpo_violations}</var>
+<arg>${schedule_results}</arg>
+<arg>rpo_violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.768790" elapsed="0.000020"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${rpo_violation_count}</var>
+<arg>${rpo_violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.769009" elapsed="0.000019"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 RPO validation results: ${rpo_violation_count} violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.769214" elapsed="0.000018"/>
+</kw>
+<if>
+<branch type="IF" condition="${rpo_violation_count} &gt; 0">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ RPO Violation: VM ${violation['vm_name']} - Current: ${violation['current_rpo']}h, Required: ${violation['required_rpo']}h</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.769574" elapsed="0.000017"/>
+</kw>
+<var name="${violation}"/>
+<status status="NOT RUN" start="2025-10-07T19:56:45.769504" elapsed="0.000118"/>
+</iter>
+<var>${violation}</var>
+<value>@{rpo_violations}</value>
+<status status="NOT RUN" start="2025-10-07T19:56:45.769449" elapsed="0.000197"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>RPO validation failed: ${rpo_violation_count} VMs exceed RPO requirements</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.769721" elapsed="0.000015"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.769401" elapsed="0.000371"/>
+</branch>
+<status status="NOT RUN" start="2025-10-07T19:56:45.769381" elapsed="0.000412"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Schedule validation: All backup schedules meet RPO requirements</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.770010" elapsed="0.000019"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.771445" elapsed="0.000041"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.771056" elapsed="0.000475"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.771957" level="INFO">❌ Completed: Critical - Validate Schedule Alignment with RPO - FAIL</msg>
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.771650" elapsed="0.000540"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.771560" elapsed="0.000688"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.771036" elapsed="0.001247"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.770693" elapsed="0.001651"/>
+</kw>
+<doc>✅ Validate backup schedules meet RPO requirements for data criticality</doc>
+<tag>critical</tag>
+<tag>rpo_compliance</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-07T19:56:45.762135" elapsed="0.010540">TypeError: '&gt;' not supported between instances of 'int' and 'str'</status>
+</test>
+<test id="s1-t10" name="Critical - Validate Retention Settings Compliance" line="205">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.774399" level="INFO">🏁 Starting: Critical - Validate Retention Settings Compliance</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.774250" elapsed="0.000370"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.773968" elapsed="0.000723"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.775112" level="INFO">🔍 Validating retention settings compliance...</msg>
+<arg>🔍 Validating retention settings compliance...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.774963" elapsed="0.000333"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.775673" level="INFO">📋 Minimum daily retention: 7 days</msg>
+<arg>📋 Minimum daily retention: ${MIN_DAILY_RETENTION} days</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.775500" elapsed="0.000347"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.776187" level="INFO">📋 Minimum weekly retention: 4 weeks</msg>
+<arg>📋 Minimum weekly retention: ${MIN_WEEKLY_RETENTION} weeks</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.776032" elapsed="0.000335"/>
+</kw>
+<kw name="Validate Retention Settings Compliance" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.777040" level="INFO">✅ Validating retention settings compliance...</msg>
+<arg>✅ Validating retention settings compliance...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.776925" elapsed="0.000308"/>
+</kw>
+<kw name="Backup Validator Validate Retention Compliance" owner="BackupValidator">
+<msg time="2025-10-07T19:56:45.777897" level="FAIL">TypeError: '&lt;' not supported between instances of 'int' and 'str'</msg>
+<var>${results}</var>
+<arg>${retention_data}</arg>
+<arg>${MIN_DAILY_RETENTION}</arg>
+<arg>${MIN_WEEKLY_RETENTION}</arg>
+<arg>${MIN_MONTHLY_RETENTION}</arg>
+<doc>Validate retention settings meet compliance standards</doc>
+<status status="FAIL" start="2025-10-07T19:56:45.777450" elapsed="0.000977">TypeError: '&lt;' not supported between instances of 'int' and 'str'</status>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${violations}</var>
+<arg>${results}</arg>
+<arg>violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.778560" elapsed="0.000029"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${violation_count}</var>
+<arg>${violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.778681" elapsed="0.000017"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Validation complete: ${violation_count} violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.778776" elapsed="0.000025"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="NOT RUN" start="2025-10-07T19:56:45.778862" elapsed="0.000019"/>
+</return>
+<var>${retention_results}</var>
+<arg>${RETENTION_DATA}</arg>
+<doc>Validate retention settings meet compliance standards</doc>
+<status status="FAIL" start="2025-10-07T19:56:45.776674" elapsed="0.002321">TypeError: '&lt;' not supported between instances of 'int' and 'str'</status>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${retention_violations}</var>
+<arg>${retention_results}</arg>
+<arg>violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.779209" elapsed="0.000018"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${retention_violation_count}</var>
+<arg>${retention_violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.779413" elapsed="0.000018"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Retention validation results: ${retention_violation_count} violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.779609" elapsed="0.000018"/>
+</kw>
+<if>
+<branch type="IF" condition="${retention_violation_count} &gt; 0">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ Retention Violation: VM ${violation['vm_name']} - ${violation['reason']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.779965" elapsed="0.000017"/>
+</kw>
+<var name="${violation}"/>
+<status status="NOT RUN" start="2025-10-07T19:56:45.779894" elapsed="0.000129"/>
+</iter>
+<var>${violation}</var>
+<value>@{retention_violations}</value>
+<status status="NOT RUN" start="2025-10-07T19:56:45.779839" elapsed="0.000208"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Retention validation failed: ${retention_violation_count} VMs with insufficient retention</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.780124" elapsed="0.000014"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.779788" elapsed="0.000376"/>
+</branch>
+<status status="NOT RUN" start="2025-10-07T19:56:45.779766" elapsed="0.000418"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Retention validation: All settings meet compliance standards</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.780443" elapsed="0.000019"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.781237" elapsed="0.000018"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.781072" elapsed="0.000349"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.781704" level="INFO">❌ Completed: Critical - Validate Retention Settings Compliance - FAIL</msg>
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.781539" elapsed="0.000378"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.781452" elapsed="0.000521"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.781057" elapsed="0.000955"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.780815" elapsed="0.001252"/>
+</kw>
+<doc>✅ Validate retention settings meet compliance standards</doc>
+<tag>critical</tag>
+<tag>retention_compliance</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-07T19:56:45.773448" elapsed="0.008774">TypeError: '&lt;' not supported between instances of 'int' and 'str'</status>
+</test>
+<test id="s1-t11" name="Critical - Validate Recent Job Completion Status" line="231">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.783694" level="INFO">🏁 Starting: Critical - Validate Recent Job Completion Status</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.783562" elapsed="0.000326"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.783332" elapsed="0.000649"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.784294" level="INFO">🔍 Validating recent backup job completion status...</msg>
+<arg>🔍 Validating recent backup job completion status...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.784188" elapsed="0.000309"/>
+</kw>
+<kw name="Validate Recent Job Completion Status" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.785255" level="INFO">✅ Validating recent backup job completion status...</msg>
+<arg>✅ Validating recent backup job completion status...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.785133" elapsed="0.000303"/>
+</kw>
+<kw name="Backup Validator Validate Job Status" owner="BackupValidator">
+<msg time="2025-10-07T19:56:45.794196" level="INFO">${results} = {'failed_jobs': [], 'total_jobs': 12, 'successful_jobs': 12}</msg>
+<var>${results}</var>
+<arg>${job_status}</arg>
+<doc>Validate recent backup jobs completed successfully</doc>
+<status status="PASS" start="2025-10-07T19:56:45.785599" elapsed="0.008640"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-10-07T19:56:45.794578" level="INFO">${failed_jobs} = []</msg>
+<var>${failed_jobs}</var>
+<arg>${results}</arg>
+<arg>failed_jobs</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.794401" elapsed="0.000199"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.794788" level="INFO">Length is 0.</msg>
+<msg time="2025-10-07T19:56:45.794847" level="INFO">${failed_count} = 0</msg>
+<var>${failed_count}</var>
+<arg>${failed_jobs}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.794696" elapsed="0.000170"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.795111" level="INFO">📊 Validation complete: 0 failed jobs found</msg>
+<arg>📊 Validation complete: ${failed_count} failed jobs found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.794967" elapsed="0.000844"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="PASS" start="2025-10-07T19:56:45.795888" elapsed="0.000044"/>
+</return>
+<msg time="2025-10-07T19:56:45.796122" level="INFO">${job_results} = {'failed_jobs': [], 'total_jobs': 12, 'successful_jobs': 12}</msg>
+<var>${job_results}</var>
+<arg>${JOB_STATUS}</arg>
+<doc>Validate recent backup jobs completed successfully</doc>
+<status status="PASS" start="2025-10-07T19:56:45.784822" elapsed="0.011330"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-10-07T19:56:45.796593" level="INFO">${failed_jobs} = []</msg>
+<var>${failed_jobs}</var>
+<arg>${job_results}</arg>
+<arg>failed_jobs</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.796392" elapsed="0.000229"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.796980" level="INFO">Length is 0.</msg>
+<msg time="2025-10-07T19:56:45.797054" level="INFO">${failed_count} = 0</msg>
+<var>${failed_count}</var>
+<arg>${failed_jobs}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.796860" elapsed="0.000223"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.797564" level="INFO">📊 Job validation results: 0 failed jobs found</msg>
+<arg>📊 Job validation results: ${failed_count} failed jobs found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.797349" elapsed="0.000840"/>
+</kw>
+<if>
+<branch type="IF" condition="${failed_count} &gt; 0">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ Failed Job: VM ${failed['vm_name']} - Status: ${failed['status']}, Error: ${failed['error_message']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.798642" elapsed="0.000018"/>
+</kw>
+<var name="${failed}"/>
+<status status="NOT RUN" start="2025-10-07T19:56:45.798568" elapsed="0.000127"/>
+</iter>
+<var>${failed}</var>
+<value>@{failed_jobs}</value>
+<status status="NOT RUN" start="2025-10-07T19:56:45.798512" elapsed="0.000208"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Job validation failed: ${failed_count} backup jobs failed</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.798802" elapsed="0.000016"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.798347" elapsed="0.000496"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.798324" elapsed="0.000540"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.799152" level="INFO">✅ Job validation: All recent backup jobs completed successfully</msg>
+<arg>✅ Job validation: All recent backup jobs completed successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.799046" elapsed="0.000290"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.800258" level="INFO">✅ Completed: Critical - Validate Recent Job Completion Status - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.800107" elapsed="0.000345"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.799952" elapsed="0.000559"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.800646" elapsed="0.000037"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.800546" elapsed="0.000235"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.799937" elapsed="0.000867"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.799689" elapsed="0.001161"/>
+</kw>
+<doc>✅ Validate recent backup jobs completed successfully</doc>
+<tag>critical</tag>
+<tag>job_success</tag>
+<tag>validation</tag>
+<status status="PASS" start="2025-10-07T19:56:45.782845" elapsed="0.018208"/>
+</test>
+<test id="s1-t12" name="Critical - Validate Backup Recency" line="255">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.802366" level="INFO">🏁 Starting: Critical - Validate Backup Recency</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.802238" elapsed="0.000307"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.802016" elapsed="0.000635"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.803060" level="INFO">🔍 Validating backup recency...</msg>
+<arg>🔍 Validating backup recency...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.802933" elapsed="0.000280"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.803742" level="INFO">📋 Maximum backup age: 26 hours</msg>
+<arg>📋 Maximum backup age: ${MAX_BACKUP_AGE_HOURS} hours</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.803462" elapsed="0.000452"/>
+</kw>
+<kw name="Validate Backup Recency" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.804594" level="INFO">✅ Validating backup recency...</msg>
+<arg>✅ Validating backup recency...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.804480" elapsed="0.000291"/>
+</kw>
+<kw name="Backup Validator Validate Backup Recency" owner="BackupValidator">
+<msg time="2025-10-07T19:56:45.805280" level="FAIL">TypeError: '&gt;' not supported between instances of 'float' and 'str'</msg>
+<var>${results}</var>
+<arg>${timestamp_data}</arg>
+<arg>${MAX_BACKUP_AGE_HOURS}</arg>
+<doc>Validate backups are recent and within acceptable time windows</doc>
+<status status="FAIL" start="2025-10-07T19:56:45.804945" elapsed="0.000968">TypeError: '&gt;' not supported between instances of 'float' and 'str'</status>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${stale_backups}</var>
+<arg>${results}</arg>
+<arg>stale_backups</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.806085" elapsed="0.000029"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${stale_count}</var>
+<arg>${stale_backups}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.806226" elapsed="0.000018"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Validation complete: ${stale_count} stale backups found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.806326" elapsed="0.000030"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="NOT RUN" start="2025-10-07T19:56:45.806401" elapsed="0.000018"/>
+</return>
+<var>${recency_results}</var>
+<arg>${TIMESTAMP_DATA}</arg>
+<doc>Validate backups are recent and within acceptable time windows</doc>
+<status status="FAIL" start="2025-10-07T19:56:45.804230" elapsed="0.002312">TypeError: '&gt;' not supported between instances of 'float' and 'str'</status>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${stale_backups}</var>
+<arg>${recency_results}</arg>
+<arg>stale_backups</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.806788" elapsed="0.000021"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${stale_count}</var>
+<arg>${stale_backups}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.807015" elapsed="0.000019"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Recency validation results: ${stale_count} stale backups found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.807215" elapsed="0.000018"/>
+</kw>
+<if>
+<branch type="IF" condition="${stale_count} &gt; 0">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ Stale Backup: VM ${stale['vm_name']} - Last backup: ${stale['last_backup_time']}, Age: ${stale['age_hours']}h</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.807583" elapsed="0.000016"/>
+</kw>
+<var name="${stale}"/>
+<status status="NOT RUN" start="2025-10-07T19:56:45.807510" elapsed="0.000123"/>
+</iter>
+<var>${stale}</var>
+<value>@{stale_backups}</value>
+<status status="NOT RUN" start="2025-10-07T19:56:45.807454" elapsed="0.000203"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Recency validation failed: ${stale_count} VMs have stale backups</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.807735" elapsed="0.000016"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.807401" elapsed="0.000374"/>
+</branch>
+<status status="NOT RUN" start="2025-10-07T19:56:45.807380" elapsed="0.000416"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Recency validation: All backups are current and within acceptable time windows</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.807989" elapsed="0.000018"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.808877" elapsed="0.000018"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.808709" elapsed="0.000219"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.809210" level="INFO">❌ Completed: Critical - Validate Backup Recency - FAIL</msg>
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.809033" elapsed="0.000391"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.808949" elapsed="0.000533"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.808693" elapsed="0.000824"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.808441" elapsed="0.001138"/>
+</kw>
+<doc>✅ Validate backups are recent and within acceptable time windows</doc>
+<tag>backup_recency</tag>
+<tag>critical</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-07T19:56:45.801542" elapsed="0.008214">TypeError: '&gt;' not supported between instances of 'float' and 'str'</status>
+</test>
+<test id="s1-t13" name="Critical - Validate Offsite Replication Configuration" line="280">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.811520" level="INFO">🏁 Starting: Critical - Validate Offsite Replication Configuration</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.811380" elapsed="0.000338"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.811060" elapsed="0.000740"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.812212" level="INFO">🔍 Validating offsite replication configuration...</msg>
+<arg>🔍 Validating offsite replication configuration...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.812076" elapsed="0.000334"/>
+</kw>
+<kw name="Validate Offsite Replication Configuration" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.813086" level="INFO">✅ Validating offsite replication configuration...</msg>
+<arg>✅ Validating offsite replication configuration...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.812986" elapsed="0.000265"/>
+</kw>
+<kw name="Backup Validator Validate Offsite Replication" owner="BackupValidator">
+<msg time="2025-10-07T19:56:45.813626" level="INFO">${results} = {'violations': [], 'total_required_vms': 3, 'compliant_vms': 3}</msg>
+<var>${results}</var>
+<arg>${replication_data}</arg>
+<arg>${OFFSITE_REQUIRED_VMS}</arg>
+<doc>Validate offsite replication is enabled for critical VMs</doc>
+<status status="PASS" start="2025-10-07T19:56:45.813386" elapsed="0.000270"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-10-07T19:56:45.813944" level="INFO">${violations} = []</msg>
+<var>${violations}</var>
+<arg>${results}</arg>
+<arg>violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.813774" elapsed="0.000196"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.814177" level="INFO">Length is 0.</msg>
+<msg time="2025-10-07T19:56:45.814250" level="INFO">${violation_count} = 0</msg>
+<var>${violation_count}</var>
+<arg>${violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.814077" elapsed="0.000196"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.814578" level="INFO">📊 Validation complete: 0 violations found</msg>
+<arg>📊 Validation complete: ${violation_count} violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.814411" elapsed="0.000318"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="PASS" start="2025-10-07T19:56:45.814832" elapsed="0.000046"/>
+</return>
+<msg time="2025-10-07T19:56:45.815080" level="INFO">${replication_results} = {'violations': [], 'total_required_vms': 3, 'compliant_vms': 3}</msg>
+<var>${replication_results}</var>
+<arg>${REPLICATION_DATA}</arg>
+<doc>Validate offsite replication is enabled for critical VMs</doc>
+<status status="PASS" start="2025-10-07T19:56:45.812720" elapsed="0.002399"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-10-07T19:56:45.815526" level="INFO">${offsite_violations} = []</msg>
+<var>${offsite_violations}</var>
+<arg>${replication_results}</arg>
+<arg>violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.815365" elapsed="0.000184"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.815861" level="INFO">Length is 0.</msg>
+<msg time="2025-10-07T19:56:45.815925" level="INFO">${offsite_violation_count} = 0</msg>
+<var>${offsite_violation_count}</var>
+<arg>${offsite_violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.815755" elapsed="0.000189"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.816331" level="INFO">📊 Offsite validation results: 0 violations found</msg>
+<arg>📊 Offsite validation results: ${offsite_violation_count} violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.816179" elapsed="0.000356"/>
+</kw>
+<if>
+<branch type="IF" condition="${offsite_violation_count} &gt; 0">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ Offsite Violation: VM ${violation['vm_name']} - ${violation['reason']}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.816984" elapsed="0.000018"/>
+</kw>
+<var name="${violation}"/>
+<status status="NOT RUN" start="2025-10-07T19:56:45.816908" elapsed="0.000130"/>
+</iter>
+<var>${violation}</var>
+<value>@{offsite_violations}</value>
+<status status="NOT RUN" start="2025-10-07T19:56:45.816855" elapsed="0.000206"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Offsite replication validation failed: ${offsite_violation_count} VMs missing offsite protection</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.817138" elapsed="0.000016"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.816691" elapsed="0.000488"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.816670" elapsed="0.000529"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.817543" level="INFO">✅ Offsite validation: Critical VMs have proper offsite replication configured</msg>
+<arg>✅ Offsite validation: Critical VMs have proper offsite replication configured</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.817432" elapsed="0.000303"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.818642" level="INFO">✅ Completed: Critical - Validate Offsite Replication Configuration - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.818489" elapsed="0.000327"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.818333" elapsed="0.000571"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.819072" elapsed="0.000018"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.818955" elapsed="0.000168"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.818317" elapsed="0.000826"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.818079" elapsed="0.001107"/>
+</kw>
+<doc>✅ Validate offsite replication is enabled for critical VMs</doc>
+<tag>critical</tag>
+<tag>dr</tag>
+<tag>offsite_compliance</tag>
+<tag>validation</tag>
+<status status="PASS" start="2025-10-07T19:56:45.810431" elapsed="0.008970"/>
+</test>
+<test id="s1-t14" name="Normal - Comprehensive Backup Compliance Validation" line="304">
+<kw name="Log Test Start" owner="backup_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.821145" level="INFO">🏁 Starting: Normal - Comprehensive Backup Compliance Validation</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.821000" elapsed="0.000331"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.820715" elapsed="0.000821"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.821937" level="INFO">🔍 Performing comprehensive backup compliance validation...</msg>
+<arg>🔍 Performing comprehensive backup compliance validation...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.821819" elapsed="0.000284"/>
+</kw>
+<kw name="Validate Complete Backup Compliance" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.822921" level="INFO">🔍 Performing comprehensive backup compliance validation...</msg>
+<arg>🔍 Performing comprehensive backup compliance validation...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.822761" elapsed="0.000332"/>
+</kw>
+<kw name="Validate Backup Policy Applied" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.823764" level="INFO">✅ Validating backup policy application...</msg>
+<arg>✅ Validating backup policy application...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.823591" elapsed="0.000338"/>
+</kw>
+<kw name="Backup Validator Validate Policies" owner="BackupValidator">
+<msg time="2025-10-07T19:56:45.824359" level="INFO">${results} = {'violations': [], 'total_vms': 4, 'compliant_vms': 4}</msg>
+<var>${results}</var>
+<arg>${policy_data}</arg>
+<arg>${TARGET_VMS}</arg>
+<doc>Validate all VMs have backup policies applied</doc>
+<status status="PASS" start="2025-10-07T19:56:45.824112" elapsed="0.000272"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-10-07T19:56:45.824616" level="INFO">${violations} = []</msg>
+<var>${violations}</var>
+<arg>${results}</arg>
+<arg>violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.824483" elapsed="0.000154"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.824836" level="INFO">Length is 0.</msg>
+<msg time="2025-10-07T19:56:45.824897" level="INFO">${violation_count} = 0</msg>
+<var>${violation_count}</var>
+<arg>${violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.824737" elapsed="0.000178"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.825143" level="INFO">📊 Validation complete: 0 violations found</msg>
+<arg>📊 Validation complete: ${violation_count} violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.825011" elapsed="0.000287"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="PASS" start="2025-10-07T19:56:45.825369" elapsed="0.000042"/>
+</return>
+<msg time="2025-10-07T19:56:45.825565" level="INFO">${policy_validation} = {'violations': [], 'total_vms': 4, 'compliant_vms': 4}</msg>
+<var>${policy_validation}</var>
+<arg>${POLICY_DATA}</arg>
+<doc>Validate all VMs have appropriate backup policies applied</doc>
+<status status="PASS" start="2025-10-07T19:56:45.823342" elapsed="0.002253"/>
+</kw>
+<kw name="Validate Schedule Alignment With RPO" owner="backup_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.826197" level="INFO">✅ Validating schedule alignment with RPO requirements...</msg>
+<arg>✅ Validating schedule alignment with RPO requirements...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.826066" elapsed="0.000291"/>
+</kw>
+<kw name="Backup Validator Validate Rpo Alignment" owner="BackupValidator">
+<msg time="2025-10-07T19:56:45.826728" level="FAIL">TypeError: '&gt;' not supported between instances of 'int' and 'str'</msg>
+<var>${results}</var>
+<arg>${schedule_data}</arg>
+<arg>${VM_CRITICALITY}</arg>
+<arg>${RPO_REQUIREMENTS}</arg>
+<doc>Validate backup schedules meet RPO requirements</doc>
+<status status="FAIL" start="2025-10-07T19:56:45.826485" elapsed="0.000644">TypeError: '&gt;' not supported between instances of 'int' and 'str'</status>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${rpo_violations}</var>
+<arg>${results}</arg>
+<arg>rpo_violations</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.827250" elapsed="0.000018"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${rpo_violation_count}</var>
+<arg>${rpo_violations}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.827364" elapsed="0.000016"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Validation complete: ${rpo_violation_count} RPO violations found</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.827472" elapsed="0.000015"/>
+</kw>
+<return>
+<value>${results}</value>
+<status status="NOT RUN" start="2025-10-07T19:56:45.827525" elapsed="0.000015"/>
+</return>
+<var>${rpo_validation}</var>
+<arg>${SCHEDULE_DATA}</arg>
+<doc>Validate backup schedules meet RPO requirements</doc>
+<status status="FAIL" start="2025-10-07T19:56:45.825771" elapsed="0.001846">TypeError: '&gt;' not supported between instances of 'int' and 'str'</status>
+</kw>
+<kw name="Validate Retention Settings Compliance" owner="backup_keywords">
+<var>${retention_validation}</var>
+<arg>${RETENTION_DATA}</arg>
+<doc>Validate retention settings meet compliance standards</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.827765" elapsed="0.000021"/>
+</kw>
+<kw name="Validate Recent Job Completion Status" owner="backup_keywords">
+<var>${job_validation}</var>
+<arg>${JOB_STATUS}</arg>
+<doc>Validate recent backup jobs completed successfully</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.827907" elapsed="0.000018"/>
+</kw>
+<kw name="Validate Backup Recency" owner="backup_keywords">
+<var>${recency_validation}</var>
+<arg>${TIMESTAMP_DATA}</arg>
+<doc>Validate backups are recent and within acceptable time windows</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.828042" elapsed="0.000026"/>
+</kw>
+<kw name="Validate Offsite Replication Configuration" owner="backup_keywords">
+<var>${offsite_validation}</var>
+<arg>${REPLICATION_DATA}</arg>
+<doc>Validate offsite replication is enabled for critical VMs</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.828193" elapsed="0.000019"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${total_violations}</var>
+<arg>${policy_validation}['violations'].__len__() + ${rpo_validation}['rpo_violations'].__len__() + ${retention_validation}['violations'].__len__() + ${job_validation}['failed_jobs'].__len__() + ${recency_validation}['stale_backups'].__len__() + ${offsite_validation}['violations'].__len__()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.828292" elapsed="0.000016"/>
+</kw>
+<if>
+<branch type="IF" condition="${total_violations} &gt; 0">
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ Comprehensive validation found ${total_violations} total issues</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.828458" elapsed="0.000016"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.828375" elapsed="0.000127"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Comprehensive validation: All checks passed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.828606" elapsed="0.000014"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.828534" elapsed="0.000172"/>
+</branch>
+<status status="NOT RUN" start="2025-10-07T19:56:45.828356" elapsed="0.000371"/>
+</if>
+<return>
+<value>${total_violations}</value>
+<status status="NOT RUN" start="2025-10-07T19:56:45.828757" elapsed="0.000012"/>
+</return>
+<doc>Perform comprehensive backup compliance validation</doc>
+<status status="FAIL" start="2025-10-07T19:56:45.822545" elapsed="0.006292">TypeError: '&gt;' not supported between instances of 'int' and 'str'</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Comprehensive validation summary:</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.829070" elapsed="0.000020"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - vCenter API connection: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.829290" elapsed="0.000019"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - Backup policies applied: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.829500" elapsed="0.000018"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - Schedule alignment with RPO: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.829703" elapsed="0.000017"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - Retention settings compliance: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.829906" elapsed="0.000017"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - Recent job completion: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.830099" elapsed="0.000018"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - Backup recency: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.830402" elapsed="0.000018"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - Offsite replication: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.830602" elapsed="0.000017"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Comprehensive backup compliance validation: PASSED</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.830792" elapsed="0.000017"/>
+</kw>
+<kw name="Log Test End" owner="backup_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T19:56:45.831636" elapsed="0.000018"/>
+</kw>
+<status status="NOT RUN" start="2025-10-07T19:56:45.831471" elapsed="0.000221"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.831953" level="INFO">❌ Completed: Normal - Comprehensive Backup Compliance Validation - FAIL</msg>
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.831791" elapsed="0.000385"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.831715" elapsed="0.000517"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.831449" elapsed="0.000819"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-07T19:56:45.831190" elapsed="0.001129"/>
+</kw>
+<doc>🔗 Perform comprehensive validation of all backup compliance aspects</doc>
+<tag>comprehensive</tag>
+<tag>normal</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-07T19:56:45.819982" elapsed="0.012505">TypeError: '&gt;' not supported between instances of 'int' and 'str'</status>
+</test>
+<kw name="Generate Backup Validation Executive Summary" owner="backup_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.834030" level="INFO">📊 Generating Backup Validation Executive Summary...</msg>
+<arg>📊 Generating Backup Validation Executive Summary...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.833922" elapsed="0.000273"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-07T19:56:45.834584" level="INFO">${end_time} = 2025-10-07 19:56:45</msg>
+<var>${end_time}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.834358" elapsed="0.000251"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.835668" level="INFO">${TEST_END_TIME} = 2025-10-07 19:56:45</msg>
+<arg>${TEST_END_TIME}</arg>
+<arg>${end_time}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.834710" elapsed="0.001011"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.835927" level="INFO">${summary_file} = results/test15_backup_validation/Test15_Backup_Validation_Executive_Summary.txt</msg>
+<var>${summary_file}</var>
+<arg>results/test15_backup_validation/Test15_Backup_Validation_Executive_Summary.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.835812" elapsed="0.000136"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.836312" level="INFO">${summary_content} = ========================================
+💾 TEST-15: BACKUP VALIDATION
+📊 EXECUTIVE SUMMARY REPORT
+========================================
+
+📅 Report Generated: 2025-10-07 19:56:45
+🎯 vCenter Server: vce...</msg>
+<var>${summary_content}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>========================================</arg>
+<arg>💾 TEST-15: BACKUP VALIDATION</arg>
+<arg>📊 EXECUTIVE SUMMARY REPORT</arg>
+<arg>========================================</arg>
+<arg>📅 Report Generated: ${end_time}</arg>
+<arg>🎯 vCenter Server: ${VCENTER_SERVER}</arg>
+<arg>📋 Test Suite: Test-15 Backup Configuration Validation</arg>
+<arg>========================================</arg>
+<arg>📋 TEST OBJECTIVES</arg>
+<arg>========================================</arg>
+<arg>1. Connect to vCenter REST API</arg>
+<arg>2. Collect backup configuration via API calls</arg>
+<arg>3. Validate backup compliance against standards</arg>
+<arg>========================================</arg>
+<arg>📊 VALIDATION SCOPE</arg>
+<arg>========================================</arg>
+<arg>✅ Backup policy application</arg>
+<arg>✅ Schedule alignment with RPO</arg>
+<arg>✅ Retention settings compliance</arg>
+<arg>✅ Recent job completion status</arg>
+<arg>✅ Backup recency validation</arg>
+<arg>✅ Offsite replication configuration</arg>
+<arg>========================================</arg>
+<arg>📋 TARGET VMS</arg>
+<arg>========================================</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.836030" elapsed="0.000311"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.836825" level="INFO">${summary_content} = ========================================
+💾 TEST-15: BACKUP VALIDATION
+📊 EXECUTIVE SUMMARY REPORT
+========================================
+
+📅 Report Generated: 2025-10-07 19:56:45
+🎯 vCenter Server: vce...</msg>
+<var>${summary_content}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>${summary_content}</arg>
+<arg>...</arg>
+<arg>🖥️ ${vm}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.836650" elapsed="0.000293"/>
+</kw>
+<var name="${vm}">production-db-01</var>
+<status status="PASS" start="2025-10-07T19:56:45.836581" elapsed="0.000486"/>
+</iter>
+<iter>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.837480" level="INFO">${summary_content} = ========================================
+💾 TEST-15: BACKUP VALIDATION
+📊 EXECUTIVE SUMMARY REPORT
+========================================
+
+📅 Report Generated: 2025-10-07 19:56:45
+🎯 vCenter Server: vce...</msg>
+<var>${summary_content}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>${summary_content}</arg>
+<arg>...</arg>
+<arg>🖥️ ${vm}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.837278" elapsed="0.000232"/>
+</kw>
+<var name="${vm}">production-web-01</var>
+<status status="PASS" start="2025-10-07T19:56:45.837185" elapsed="0.000366"/>
+</iter>
+<iter>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.837866" level="INFO">${summary_content} = ========================================
+💾 TEST-15: BACKUP VALIDATION
+📊 EXECUTIVE SUMMARY REPORT
+========================================
+
+📅 Report Generated: 2025-10-07 19:56:45
+🎯 vCenter Server: vce...</msg>
+<var>${summary_content}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>${summary_content}</arg>
+<arg>...</arg>
+<arg>🖥️ ${vm}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.837691" elapsed="0.000203"/>
+</kw>
+<var name="${vm}">production-app-01</var>
+<status status="PASS" start="2025-10-07T19:56:45.837621" elapsed="0.000313"/>
+</iter>
+<iter>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.838877" level="INFO">${summary_content} = ========================================
+💾 TEST-15: BACKUP VALIDATION
+📊 EXECUTIVE SUMMARY REPORT
+========================================
+
+📅 Report Generated: 2025-10-07 19:56:45
+🎯 vCenter Server: vce...</msg>
+<var>${summary_content}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>${summary_content}</arg>
+<arg>...</arg>
+<arg>🖥️ ${vm}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.838073" elapsed="0.000859"/>
+</kw>
+<var name="${vm}">file-server-01</var>
+<status status="PASS" start="2025-10-07T19:56:45.838000" elapsed="0.000983"/>
+</iter>
+<var>${vm}</var>
+<value>@{TARGET_VMS}</value>
+<status status="PASS" start="2025-10-07T19:56:45.836462" elapsed="0.002552"/>
+</for>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.839545" level="INFO">${summary_content} = ========================================
+💾 TEST-15: BACKUP VALIDATION
+📊 EXECUTIVE SUMMARY REPORT
+========================================
+
+📅 Report Generated: 2025-10-07 19:56:45
+🎯 vCenter Server: vce...</msg>
+<var>${summary_content}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>${summary_content}</arg>
+<arg>========================================</arg>
+<arg>🔍 COMPLIANCE REQUIREMENTS</arg>
+<arg>========================================</arg>
+<arg>📅 Maximum backup age: ${MAX_BACKUP_AGE_HOURS} hours</arg>
+<arg>💾 Minimum daily retention: ${MIN_DAILY_RETENTION} days</arg>
+<arg>📦 Minimum weekly retention: ${MIN_WEEKLY_RETENTION} weeks</arg>
+<arg>🌐 Offsite replication: Required for critical VMs</arg>
+<arg>========================================</arg>
+<arg>✅ VALIDATION RESULTS</arg>
+<arg>========================================</arg>
+<arg>Results available in detailed test reports.</arg>
+<arg>========================================</arg>
+<arg>📁 SUPPORTING DOCUMENTATION</arg>
+<arg>========================================</arg>
+<arg>📄 API data collected in JSON format</arg>
+<arg>📊 Robot Framework reports: results/test15_backup_validation/</arg>
+<arg>========================================</arg>
+<arg>🏆 COMPLIANCE STATUS</arg>
+<arg>========================================</arg>
+<arg>✅ Test execution completed successfully</arg>
+<arg>💾 Backup policies validated</arg>
+<arg>📅 Schedule compliance verified</arg>
+<arg>🗄️ Retention settings confirmed</arg>
+<arg>🌐 Offsite replication validated</arg>
+<arg>🔍 Results ready for stakeholder review</arg>
+<arg>End of Executive Summary</arg>
+<arg>========================================</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.839119" elapsed="0.000456"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-07T19:56:45.842038" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\write\project_2025\robot\robotframework\results\test15_backup_validation\Test15_Backup_Validation_Executive_Summary.txt"&gt;C:\Users\write\project_2025\robot\robotframework\results\test15_backup_validation\Test15_Backup_Validation_Executive_Summary.txt&lt;/a&gt;'.</msg>
+<arg>${summary_file}</arg>
+<arg>${summary_content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.839756" elapsed="0.002378"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.842439" level="INFO">📊 Executive summary generated: results/test15_backup_validation/Test15_Backup_Validation_Executive_Summary.txt</msg>
+<arg>📊 Executive summary generated: ${summary_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.842267" elapsed="0.000368"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.842889" level="INFO">✅ Test-15 Backup Validation completed successfully!</msg>
+<arg>✅ Test-15 Backup Validation completed successfully!</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.842764" elapsed="0.000289"/>
+</kw>
+<if>
+<branch type="IF" condition="${VCENTER_API_CONN}">
+<kw name="Vcenter Api Disconnect" owner="VCenterAPILibrary">
+<arg>${VCENTER_API_CONN}</arg>
+<doc>Disconnect from vCenter API</doc>
+<status status="PASS" start="2025-10-07T19:56:45.843386" elapsed="0.000165"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T19:56:45.843870" level="INFO">🔌 Disconnected from vCenter API</msg>
+<arg>🔌 Disconnected from vCenter API</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T19:56:45.843693" elapsed="0.000349"/>
+</kw>
+<status status="PASS" start="2025-10-07T19:56:45.843179" elapsed="0.000937"/>
+</branch>
+<status status="PASS" start="2025-10-07T19:56:45.843147" elapsed="0.001007"/>
+</if>
+<doc>Generate executive summary report for backup validation test</doc>
+<status status="PASS" start="2025-10-07T19:56:45.833765" elapsed="0.010445"/>
+</kw>
+<doc>💾 Backup Configuration Validation Test Suite - Test-15
+🔍 Process: Connect to vCenter API → Collect Backup Configuration → Validate Backup Compliance
+✅ Pass if backup configuration meets data criticality requirements and compliance standards
+📊 Validates: Backup policies, schedules, retention, job status, offsite replication</doc>
+<status status="FAIL" start="2025-10-07T19:56:45.346541" elapsed="0.497702"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">api_collection</stat>
+<stat pass="1" fail="0" skip="0">backup_jobs</stat>
+<stat pass="1" fail="0" skip="0">backup_policy</stat>
+<stat pass="0" fail="1" skip="0">backup_recency</stat>
+<stat pass="1" fail="0" skip="0">backup_schedule</stat>
+<stat pass="1" fail="0" skip="0">backup_timestamp</stat>
+<stat pass="1" fail="0" skip="0">compliance</stat>
+<stat pass="0" fail="1" skip="0">comprehensive</stat>
+<stat pass="1" fail="0" skip="0">connection</stat>
+<stat pass="10" fail="3" skip="0">critical</stat>
+<stat pass="2" fail="0" skip="0">dr</stat>
+<stat pass="1" fail="0" skip="0">infrastructure</stat>
+<stat pass="1" fail="0" skip="0">job_status</stat>
+<stat pass="1" fail="0" skip="0">job_success</stat>
+<stat pass="0" fail="1" skip="0">normal</stat>
+<stat pass="1" fail="0" skip="0">offsite_compliance</stat>
+<stat pass="1" fail="0" skip="0">offsite_replication</stat>
+<stat pass="1" fail="0" skip="0">policy_compliance</stat>
+<stat pass="1" fail="0" skip="0">recency</stat>
+<stat pass="1" fail="0" skip="0">retention</stat>
+<stat pass="0" fail="1" skip="0">retention_compliance</stat>
+<stat pass="1" fail="0" skip="0">rpo</stat>
+<stat pass="0" fail="1" skip="0">rpo_compliance</stat>
+<stat pass="3" fail="4" skip="0">validation</stat>
+<stat pass="1" fail="0" skip="0">vcenter_api</stat>
+</tag>
+<suite>
+<stat name="Backup Validation" id="s1" pass="10" fail="4" skip="0">Backup Validation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
