@@ -1,0 +1,1376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.8 on win32)" generated="2025-10-07T22:21:31.819289" rpa="false" schemaversion="5">
+<suite id="s1" name="Test20 Av Agent Validation Local" source="C:\Users\write\project_2025\robot\robotframework\tests\test20_av_agent_validation\test20_av_agent_validation_local.robot">
+<kw name="Initialize AV Test Environment" owner="av_keywords_mock" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.876623" level="INFO">🔧 Initializing AV Test Environment (MOCK MODE)...</msg>
+<arg>🔧 Initializing AV Test Environment (MOCK MODE)...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.876469" elapsed="0.000313"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.877022" level="INFO">⚠️ Running in LOCAL MOCK mode - no SSH connection</msg>
+<arg>⚠️ Running in LOCAL MOCK mode - no SSH connection</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.876921" elapsed="0.000232"/>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-07T22:21:31.878221" level="INFO" html="true">Created directory '&lt;a href="file://C:\Users\write\project_2025\robot\robotframework\results\test20_av_agent_validation\av_screenshots"&gt;C:\Users\write\project_2025\robot\robotframework\results\test20_av_agent_validation\av_screenshots&lt;/a&gt;'.</msg>
+<arg>${AV_SCREENSHOT_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.877251" elapsed="0.001031"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.878506" level="INFO">✅ Mock environment initialized</msg>
+<arg>✅ Mock environment initialized</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.878376" elapsed="0.000265"/>
+</kw>
+<doc>Initialize test environment (Mock Mode)</doc>
+<status status="PASS" start="2025-10-07T22:21:31.876018" elapsed="0.002714"/>
+</kw>
+<test id="s1-t1" name="Critical - Connect to Target Machine" line="19">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:31.879401" level="INFO">🏁 Starting Test: Critical - Connect to Target Machine</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.879261" elapsed="0.000254"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.879788" level="INFO">🔍 MOCK: Simulating connection to target machine...</msg>
+<arg>🔍 MOCK: Simulating connection to target machine...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.879687" elapsed="0.000251"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.880213" level="INFO">⚠️ Running in LOCAL MOCK MODE</msg>
+<arg>⚠️ Running in LOCAL MOCK MODE</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.880129" elapsed="0.000188"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.880646" level="INFO">${connection_status} = Connection active (mock)</msg>
+<var>${connection_status}</var>
+<arg>Connection active (mock)</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.880490" elapsed="0.000177"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${connection_status}</arg>
+<arg>Connection active</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.880811" elapsed="0.000102"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.881125" level="INFO">✅ Mock connection verified</msg>
+<arg>✅ Mock connection verified</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.881036" elapsed="0.000212"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:31.881572" level="INFO">✅ Test Complete: Critical - Connect to Target Machine - PASS</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.881445" elapsed="0.000226"/>
+</kw>
+<doc>🔗 Simulate connection (local mock mode)</doc>
+<tag>connection</tag>
+<tag>critical</tag>
+<tag>mock</tag>
+<status status="PASS" start="2025-10-07T22:21:31.878800" elapsed="0.002969"/>
+</test>
+<test id="s1-t2" name="Critical - Detect Operating System Type" line="31">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:31.882705" level="INFO">🏁 Starting Test: Critical - Detect Operating System Type</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.882585" elapsed="0.000265"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.883108" level="INFO">🔍 Detecting operating system type...</msg>
+<arg>🔍 Detecting operating system type...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.883025" elapsed="0.000178"/>
+</kw>
+<kw name="Detect Operating System" owner="av_keywords_mock">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.943011" level="INFO">${os} = Windows</msg>
+<var>${os}</var>
+<arg>platform.system()</arg>
+<arg>modules=platform</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.883682" elapsed="0.059392"/>
+</kw>
+<if>
+<branch type="IF" condition="'${os}' == 'Windows'">
+<return>
+<value>Windows</value>
+<status status="PASS" start="2025-10-07T22:21:31.943390" elapsed="0.000048"/>
+</return>
+<status status="PASS" start="2025-10-07T22:21:31.943221" elapsed="0.000260"/>
+</branch>
+<status status="PASS" start="2025-10-07T22:21:31.943181" elapsed="0.000332"/>
+</if>
+<if>
+<branch type="IF" condition="'${os}' == 'Linux'">
+<return>
+<value>Linux</value>
+<status status="NOT RUN" start="2025-10-07T22:21:31.943623" elapsed="0.000012"/>
+</return>
+<status status="NOT RUN" start="2025-10-07T22:21:31.943589" elapsed="0.000072"/>
+</branch>
+<status status="NOT RUN" start="2025-10-07T22:21:31.943573" elapsed="0.000106"/>
+</if>
+<if>
+<branch type="IF" condition="'${os}' == 'Darwin'">
+<return>
+<value>Linux</value>
+<status status="NOT RUN" start="2025-10-07T22:21:31.943750" elapsed="0.000009"/>
+</return>
+<status status="NOT RUN" start="2025-10-07T22:21:31.943721" elapsed="0.000060"/>
+</branch>
+<status status="NOT RUN" start="2025-10-07T22:21:31.943710" elapsed="0.000088"/>
+</if>
+<return>
+<value>Windows</value>
+<status status="NOT RUN" start="2025-10-07T22:21:31.943821" elapsed="0.000009"/>
+</return>
+<msg time="2025-10-07T22:21:31.943945" level="INFO">${os_type} = Windows</msg>
+<var>${os_type}</var>
+<doc>Mock: Return current host OS</doc>
+<status status="PASS" start="2025-10-07T22:21:31.883496" elapsed="0.060472"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.944608" level="INFO">${OS_TYPE} = Windows</msg>
+<arg>${OS_TYPE}</arg>
+<arg>${os_type}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.944334" elapsed="0.000324"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.945092" level="INFO">🖥️ Operating System: Windows</msg>
+<arg>🖥️ Operating System: ${os_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.944879" elapsed="0.000340"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.945749" level="INFO">✅ Operating system detected successfully</msg>
+<arg>✅ Operating system detected successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.945622" elapsed="0.000261"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:31.946450" level="INFO">✅ Test Complete: Critical - Detect Operating System Type - PASS</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.946184" elapsed="0.000419"/>
+</kw>
+<doc>🖥️ Detect local operating system</doc>
+<tag>critical</tag>
+<tag>os_detection</tag>
+<tag>platform</tag>
+<status status="PASS" start="2025-10-07T22:21:31.882221" elapsed="0.064525"/>
+</test>
+<test id="s1-t3" name="Critical - Detect Installed AV Agent" line="43">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:31.947744" level="INFO">🏁 Starting Test: Critical - Detect Installed AV Agent</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.947595" elapsed="0.000344"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.948310" level="INFO">🔍 MOCK: Simulating AV agent detection...</msg>
+<arg>🔍 MOCK: Simulating AV agent detection...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.948170" elapsed="0.000282"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.948833" level="INFO">📋 OS Type: Windows</msg>
+<arg>📋 OS Type: ${OS_TYPE}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.948651" elapsed="0.000337"/>
+</kw>
+<kw name="Detect AV Agent" owner="av_keywords_mock">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.949652" level="INFO">🔍 MOCK: Simulating AV detection on Windows...</msg>
+<arg>🔍 MOCK: Simulating AV detection on ${os_type}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.949522" elapsed="0.000263"/>
+</kw>
+<return>
+<value>McAfee</value>
+<status status="PASS" start="2025-10-07T22:21:31.949859" elapsed="0.000058"/>
+</return>
+<msg time="2025-10-07T22:21:31.950066" level="INFO">${av_type} = McAfee</msg>
+<var>${av_type}</var>
+<arg>${OS_TYPE}</arg>
+<doc>Mock: Simulate AV detection</doc>
+<status status="PASS" start="2025-10-07T22:21:31.949262" elapsed="0.000847"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.950467" level="INFO">${AV_TYPE} = McAfee</msg>
+<arg>${AV_TYPE}</arg>
+<arg>${av_type}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.950298" elapsed="0.000204"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.950786" level="INFO">🛡️ MOCK Detected AV Agent: McAfee</msg>
+<arg>🛡️ MOCK Detected AV Agent: ${av_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.950647" elapsed="0.000281"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.951227" level="INFO">Length is 6.</msg>
+<arg>${av_type}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.951110" elapsed="0.000153"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${av_type}</arg>
+<arg>(?i)(mcafee|sentinelone|sentinel)</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.951406" elapsed="0.000245"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.951936" level="INFO">✅ Mock AV agent detected: McAfee</msg>
+<arg>✅ Mock AV agent detected: ${av_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.951800" elapsed="0.000288"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:31.952575" level="INFO">✅ Test Complete: Critical - Detect Installed AV Agent - PASS</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.952427" elapsed="0.000275"/>
+</kw>
+<doc>🔍 Simulate AV agent detection</doc>
+<tag>agent</tag>
+<tag>av_detection</tag>
+<tag>critical</tag>
+<tag>mock</tag>
+<status status="PASS" start="2025-10-07T22:21:31.947206" elapsed="0.005613"/>
+</test>
+<test id="s1-t4" name="Critical - Verify AV Agent Installation Status" line="60">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:31.953771" level="INFO">🏁 Starting Test: Critical - Verify AV Agent Installation Status</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.953629" elapsed="0.000276"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.954194" level="INFO">🔍 MOCK: Simulating installation verification...</msg>
+<arg>🔍 MOCK: Simulating installation verification...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.954089" elapsed="0.000243"/>
+</kw>
+<kw name="Verify AV Installation" owner="av_keywords_mock">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.955014" level="INFO">📦 MOCK: Simulating installation verification for McAfee...</msg>
+<arg>📦 MOCK: Simulating installation verification for ${av_type}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.954880" elapsed="0.000269"/>
+</kw>
+<return>
+<value>${True}</value>
+<status status="PASS" start="2025-10-07T22:21:31.955227" elapsed="0.000058"/>
+</return>
+<msg time="2025-10-07T22:21:31.955460" level="INFO">${install_status} = True</msg>
+<var>${install_status}</var>
+<arg>${AV_TYPE}</arg>
+<arg>${OS_TYPE}</arg>
+<doc>Mock: Simulate installation check</doc>
+<status status="PASS" start="2025-10-07T22:21:31.954600" elapsed="0.000898"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.955931" level="INFO">${INSTALL_STATUS} = True</msg>
+<arg>${INSTALL_STATUS}</arg>
+<arg>${install_status}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.955755" elapsed="0.000212"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${install_status}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.956141" elapsed="0.000129"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.956537" level="INFO">✅ Mock installation verified</msg>
+<arg>✅ Mock installation verified</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.956423" elapsed="0.000240"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:31.957132" level="INFO">✅ Test Complete: Critical - Verify AV Agent Installation Status - PASS</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.956933" elapsed="0.000321"/>
+</kw>
+<doc>📦 Simulate AV installation verification</doc>
+<tag>critical</tag>
+<tag>installation</tag>
+<tag>mock</tag>
+<tag>status</tag>
+<status status="PASS" start="2025-10-07T22:21:31.953207" elapsed="0.004355"/>
+</test>
+<test id="s1-t5" name="Critical - Verify AV Agent Service Status" line="73">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:31.958872" level="INFO">🏁 Starting Test: Critical - Verify AV Agent Service Status</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.958654" elapsed="0.000413"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.959485" level="INFO">🔍 MOCK: Simulating service status check...</msg>
+<arg>🔍 MOCK: Simulating service status check...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.959323" elapsed="0.000333"/>
+</kw>
+<kw name="Verify AV Service Running" owner="av_keywords_mock">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.968131" level="INFO">🔄 MOCK: Simulating service status check for McAfee...</msg>
+<arg>🔄 MOCK: Simulating service status check for ${av_type}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.967860" elapsed="0.000550"/>
+</kw>
+<return>
+<value>${True}</value>
+<status status="PASS" start="2025-10-07T22:21:31.968521" elapsed="0.000061"/>
+</return>
+<msg time="2025-10-07T22:21:31.968793" level="INFO">${service_status} = True</msg>
+<var>${service_status}</var>
+<arg>${AV_TYPE}</arg>
+<arg>${OS_TYPE}</arg>
+<doc>Mock: Simulate service check</doc>
+<status status="PASS" start="2025-10-07T22:21:31.960027" elapsed="0.008811"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.969403" level="INFO">${SERVICE_STATUS} = True</msg>
+<arg>${SERVICE_STATUS}</arg>
+<arg>${service_status}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.969147" elapsed="0.000310"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${service_status}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.969686" elapsed="0.000187"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.970250" level="INFO">✅ Mock service is running</msg>
+<arg>✅ Mock service is running</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.970097" elapsed="0.000326"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:31.970959" level="INFO">✅ Test Complete: Critical - Verify AV Agent Service Status - PASS</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.970740" elapsed="0.000364"/>
+</kw>
+<doc>🔄 Simulate service status check</doc>
+<tag>critical</tag>
+<tag>mock</tag>
+<tag>running</tag>
+<tag>service</tag>
+<status status="PASS" start="2025-10-07T22:21:31.958066" elapsed="0.013153"/>
+</test>
+<test id="s1-t6" name="Critical - Collect AV Agent Information" line="86">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:31.972254" level="INFO">🏁 Starting Test: Critical - Collect AV Agent Information</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.972116" elapsed="0.000256"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.972629" level="INFO">🔍 MOCK: Collecting simulated agent information...</msg>
+<arg>🔍 MOCK: Collecting simulated agent information...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.972534" elapsed="0.000207"/>
+</kw>
+<kw name="Collect AV Agent Information" owner="av_keywords_mock">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.973369" level="INFO">📊 MOCK: Simulating agent information collection for McAfee...</msg>
+<arg>📊 MOCK: Simulating agent information collection for ${av_type}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.973254" elapsed="0.000226"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.973824" level="INFO">${info} = {'version': '10.7.0.1234', 'status': 'Running', 'last_update': '2024-10-07'}</msg>
+<var>${info}</var>
+<arg>version=10.7.0.1234</arg>
+<arg>status=Running</arg>
+<arg>last_update=2024-10-07</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.973585" elapsed="0.000263"/>
+</kw>
+<return>
+<value>${info}</value>
+<status status="PASS" start="2025-10-07T22:21:31.973894" elapsed="0.000037"/>
+</return>
+<msg time="2025-10-07T22:21:31.974036" level="INFO">${agent_info} = {'version': '10.7.0.1234', 'status': 'Running', 'last_update': '2024-10-07'}</msg>
+<var>${agent_info}</var>
+<arg>${AV_TYPE}</arg>
+<arg>${OS_TYPE}</arg>
+<doc>Mock: Return simulated agent info</doc>
+<status status="PASS" start="2025-10-07T22:21:31.972988" elapsed="0.001067"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.974414" level="INFO">${AGENT_INFO} = {'version': '10.7.0.1234', 'status': 'Running', 'last_update': '2024-10-07'}</msg>
+<arg>${AGENT_INFO}</arg>
+<arg>${agent_info}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.974236" elapsed="0.000217"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.974783" level="INFO">📊 Agent Version: 10.7.0.1234</msg>
+<arg>📊 Agent Version: ${agent_info}[version]</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.974628" elapsed="0.000276"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.975208" level="INFO">📊 Agent Status: Running</msg>
+<arg>📊 Agent Status: ${agent_info}[status]</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.975062" elapsed="0.000266"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.975645" level="INFO">Length is 11.</msg>
+<arg>${agent_info}[version]</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.975510" elapsed="0.000180"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.975955" level="INFO">✅ Mock agent information collected</msg>
+<arg>✅ Mock agent information collected</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.975850" elapsed="0.000214"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:31.976403" level="INFO">✅ Test Complete: Critical - Collect AV Agent Information - PASS</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.976266" elapsed="0.000254"/>
+</kw>
+<doc>📊 Simulate agent information collection</doc>
+<tag>collection</tag>
+<tag>critical</tag>
+<tag>information</tag>
+<tag>mock</tag>
+<status status="PASS" start="2025-10-07T22:21:31.971665" elapsed="0.005075"/>
+</test>
+<test id="s1-t7" name="Critical - Verify Real-Time Protection Enabled" line="102">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:31.977897" level="INFO">🏁 Starting Test: Critical - Verify Real-Time Protection Enabled</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.977667" elapsed="0.000391"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.978354" level="INFO">🔍 MOCK: Simulating real-time protection check...</msg>
+<arg>🔍 MOCK: Simulating real-time protection check...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.978240" elapsed="0.000269"/>
+</kw>
+<kw name="Verify Real-Time Protection" owner="av_keywords_mock">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.979332" level="INFO">🛡️ MOCK: Simulating real-time protection check for McAfee...</msg>
+<arg>🛡️ MOCK: Simulating real-time protection check for ${av_type}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.979161" elapsed="0.000323"/>
+</kw>
+<return>
+<value>${True}</value>
+<status status="PASS" start="2025-10-07T22:21:31.979558" elapsed="0.000074"/>
+</return>
+<msg time="2025-10-07T22:21:31.979796" level="INFO">${rtp_enabled} = True</msg>
+<var>${rtp_enabled}</var>
+<arg>${AV_TYPE}</arg>
+<arg>${OS_TYPE}</arg>
+<doc>Mock: Simulate RTP check</doc>
+<status status="PASS" start="2025-10-07T22:21:31.978804" elapsed="0.001020"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.980321" level="INFO">${RTP_ENABLED} = True</msg>
+<arg>${RTP_ENABLED}</arg>
+<arg>${rtp_enabled}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.980080" elapsed="0.000294"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${rtp_enabled}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.980597" elapsed="0.000151"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.981085" level="INFO">✅ Mock real-time protection is ENABLED</msg>
+<arg>✅ Mock real-time protection is ENABLED</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.980943" elapsed="0.000298"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:31.981669" level="INFO">✅ Test Complete: Critical - Verify Real-Time Protection Enabled - PASS</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.981509" elapsed="0.000301"/>
+</kw>
+<doc>🛡️ Simulate real-time protection check</doc>
+<tag>cip_007</tag>
+<tag>critical</tag>
+<tag>mock</tag>
+<tag>protection</tag>
+<tag>real_time</tag>
+<status status="PASS" start="2025-10-07T22:21:31.977140" elapsed="0.004809"/>
+</test>
+<test id="s1-t8" name="Critical - Verify Signature Update Status" line="115">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:31.983320" level="INFO">🏁 Starting Test: Critical - Verify Signature Update Status</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.983056" elapsed="0.000436"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.983820" level="INFO">🔍 MOCK: Simulating signature update check...</msg>
+<arg>🔍 MOCK: Simulating signature update check...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.983695" elapsed="0.000242"/>
+</kw>
+<kw name="Get Signature Update Status" owner="av_keywords_mock">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.984854" level="INFO">📅 MOCK: Simulating signature update check for McAfee...</msg>
+<arg>📅 MOCK: Simulating signature update check for ${av_type}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.984663" elapsed="0.000335"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-07T22:21:31.985405" level="INFO">${today} = 2025-10-07</msg>
+<var>${today}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.985123" elapsed="0.000313"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.985849" level="INFO">${sig_info} = {'last_update': '2025-10-07', 'version': '9999.0'}</msg>
+<var>${sig_info}</var>
+<arg>last_update=${today}</arg>
+<arg>version=9999.0</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.985565" elapsed="0.000314"/>
+</kw>
+<return>
+<value>${sig_info}</value>
+<status status="PASS" start="2025-10-07T22:21:31.985946" elapsed="0.000057"/>
+</return>
+<msg time="2025-10-07T22:21:31.986162" level="INFO">${sig_info} = {'last_update': '2025-10-07', 'version': '9999.0'}</msg>
+<var>${sig_info}</var>
+<arg>${AV_TYPE}</arg>
+<arg>${OS_TYPE}</arg>
+<doc>Mock: Return simulated signature status</doc>
+<status status="PASS" start="2025-10-07T22:21:31.984245" elapsed="0.001942"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.986645" level="INFO">${SIGNATURE_INFO} = {'last_update': '2025-10-07', 'version': '9999.0'}</msg>
+<arg>${SIGNATURE_INFO}</arg>
+<arg>${sig_info}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.986438" elapsed="0.000253"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.987033" level="INFO">📅 Last Signature Update: 2025-10-07</msg>
+<arg>📅 Last Signature Update: ${sig_info}[last_update]</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.986878" elapsed="0.000284"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.987472" level="INFO">📊 Signature Version: 9999.0</msg>
+<arg>📊 Signature Version: ${sig_info}[version]</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.987330" elapsed="0.000261"/>
+</kw>
+<kw name="Calculate Days Since Update" owner="av_keywords_mock">
+<kw name="Return From Keyword If" owner="BuiltIn">
+<arg>'${update_date}' == 'Unknown'</arg>
+<arg>${0}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.988130" elapsed="0.000153"/>
+</kw>
+<kw name="Return From Keyword If" owner="BuiltIn">
+<arg>'${update_date}' == ''</arg>
+<arg>${0}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.988392" elapsed="0.000157"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-07T22:21:31.989010" level="INFO">${current_date} = 2025-10-07</msg>
+<var>${current_date}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.988823" elapsed="0.000208"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Subtract Date From Date" owner="DateTime">
+<msg time="2025-10-07T22:21:31.996173" level="INFO">${days} = 0.0</msg>
+<var>${days}</var>
+<arg>${current_date}</arg>
+<arg>${update_date}</arg>
+<arg>result_format=number</arg>
+<doc>Subtracts date from another date and returns time between.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.989214" elapsed="0.007003"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.996866" level="INFO">${days_int} = 0</msg>
+<var>${days_int}</var>
+<arg>${days}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.996436" elapsed="0.000459"/>
+</kw>
+<return>
+<value>${days_int}</value>
+<status status="PASS" start="2025-10-07T22:21:31.996947" elapsed="0.000044"/>
+</return>
+<status status="PASS" start="2025-10-07T22:21:31.989142" elapsed="0.007886"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" owner="BuiltIn">
+<arg>⚠️ Failed to parse date: ${update_date}, assuming current</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:31.997182" elapsed="0.000019"/>
+</kw>
+<return>
+<value>${0}</value>
+<status status="NOT RUN" start="2025-10-07T22:21:31.997242" elapsed="0.000013"/>
+</return>
+<status status="NOT RUN" start="2025-10-07T22:21:31.997094" elapsed="0.000199"/>
+</branch>
+<status status="PASS" start="2025-10-07T22:21:31.989090" elapsed="0.008235"/>
+</try>
+<msg time="2025-10-07T22:21:31.997454" level="INFO">${days_old} = 0</msg>
+<var>${days_old}</var>
+<arg>${sig_info}[last_update]</arg>
+<doc>Calculate days since last signature update</doc>
+<status status="PASS" start="2025-10-07T22:21:31.987891" elapsed="0.009588"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.997889" level="INFO">${SIGNATURE_AGE} = 0</msg>
+<arg>${SIGNATURE_AGE}</arg>
+<arg>${days_old}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.997718" elapsed="0.000208"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${days_old} &lt;= 7</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.998079" elapsed="0.000204"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:31.998636" level="INFO">✅ Mock signatures are current: 0 days old</msg>
+<arg>✅ Mock signatures are current: ${days_old} days old</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.998498" elapsed="0.000267"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:31.999187" level="INFO">✅ Test Complete: Critical - Verify Signature Update Status - PASS</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:31.999023" elapsed="0.000276"/>
+</kw>
+<doc>📅 Simulate signature update check</doc>
+<tag>cip_007</tag>
+<tag>critical</tag>
+<tag>mock</tag>
+<tag>signatures</tag>
+<tag>updates</tag>
+<status status="PASS" start="2025-10-07T22:21:31.982463" elapsed="0.016942"/>
+</test>
+<test id="s1-t9" name="Normal - Verify Scheduled Scan Configuration" line="134">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:32.000246" level="INFO">🏁 Starting Test: Normal - Verify Scheduled Scan Configuration</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.000122" elapsed="0.000237"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.000627" level="INFO">🔍 MOCK: Simulating scheduled scan check...</msg>
+<arg>🔍 MOCK: Simulating scheduled scan check...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.000537" elapsed="0.000185"/>
+</kw>
+<kw name="Get Scheduled Scan Configuration" owner="av_keywords_mock">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.001246" level="INFO">📅 MOCK: Simulating scan configuration retrieval for McAfee...</msg>
+<arg>📅 MOCK: Simulating scan configuration retrieval for ${av_type}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.001143" elapsed="0.000200"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.001622" level="INFO">${config} = {'schedule': 'Daily at 2:00 AM', 'last_scan': '2024-10-06 02:00:00'}</msg>
+<var>${config}</var>
+<arg>schedule=Daily at 2:00 AM</arg>
+<arg>last_scan=2024-10-06 02:00:00</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.001468" elapsed="0.000174"/>
+</kw>
+<return>
+<value>${config}</value>
+<status status="PASS" start="2025-10-07T22:21:32.001676" elapsed="0.000024"/>
+</return>
+<msg time="2025-10-07T22:21:32.001787" level="INFO">${scan_config} = {'schedule': 'Daily at 2:00 AM', 'last_scan': '2024-10-06 02:00:00'}</msg>
+<var>${scan_config}</var>
+<arg>${AV_TYPE}</arg>
+<arg>${OS_TYPE}</arg>
+<doc>Mock: Return simulated scan config</doc>
+<status status="PASS" start="2025-10-07T22:21:32.000929" elapsed="0.000876"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.002079" level="INFO">${SCAN_CONFIG} = {'schedule': 'Daily at 2:00 AM', 'last_scan': '2024-10-06 02:00:00'}</msg>
+<arg>${SCAN_CONFIG}</arg>
+<arg>${scan_config}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.001948" elapsed="0.000161"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.002316" level="INFO">Length is 16.</msg>
+<arg>${scan_config}[schedule]</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.002229" elapsed="0.000116"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.002570" level="INFO">📅 Scan Schedule: Daily at 2:00 AM</msg>
+<arg>📅 Scan Schedule: ${scan_config}[schedule]</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.002462" elapsed="0.000198"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.002909" level="INFO">📅 Last Scan: 2024-10-06 02:00:00</msg>
+<arg>📅 Last Scan: ${scan_config}[last_scan]</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.002794" elapsed="0.000213"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.003711" level="INFO">✅ Mock scheduled scan configuration verified</msg>
+<arg>✅ Mock scheduled scan configuration verified</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.003173" elapsed="0.000651"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:32.004136" level="INFO">✅ Test Complete: Normal - Verify Scheduled Scan Configuration - PASS</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.004008" elapsed="0.000239"/>
+</kw>
+<doc>📅 Simulate scheduled scan check</doc>
+<tag>configuration</tag>
+<tag>mock</tag>
+<tag>normal</tag>
+<tag>scheduled_scan</tag>
+<status status="PASS" start="2025-10-07T22:21:31.999762" elapsed="0.004665"/>
+</test>
+<test id="s1-t10" name="Normal - Collect Exclusion List Configuration" line="150">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:32.005474" level="INFO">🏁 Starting Test: Normal - Collect Exclusion List Configuration</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.005211" elapsed="0.000448"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.005971" level="INFO">🔍 MOCK: Simulating exclusion list collection...</msg>
+<arg>🔍 MOCK: Simulating exclusion list collection...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.005861" elapsed="0.000302"/>
+</kw>
+<kw name="Get AV Exclusions" owner="av_keywords_mock">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.006775" level="INFO">📋 MOCK: Simulating exclusion list retrieval for McAfee...</msg>
+<arg>📋 MOCK: Simulating exclusion list retrieval for ${av_type}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.006669" elapsed="0.000206"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.007126" level="INFO">${exclusions} = {'count': '3', 'paths': 'C:\\Temp, C:\\Development, C:\\Build', 'processes': 'devenv.exe, msbuild.exe'}</msg>
+<var>${exclusions}</var>
+<arg>count=3</arg>
+<arg>paths=C:\\Temp, C:\\Development, C:\\Build</arg>
+<arg>processes=devenv.exe, msbuild.exe</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.006966" elapsed="0.000179"/>
+</kw>
+<return>
+<value>${exclusions}</value>
+<status status="PASS" start="2025-10-07T22:21:32.007186" elapsed="0.000034"/>
+</return>
+<msg time="2025-10-07T22:21:32.007315" level="INFO">${exclusions} = {'count': '3', 'paths': 'C:\\Temp, C:\\Development, C:\\Build', 'processes': 'devenv.exe, msbuild.exe'}</msg>
+<var>${exclusions}</var>
+<arg>${AV_TYPE}</arg>
+<arg>${OS_TYPE}</arg>
+<doc>Mock: Return simulated exclusions</doc>
+<status status="PASS" start="2025-10-07T22:21:32.006407" elapsed="0.000925"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.007698" level="INFO">${EXCLUSIONS} = {'count': '3', 'paths': 'C:\\Temp, C:\\Development, C:\\Build', 'processes': 'devenv.exe, msbuild.exe'}</msg>
+<arg>${EXCLUSIONS}</arg>
+<arg>${exclusions}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.007516" elapsed="0.000221"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.008069" level="INFO">📋 Total Exclusions: 3</msg>
+<arg>📋 Total Exclusions: ${exclusions}[count]</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.007900" elapsed="0.000368"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.008638" level="INFO">📋 Path Exclusions: C:\Temp, C:\Development, C:\Build</msg>
+<arg>📋 Path Exclusions: ${exclusions}[paths]</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.008472" elapsed="0.000277"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.009018" level="INFO">📋 Process Exclusions: devenv.exe, msbuild.exe</msg>
+<arg>📋 Process Exclusions: ${exclusions}[processes]</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.008883" elapsed="0.000247"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.009348" level="INFO">✅ Mock exclusion list collected</msg>
+<arg>✅ Mock exclusion list collected</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.009262" elapsed="0.000193"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:32.009894" level="INFO">✅ Test Complete: Normal - Collect Exclusion List Configuration - PASS</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.009717" elapsed="0.000335"/>
+</kw>
+<doc>📋 Simulate exclusion list collection</doc>
+<tag>configuration</tag>
+<tag>exclusions</tag>
+<tag>mock</tag>
+<tag>normal</tag>
+<status status="PASS" start="2025-10-07T22:21:32.004766" elapsed="0.005522"/>
+</test>
+<test id="s1-t11" name="Normal - Verify AV Console Reporting" line="165">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:32.011194" level="INFO">🏁 Starting Test: Normal - Verify AV Console Reporting</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.011060" elapsed="0.000259"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.011580" level="INFO">🔍 MOCK: Simulating console reporting check...</msg>
+<arg>🔍 MOCK: Simulating console reporting check...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.011487" elapsed="0.000188"/>
+</kw>
+<kw name="Verify Console Reporting" owner="av_keywords_mock">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.012209" level="INFO">📡 MOCK: Simulating console reporting check for McAfee...</msg>
+<arg>📡 MOCK: Simulating console reporting check for ${av_type}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.012103" elapsed="0.000197"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.012607" level="INFO">${status} = {'is_connected': True, 'console_address': 'epo-server.company.local', 'last_checkin': '2024-10-07 10:30:00'}</msg>
+<var>${status}</var>
+<arg>is_connected=${True}</arg>
+<arg>console_address=epo-server.company.local</arg>
+<arg>last_checkin=2024-10-07 10:30:00</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.012400" elapsed="0.000226"/>
+</kw>
+<return>
+<value>${status}</value>
+<status status="PASS" start="2025-10-07T22:21:32.012668" elapsed="0.000032"/>
+</return>
+<msg time="2025-10-07T22:21:32.012791" level="INFO">${console_status} = {'is_connected': True, 'console_address': 'epo-server.company.local', 'last_checkin': '2024-10-07 10:30:00'}</msg>
+<var>${console_status}</var>
+<arg>${AV_TYPE}</arg>
+<arg>${OS_TYPE}</arg>
+<doc>Mock: Return simulated console status</doc>
+<status status="PASS" start="2025-10-07T22:21:32.011878" elapsed="0.000930"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.013085" level="INFO">${CONSOLE_STATUS} = {'is_connected': True, 'console_address': 'epo-server.company.local', 'last_checkin': '2024-10-07 10:30:00'}</msg>
+<arg>${CONSOLE_STATUS}</arg>
+<arg>${console_status}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.012950" elapsed="0.000167"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${console_status}[is_connected]</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.013238" elapsed="0.000111"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.013576" level="INFO">📡 Console: epo-server.company.local</msg>
+<arg>📡 Console: ${console_status}[console_address]</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.013466" elapsed="0.000204"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.013916" level="INFO">📡 Last Check-in: 2024-10-07 10:30:00</msg>
+<arg>📡 Last Check-in: ${console_status}[last_checkin]</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.013800" elapsed="0.000233"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.014315" level="INFO">✅ Mock console reporting verified</msg>
+<arg>✅ Mock console reporting verified</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.014208" elapsed="0.000220"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:32.014882" level="INFO">✅ Test Complete: Normal - Verify AV Console Reporting - PASS</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.014749" elapsed="0.000240"/>
+</kw>
+<doc>📡 Simulate console reporting check</doc>
+<tag>console</tag>
+<tag>mock</tag>
+<tag>normal</tag>
+<tag>reporting</tag>
+<status status="PASS" start="2025-10-07T22:21:32.010700" elapsed="0.004469"/>
+</test>
+<test id="s1-t12" name="Normal - Capture AV Agent Screenshots" line="181">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:32.015981" level="INFO">🏁 Starting Test: Normal - Capture AV Agent Screenshots</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.015856" elapsed="0.000239"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.016342" level="INFO">📸 MOCK: Simulating screenshot capture...</msg>
+<arg>📸 MOCK: Simulating screenshot capture...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.016250" elapsed="0.000222"/>
+</kw>
+<kw name="Capture AV Screenshots" owner="av_keywords_mock">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.017087" level="INFO">📸 MOCK: Simulating screenshot capture for McAfee...</msg>
+<arg>📸 MOCK: Simulating screenshot capture for ${av_type}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.016960" elapsed="0.000234"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-07T22:21:32.017492" level="INFO">${timestamp} = 20251007_222132</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.017298" elapsed="0.000218"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.017739" level="INFO">${screenshot_path} = C:\Users\write\project_2025\robot\robotframework\tests\test20_av_agent_validation/../../results/test20_av_agent_validation/av_screenshots/McAfee_20251007_222132.txt</msg>
+<var>${screenshot_path}</var>
+<arg>${AV_SCREENSHOT_DIR}/${av_type}_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.017603" elapsed="0.000154"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.017999" level="INFO">${mock_output} = ========================================
+MOCK AV AGENT SCREENSHOT
+========================================
+AV Type: McAfee
+OS Type: Windows
+Status: Running
+Version: 10.7.0.1234
+Real-Time Protection: E...</msg>
+<var>${mock_output}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>========================================</arg>
+<arg>MOCK AV AGENT SCREENSHOT</arg>
+<arg>========================================</arg>
+<arg>AV Type: ${av_type}</arg>
+<arg>OS Type: ${os_type}</arg>
+<arg>Status: Running</arg>
+<arg>Version: 10.7.0.1234</arg>
+<arg>Real-Time Protection: Enabled</arg>
+<arg>Last Update: 2024-10-07</arg>
+<arg>Console: Connected to epo-server.company.local</arg>
+<arg>Scan Schedule: Daily at 2:00 AM</arg>
+<arg>Last Scan: 2024-10-06 02:00:00</arg>
+<arg>Exclusions: 3 configured</arg>
+<arg>========================================</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.017820" elapsed="0.000198"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-07T22:21:32.018817" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\write\project_2025\robot\robotframework\results\test20_av_agent_validation\av_screenshots\McAfee_20251007_222132.txt"&gt;C:\Users\write\project_2025\robot\robotframework\results\test20_av_agent_validation\av_screenshots\McAfee_20251007_222132.txt&lt;/a&gt;'.</msg>
+<arg>${screenshot_path}</arg>
+<arg>${mock_output}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.018107" elapsed="0.000759"/>
+</kw>
+<return>
+<value>${screenshot_path}</value>
+<status status="PASS" start="2025-10-07T22:21:32.018908" elapsed="0.000033"/>
+</return>
+<msg time="2025-10-07T22:21:32.019050" level="INFO">${screenshot_paths} = C:\Users\write\project_2025\robot\robotframework\tests\test20_av_agent_validation/../../results/test20_av_agent_validation/av_screenshots/McAfee_20251007_222132.txt</msg>
+<var>${screenshot_paths}</var>
+<arg>${AV_TYPE}</arg>
+<arg>${OS_TYPE}</arg>
+<doc>Mock: Create simulated screenshot file</doc>
+<status status="PASS" start="2025-10-07T22:21:32.016702" elapsed="0.002367"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.019346" level="INFO">${SCREENSHOT_PATHS} = C:\Users\write\project_2025\robot\robotframework\tests\test20_av_agent_validation/../../results/test20_av_agent_validation/av_screenshots/McAfee_20251007_222132.txt</msg>
+<arg>${SCREENSHOT_PATHS}</arg>
+<arg>${screenshot_paths}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.019220" elapsed="0.000155"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.019612" level="INFO">📸 Screenshots saved to: C:\Users\write\project_2025\robot\robotframework\tests\test20_av_agent_validation/../../results/test20_av_agent_validation/av_screenshots/McAfee_20251007_222132.txt</msg>
+<arg>📸 Screenshots saved to: ${screenshot_paths}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.019496" elapsed="0.000240"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.019998" level="INFO">✅ Mock screenshots captured</msg>
+<arg>✅ Mock screenshots captured</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.019885" elapsed="0.000250"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:32.020524" level="INFO">✅ Test Complete: Normal - Capture AV Agent Screenshots - PASS</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.020371" elapsed="0.000256"/>
+</kw>
+<doc>📸 Simulate screenshot capture</doc>
+<tag>documentation</tag>
+<tag>mock</tag>
+<tag>normal</tag>
+<tag>screenshots</tag>
+<status status="PASS" start="2025-10-07T22:21:32.015482" elapsed="0.005239"/>
+</test>
+<test id="s1-t13" name="Normal - Validate Against CIP-007 R3.1 Requirements" line="193">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2025-10-07T22:21:32.021638" level="INFO">🏁 Starting Test: Normal - Validate Against CIP-007 R3.1 Requirements</msg>
+<arg>🏁 Starting Test: ${TEST_NAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.021508" elapsed="0.000229"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.021980" level="INFO">🔍 MOCK: Testing compliance validation logic...</msg>
+<arg>🔍 MOCK: Testing compliance validation logic...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.021889" elapsed="0.000184"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.022333" level="INFO">📋 CIP-007 R3.1 Requirements:</msg>
+<arg>📋 CIP-007 R3.1 Requirements:</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.022232" elapsed="0.000274"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.022885" level="FAIL">Invalid log level '1. Malware prevention tools deployed'.</msg>
+<arg>📋</arg>
+<arg>1. Malware prevention tools deployed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="FAIL" start="2025-10-07T22:21:32.022678" elapsed="0.000380">Invalid log level '1. Malware prevention tools deployed'.</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋</arg>
+<arg>2. Real-time protection enabled</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:32.023219" elapsed="0.000017"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋</arg>
+<arg>3. Current malware definitions</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:32.023365" elapsed="0.000015"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋</arg>
+<arg>4. Regular updates configured</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:32.023497" elapsed="0.000017"/>
+</kw>
+<kw name="Validate CIP007 R31 Compliance" owner="av_keywords_mock">
+<var>${compliance}</var>
+<arg>agent_installed=${INSTALL_STATUS}</arg>
+<arg>service_running=${SERVICE_STATUS}</arg>
+<arg>rtp_enabled=${RTP_ENABLED}</arg>
+<arg>signature_age=${SIGNATURE_AGE}</arg>
+<arg>console_connected=${CONSOLE_STATUS}[is_connected]</arg>
+<doc>Validate CIP-007 R3.1 compliance</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:32.023943" elapsed="0.000024"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${compliance}[is_compliant]</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:32.024119" elapsed="0.000018"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ MOCK CIP-007 R3.1 Compliance Validation Summary:</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:32.024323" elapsed="0.000017"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅</arg>
+<arg>- AV Agent Installed: ✅ ${AV_TYPE}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:32.024579" elapsed="0.000027"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅</arg>
+<arg>- Service Running: ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:32.024801" elapsed="0.000024"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅</arg>
+<arg>- Real-Time Protection: ✅ Enabled</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:32.025003" elapsed="0.000022"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅</arg>
+<arg>- Signature Age: ✅ ${SIGNATURE_AGE} days old</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:32.025203" elapsed="0.000022"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅</arg>
+<arg>- Console Reporting: ✅ Connected</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:32.025380" elapsed="0.000018"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ CIP-007 R3.1 COMPLIANCE (MOCK): PASSED ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T22:21:32.025554" elapsed="0.000020"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-07T22:21:32.026203" level="INFO">✅ Test Complete: Normal - Validate Against CIP-007 R3.1 Requirements - FAIL</msg>
+<arg>✅ Test Complete: ${TEST_NAME} - ${TEST_STATUS}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.025946" elapsed="0.000426"/>
+</kw>
+<doc>✅ Test compliance validation logic</doc>
+<tag>cip_007</tag>
+<tag>compliance</tag>
+<tag>mock</tag>
+<tag>normal</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-07T22:21:32.021110" elapsed="0.005488">Invalid log level '1. Malware prevention tools deployed'.</status>
+</test>
+<kw name="Generate AV Agent Executive Summary" owner="av_keywords_mock" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.027749" level="INFO">📊 Generating AV Agent Validation Executive Summary...</msg>
+<arg>📊 Generating AV Agent Validation Executive Summary...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.027612" elapsed="0.000266"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.028079" level="INFO">========================================</msg>
+<arg>========================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.027979" elapsed="0.000196"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.028345" level="INFO">AV AGENT VALIDATION - EXECUTIVE SUMMARY</msg>
+<arg>AV AGENT VALIDATION - EXECUTIVE SUMMARY</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.028261" elapsed="0.000168"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.028588" level="INFO">(MOCK MODE - LOCAL TESTING)</msg>
+<arg>(MOCK MODE - LOCAL TESTING)</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.028508" elapsed="0.000171"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.028882" level="INFO">========================================</msg>
+<arg>========================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.028779" elapsed="0.000194"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.029170" level="INFO">Test Suite: Test-20 - AV Agent Validation</msg>
+<arg>Test Suite: Test-20 - AV Agent Validation</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.029073" elapsed="0.000189"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.029427" level="INFO">Compliance Standard: CIP-007 R3.1</msg>
+<arg>Compliance Standard: CIP-007 R3.1</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.029344" elapsed="0.000186"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.029708" level="INFO">Mode: LOCAL MOCK TESTING</msg>
+<arg>Mode: LOCAL MOCK TESTING</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.029629" elapsed="0.000160"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.029938" level="INFO">========================================</msg>
+<arg>========================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.029861" elapsed="0.000154"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:21:32.030159" level="INFO">✅ Executive Summary Generated</msg>
+<arg>✅ Executive Summary Generated</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:21:32.030083" elapsed="0.000151"/>
+</kw>
+<doc>Generate executive summary</doc>
+<status status="PASS" start="2025-10-07T22:21:32.027444" elapsed="0.002901"/>
+</kw>
+<doc>🛡️ AV Agent Validation Test Suite - Test-20 (LOCAL MOCK MODE)
+⚠️ Running in LOCAL mode with simulated responses
+🔍 Process: Simulate AV detection → Mock agent info → Validate logic
+✅ Pass if validation logic works correctly
+📊 Validates: Test logic, compliance validation, reporting
+📋 CIP-007 R3.1: Malicious code prevention via antivirus protection</doc>
+<status status="FAIL" start="2025-10-07T22:21:31.820645" elapsed="0.209726"/>
+</suite>
+<statistics>
+<total>
+<stat pass="12" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">agent</stat>
+<stat pass="1" fail="0" skip="0">av_detection</stat>
+<stat pass="2" fail="1" skip="0">cip_007</stat>
+<stat pass="1" fail="0" skip="0">collection</stat>
+<stat pass="0" fail="1" skip="0">compliance</stat>
+<stat pass="2" fail="0" skip="0">configuration</stat>
+<stat pass="1" fail="0" skip="0">connection</stat>
+<stat pass="1" fail="0" skip="0">console</stat>
+<stat pass="8" fail="0" skip="0">critical</stat>
+<stat pass="1" fail="0" skip="0">documentation</stat>
+<stat pass="1" fail="0" skip="0">exclusions</stat>
+<stat pass="1" fail="0" skip="0">information</stat>
+<stat pass="1" fail="0" skip="0">installation</stat>
+<stat pass="11" fail="1" skip="0">mock</stat>
+<stat pass="4" fail="1" skip="0">normal</stat>
+<stat pass="1" fail="0" skip="0">os_detection</stat>
+<stat pass="1" fail="0" skip="0">platform</stat>
+<stat pass="1" fail="0" skip="0">protection</stat>
+<stat pass="1" fail="0" skip="0">real_time</stat>
+<stat pass="1" fail="0" skip="0">reporting</stat>
+<stat pass="1" fail="0" skip="0">running</stat>
+<stat pass="1" fail="0" skip="0">scheduled_scan</stat>
+<stat pass="1" fail="0" skip="0">screenshots</stat>
+<stat pass="1" fail="0" skip="0">service</stat>
+<stat pass="1" fail="0" skip="0">signatures</stat>
+<stat pass="1" fail="0" skip="0">status</stat>
+<stat pass="1" fail="0" skip="0">updates</stat>
+<stat pass="0" fail="1" skip="0">validation</stat>
+</tag>
+<suite>
+<stat name="Test20 Av Agent Validation Local" id="s1" pass="12" fail="1" skip="0">Test20 Av Agent Validation Local</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

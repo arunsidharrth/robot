@@ -1,0 +1,14 @@
+========================================
+MOCK AV AGENT SCREENSHOT
+========================================
+AV Type: McAfee
+OS Type: Windows
+Status: Running
+Version: 10.7.0.1234
+Real-Time Protection: Enabled
+Last Update: 2024-10-07
+Console: Connected to epo-server.company.local
+Scan Schedule: Daily at 2:00 AM
+Last Scan: 2024-10-06 02:00:00
+Exclusions: 3 configured
+========================================

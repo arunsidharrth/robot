@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.8 on win32)" generated="2025-10-07T22:29:47.859300" rpa="false" schemaversion="5">
+<suite id="s1" name="Av Agent Validation" source="C:\Users\write\project_2025\robot\robotframework\tests\test20_av_agent_validation\av_agent_validation.robot">
+<kw name="Initialize AV Test Environment" owner="av_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:29:48.026011" level="INFO">🔧 Initializing AV Test Environment...</msg>
+<arg>🔧 Initializing AV Test Environment...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:29:48.025843" elapsed="0.000318"/>
+</kw>
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>${TARGET_HOSTNAME}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" start="2025-10-07T22:29:48.026296" elapsed="0.000181"/>
+</kw>
+<kw name="Login" owner="SSHLibrary">
+<msg time="2025-10-07T22:29:48.026712" level="INFO">Logging into 'allxdvitap01:22' as 'test'.</msg>
+<msg time="2025-10-07T22:29:52.814588" level="FAIL">NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</msg>
+<arg>${SSH_USERNAME}</arg>
+<arg>${SSH_PASSWORD}</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<status status="FAIL" start="2025-10-07T22:29:48.026564" elapsed="4.794399">NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<arg>${AV_SCREENSHOT_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="NOT RUN" start="2025-10-07T22:29:52.821121" elapsed="0.000022"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ AV Test Environment initialized</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-07T22:29:52.821210" elapsed="0.000014"/>
+</kw>
+<doc>Initialize the AV test environment and establish SSH connection</doc>
+<status status="FAIL" start="2025-10-07T22:29:48.025307" elapsed="4.796019">NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</kw>
+<test id="s1-t1" name="Critical - Connect to Target Machine" line="19">
+<doc>🔗 Establish SSH connection to target machine for AV validation</doc>
+<tag>connection</tag>
+<tag>critical</tag>
+<tag>infrastructure</tag>
+<tag>ssh</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.821405" elapsed="0.000539">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<test id="s1-t2" name="Critical - Detect Operating System Type" line="32">
+<doc>🖥️ Detect operating system type (Windows/Linux) for appropriate AV detection</doc>
+<tag>critical</tag>
+<tag>os_detection</tag>
+<tag>platform</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.822461" elapsed="0.000440">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<test id="s1-t3" name="Critical - Detect Installed AV Agent" line="44">
+<doc>🔍 Detect installed antivirus agent (McAfee, Sentinel One, or other)</doc>
+<tag>agent</tag>
+<tag>av_detection</tag>
+<tag>critical</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.823313" elapsed="0.000314">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<test id="s1-t4" name="Critical - Verify AV Agent Installation Status" line="61">
+<doc>📦 Verify antivirus agent is properly installed</doc>
+<tag>critical</tag>
+<tag>installation</tag>
+<tag>status</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.823966" elapsed="0.000306">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<test id="s1-t5" name="Critical - Verify AV Agent Service Status" line="75">
+<doc>🔄 Verify AV agent service is running</doc>
+<tag>critical</tag>
+<tag>running</tag>
+<tag>service</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.824610" elapsed="0.000340">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<test id="s1-t6" name="Critical - Collect AV Agent Information" line="89">
+<doc>📊 Collect comprehensive AV agent information</doc>
+<tag>collection</tag>
+<tag>critical</tag>
+<tag>information</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.825282" elapsed="0.000289">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<test id="s1-t7" name="Critical - Verify Real-Time Protection Enabled" line="105">
+<doc>🛡️ Verify real-time protection is enabled (CIP-007 R3.1 requirement)</doc>
+<tag>cip_007</tag>
+<tag>critical</tag>
+<tag>protection</tag>
+<tag>real_time</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.825939" elapsed="0.000437">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<test id="s1-t8" name="Critical - Verify Signature Update Status" line="120">
+<doc>📅 Verify antivirus signatures are up-to-date</doc>
+<tag>cip_007</tag>
+<tag>critical</tag>
+<tag>signatures</tag>
+<tag>updates</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.826751" elapsed="0.000380">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<test id="s1-t9" name="Normal - Verify Scheduled Scan Configuration" line="141">
+<doc>📅 Verify scheduled scans are configured</doc>
+<tag>configuration</tag>
+<tag>normal</tag>
+<tag>scheduled_scan</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.827771" elapsed="0.000289">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<test id="s1-t10" name="Normal - Collect Exclusion List Configuration" line="157">
+<doc>📋 Collect antivirus exclusion list configuration</doc>
+<tag>configuration</tag>
+<tag>exclusions</tag>
+<tag>normal</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.828477" elapsed="0.000301">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<test id="s1-t11" name="Normal - Verify AV Console Reporting" line="172">
+<doc>📡 Verify AV agent is reporting to management console</doc>
+<tag>console</tag>
+<tag>normal</tag>
+<tag>reporting</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.829186" elapsed="0.000359">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<test id="s1-t12" name="Normal - Capture AV Agent Screenshots" line="188">
+<doc>📸 Capture screenshots of AV agent console and status</doc>
+<tag>documentation</tag>
+<tag>normal</tag>
+<tag>screenshots</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.830294" elapsed="0.000300">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<test id="s1-t13" name="Normal - Validate Against CIP-007 R3.1 Requirements" line="200">
+<doc>✅ Comprehensive validation against CIP-007 R3.1 requirements</doc>
+<tag>cip_007</tag>
+<tag>compliance</tag>
+<tag>normal</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-07T22:29:52.831026" elapsed="0.000357">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</test>
+<kw name="Generate AV Agent Executive Summary" owner="av_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:29:52.832582" level="INFO">📊 Generating AV Agent Validation Executive Summary...</msg>
+<arg>📊 Generating AV Agent Validation Executive Summary...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:29:52.832442" elapsed="0.000267"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:29:52.833224" level="INFO">======================================</msg>
+<arg>======================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:29:52.833097" elapsed="0.000237"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:29:52.833510" level="INFO">AV AGENT VALIDATION - EXECUTIVE SUMMARY</msg>
+<arg>AV AGENT VALIDATION - EXECUTIVE SUMMARY</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:29:52.833421" elapsed="0.000188"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:29:52.833831" level="INFO">======================================</msg>
+<arg>======================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:29:52.833721" elapsed="0.000198"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:29:52.834078" level="INFO">Test Suite: Test-20 - AV Agent Validation</msg>
+<arg>Test Suite: Test-20 - AV Agent Validation</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:29:52.834000" elapsed="0.000158"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:29:52.834309" level="INFO">Compliance Standard: CIP-007 R3.1</msg>
+<arg>Compliance Standard: CIP-007 R3.1</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:29:52.834235" elapsed="0.000154"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:29:52.834548" level="INFO">======================================</msg>
+<arg>======================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:29:52.834472" elapsed="0.000164"/>
+</kw>
+<kw name="Close All Connections" owner="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" start="2025-10-07T22:29:52.834743" elapsed="0.000097"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-07T22:29:52.835040" level="INFO">✅ Executive Summary Generated</msg>
+<arg>✅ Executive Summary Generated</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-07T22:29:52.834925" elapsed="0.000216"/>
+</kw>
+<doc>Generate executive summary for AV agent validation</doc>
+<status status="PASS" start="2025-10-07T22:29:52.832241" elapsed="0.002961"/>
+</kw>
+<doc>🛡️ AV Agent Validation Test Suite - Test-20
+🔍 Process: Connect to target → Detect AV type → Collect agent information → Validate protection settings
+✅ Pass if AV agent (McAfee or Sentinel One) is installed, running, and meets CIP-007 R3.1 requirements
+📊 Validates: Agent installation, real-time protection, signature updates, scan schedules, exclusions
+📋 CIP-007 R3.1: Malicious code prevention via antivirus protection</doc>
+<status status="FAIL" start="2025-10-07T22:29:47.860675" elapsed="4.974556">Suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.1.1</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="13" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">agent</stat>
+<stat pass="0" fail="1" skip="0">av_detection</stat>
+<stat pass="0" fail="3" skip="0">cip_007</stat>
+<stat pass="0" fail="1" skip="0">collection</stat>
+<stat pass="0" fail="1" skip="0">compliance</stat>
+<stat pass="0" fail="2" skip="0">configuration</stat>
+<stat pass="0" fail="1" skip="0">connection</stat>
+<stat pass="0" fail="1" skip="0">console</stat>
+<stat pass="0" fail="8" skip="0">critical</stat>
+<stat pass="0" fail="1" skip="0">documentation</stat>
+<stat pass="0" fail="1" skip="0">exclusions</stat>
+<stat pass="0" fail="1" skip="0">information</stat>
+<stat pass="0" fail="1" skip="0">infrastructure</stat>
+<stat pass="0" fail="1" skip="0">installation</stat>
+<stat pass="0" fail="5" skip="0">normal</stat>
+<stat pass="0" fail="1" skip="0">os_detection</stat>
+<stat pass="0" fail="1" skip="0">platform</stat>
+<stat pass="0" fail="1" skip="0">protection</stat>
+<stat pass="0" fail="1" skip="0">real_time</stat>
+<stat pass="0" fail="1" skip="0">reporting</stat>
+<stat pass="0" fail="1" skip="0">running</stat>
+<stat pass="0" fail="1" skip="0">scheduled_scan</stat>
+<stat pass="0" fail="1" skip="0">screenshots</stat>
+<stat pass="0" fail="1" skip="0">service</stat>
+<stat pass="0" fail="1" skip="0">signatures</stat>
+<stat pass="0" fail="1" skip="0">ssh</stat>
+<stat pass="0" fail="1" skip="0">status</stat>
+<stat pass="0" fail="1" skip="0">updates</stat>
+<stat pass="0" fail="1" skip="0">validation</stat>
+</tag>
+<suite>
+<stat name="Av Agent Validation" id="s1" pass="0" fail="13" skip="0">Av Agent Validation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
