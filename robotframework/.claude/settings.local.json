@@ -18,7 +18,8 @@
       "Bash(python -m robot:*)",
       "Bash(python:*)",
       "Bash(venv\\Scripts\\python.exe -m pip install:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(mv:*)"
     ],
     "deny": [],
     "ask": []
