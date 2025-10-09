@@ -3,6 +3,9 @@ Documentation    🗄️ Test-5 Variables: Storage & System Validation Configura
 ...              📋 Contains all variables specific to storage and system resource testing
 
 *** Variables ***
+# Target Configuration - Set via command line
+${TARGET_HOSTNAME}           # Set via command line --variable TARGET_HOSTNAME:value
+
 # 🎯 Test Suite Configuration
 ${TEST_SUITE_NAME}        Test-5 Storage & System Validation
 ${TEST_SUITE_ID}          test5

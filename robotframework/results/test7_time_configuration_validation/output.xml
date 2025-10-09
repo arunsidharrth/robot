@@ -1,78 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.8 on win32)" generated="2025-10-07T22:29:57.707203" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.8 on win32)" generated="2025-10-08T22:29:58.085859" rpa="false" schemaversion="5">
 <suite id="s1" name="Time Configuration Validation" source="C:\Users\write\project_2025\robot\robotframework\tests\test7_time_configuration_validation\time_configuration_validation.robot">
 <kw name="Initialize Time Test Environment" owner="time_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-07T22:29:58.321451" level="INFO">🚀 Initializing Test-7: Time Configuration Validation Environment...</msg>
+<msg time="2025-10-08T22:29:58.726736" level="INFO">🚀 Initializing Test-7: Time Configuration Validation Environment...</msg>
 <arg>🚀 Initializing Test-7: Time Configuration Validation Environment...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-07T22:29:58.321291" elapsed="0.000286"/>
+<status status="PASS" start="2025-10-08T22:29:58.726542" elapsed="0.000355"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-10-07T22:29:58.321819" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\write\project_2025\robot\robotframework\results\test7_time_configuration_validation\data"&gt;C:\Users\write\project_2025\robot\robotframework\results\test7_time_configuration_validation\data&lt;/a&gt;' already exists.</msg>
+<msg time="2025-10-08T22:29:58.727209" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\write\project_2025\robot\robotframework\results\test7_time_configuration_validation\data"&gt;C:\Users\write\project_2025\robot\robotframework\results\test7_time_configuration_validation\data&lt;/a&gt;' already exists.</msg>
 <arg>${DATA_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-10-07T22:29:58.321683" elapsed="0.000180"/>
+<status status="PASS" start="2025-10-08T22:29:58.727033" elapsed="0.000229"/>
 </kw>
 <kw name="Lookup Server Config" owner="EDSLookup">
-<msg time="2025-10-07T22:29:58.334271" level="ERROR">Hostname 'allxdvitap01' not found in EDS sheet</msg>
-<msg time="2025-10-07T22:29:58.334491" level="INFO">Available hostnames: ['alhxvdvitap01', 'alhxvdvitag01', 'alhxvqaitiap01', 'alhxvqaitiap02', 'alhxvqaitred01', 'alhxvqaitred02', 'alhxvqaitred03', 'alhxvqaitmdb01', 'alhxvqaitmdb02', 'alhxvqaitmdb03', 'alhxvqaitag01', 'alhxvqaitag02', 'alhxvpritiap01', 'alhxvpritiap02']</msg>
-<msg time="2025-10-07T22:29:58.334632" level="FAIL">ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</msg>
+<msg time="2025-10-08T22:29:58.740448" level="ERROR">Hostname 'allxdvitap01' not found in EDS sheet</msg>
+<msg time="2025-10-08T22:29:58.740667" level="INFO">Available hostnames: ['alhxvdvitap01', 'alhxvdvitag01', 'alhxvqaitiap01', 'alhxvqaitiap02', 'alhxvqaitred01', 'alhxvqaitred02', 'alhxvqaitred03', 'alhxvqaitmdb01', 'alhxvqaitmdb02', 'alhxvqaitmdb03', 'alhxvqaitag01', 'alhxvqaitag02', 'alhxvpritiap01', 'alhxvpritiap02']</msg>
+<msg time="2025-10-08T22:29:58.740809" level="FAIL">ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</msg>
 <var>${eds_config}</var>
 <arg>${TARGET_HOSTNAME}</arg>
 <doc>Lookup server configuration from EDS sheet based on hostname</doc>
-<status status="FAIL" start="2025-10-07T22:29:58.321941" elapsed="0.013595">ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
+<status status="FAIL" start="2025-10-08T22:29:58.727368" elapsed="0.014292">ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TARGET_IP}</arg>
 <arg>${eds_config['ip']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-10-07T22:29:58.335718" elapsed="0.000023"/>
+<status status="NOT RUN" start="2025-10-08T22:29:58.741835" elapsed="0.000024"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 Target Server: ${TARGET_HOSTNAME}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-07T22:29:58.335817" elapsed="0.000022"/>
+<status status="NOT RUN" start="2025-10-08T22:29:58.741939" elapsed="0.000015"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 Target IP: ${TARGET_IP}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-07T22:29:58.335911" elapsed="0.000013"/>
+<status status="NOT RUN" start="2025-10-08T22:29:58.742026" elapsed="0.000013"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-07T22:29:58.335984" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-08T22:29:58.742106" elapsed="0.000013"/>
 </kw>
 <kw name="Open Connection" owner="SSHLibrary">
 <arg>${TARGET_IP}</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="NOT RUN" start="2025-10-07T22:29:58.336060" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-08T22:29:58.742186" elapsed="0.000013"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
 <arg>${SSH_USERNAME}</arg>
 <arg>${SSH_PASSWORD}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="NOT RUN" start="2025-10-07T22:29:58.336134" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-08T22:29:58.742260" elapsed="0.000012"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ SSH connection established successfully</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-07T22:29:58.336205" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-08T22:29:58.742332" elapsed="0.000012"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Test-7 environment initialized</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-07T22:29:58.336276" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-08T22:29:58.742423" elapsed="0.000013"/>
 </kw>
 <doc>🏗️ Set up test environment for time configuration validation</doc>
-<status status="FAIL" start="2025-10-07T22:29:58.320789" elapsed="0.015602">ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
+<status status="FAIL" start="2025-10-08T22:29:58.725939" elapsed="0.016592">ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </kw>
 <test id="s1-t1" name="Critical - Connect to Target Server" line="18">
 <doc>🔗 Establish direct connection to target machine via SSH</doc>
@@ -80,7 +80,7 @@
 <tag>critical</tag>
 <tag>infrastructure</tag>
 <tag>ssh</tag>
-<status status="FAIL" start="2025-10-07T22:29:58.336476" elapsed="0.000449">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:29:58.742614" elapsed="0.000506">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t2" name="Critical - Collect Time Configuration Data" line="31">
@@ -89,7 +89,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>data_collection</tag>
 <tag>ntp</tag>
 <tag>time</tag>
-<status status="FAIL" start="2025-10-07T22:29:58.337482" elapsed="0.000465">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:29:58.743619" elapsed="0.000444">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t3" name="Critical - Validate Timezone Setting" line="49">
@@ -97,7 +97,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>compliance</tag>
 <tag>critical</tag>
 <tag>timezone</tag>
-<status status="FAIL" start="2025-10-07T22:29:58.338404" elapsed="0.000374">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:29:58.744492" elapsed="0.000414">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t4" name="Critical - Validate Chrony Service Status" line="62">
@@ -106,7 +106,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>critical</tag>
 <tag>ntp</tag>
 <tag>service</tag>
-<status status="FAIL" start="2025-10-07T22:29:58.339230" elapsed="0.000324">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:29:58.745313" elapsed="0.000319">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t5" name="Critical - Validate NTP Server Configuration" line="74">
@@ -115,7 +115,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>critical</tag>
 <tag>ntp</tag>
 <tag>server</tag>
-<status status="FAIL" start="2025-10-07T22:29:58.339914" elapsed="0.000341">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:29:58.746035" elapsed="0.000385">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t6" name="Critical - Validate Time Synchronization Status" line="87">
@@ -124,7 +124,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>ntp</tag>
 <tag>synchronization</tag>
 <tag>time</tag>
-<status status="FAIL" start="2025-10-07T22:29:58.340620" elapsed="0.000326">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:29:58.746827" elapsed="0.000369">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t7" name="Normal - Comprehensive Time Configuration Validation" line="100">
@@ -133,7 +133,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>comprehensive</tag>
 <tag>normal</tag>
 <tag>validation</tag>
-<status status="FAIL" start="2025-10-07T22:29:58.341350" elapsed="0.000381">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:29:58.747583" elapsed="0.000349">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t8" name="Normal - Hardware Clock Verification" line="116">
@@ -142,7 +142,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>hardware</tag>
 <tag>normal</tag>
 <tag>verification</tag>
-<status status="FAIL" start="2025-10-07T22:29:58.342098" elapsed="0.000402">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:29:58.748331" elapsed="0.000387">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t9" name="Normal - NTP Source Analysis" line="133">
@@ -151,7 +151,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>normal</tag>
 <tag>ntp</tag>
 <tag>sources</tag>
-<status status="FAIL" start="2025-10-07T22:29:58.342989" elapsed="0.000422">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:29:58.749327" elapsed="0.000332">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <test id="s1-t10" name="Normal - Clock Drift Monitoring" line="165">
@@ -160,34 +160,34 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <tag>drift</tag>
 <tag>monitoring</tag>
 <tag>normal</tag>
-<status status="FAIL" start="2025-10-07T22:29:58.343818" elapsed="0.000299">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:29:58.750025" elapsed="0.000331">Parent suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.</status>
 </test>
 <kw name="Generate Time Configuration Executive Summary" owner="time_keywords" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-07T22:29:58.345382" level="INFO">📊 Generating Test-7 Time Configuration Executive Summary...</msg>
+<msg time="2025-10-08T22:29:58.751443" level="INFO">📊 Generating Test-7 Time Configuration Executive Summary...</msg>
 <arg>📊 Generating Test-7 Time Configuration Executive Summary...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-07T22:29:58.345241" elapsed="0.000257"/>
+<status status="PASS" start="2025-10-08T22:29:58.751301" elapsed="0.000254"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-07T22:29:58.345784" level="INFO">${timestamp} = 2025-10-07 22:29:58</msg>
+<msg time="2025-10-08T22:29:58.751834" level="INFO">${timestamp} = 2025-10-08 22:29:58</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-07T22:29:58.345601" elapsed="0.000204"/>
+<status status="PASS" start="2025-10-08T22:29:58.751663" elapsed="0.000192"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-07T22:29:58.345977" level="INFO">${summary_file} = results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
+<msg time="2025-10-08T22:29:58.752034" level="INFO">${summary_file} = results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
 <var>${summary_file}</var>
 <arg>results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-07T22:29:58.345886" elapsed="0.000110"/>
+<status status="PASS" start="2025-10-08T22:29:58.751938" elapsed="0.000116"/>
 </kw>
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2025-10-07T22:29:58.347072" level="INFO">${summary_content} = None</msg>
-<msg time="2025-10-07T22:29:58.347098" level="FAIL">Variable '${TARGET_IP}' not found.</msg>
+<msg time="2025-10-08T22:29:58.753178" level="INFO">${summary_content} = None</msg>
+<msg time="2025-10-08T22:29:58.753204" level="FAIL">Variable '${TARGET_IP}' not found.</msg>
 <var>${summary_content}</var>
 <arg>SEPARATOR=\n</arg>
 <arg>========================================</arg>
@@ -222,31 +222,31 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 <arg>End of Executive Summary</arg>
 <arg>========================================</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="FAIL" start="2025-10-07T22:29:58.346068" elapsed="0.001054">Variable '${TARGET_IP}' not found.</status>
+<status status="FAIL" start="2025-10-08T22:29:58.752138" elapsed="0.001090">Variable '${TARGET_IP}' not found.</status>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-10-07T22:29:58.347943" level="FAIL">TypeError: write() argument must be str, not None</msg>
+<msg time="2025-10-08T22:29:58.754015" level="FAIL">TypeError: write() argument must be str, not None</msg>
 <arg>${summary_file}</arg>
 <arg>${summary_content}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="FAIL" start="2025-10-07T22:29:58.347298" elapsed="0.000735">TypeError: write() argument must be str, not None</status>
+<status status="FAIL" start="2025-10-08T22:29:58.753387" elapsed="0.000705">TypeError: write() argument must be str, not None</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-07T22:29:58.348305" level="INFO">📊 Executive summary generated: results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
+<msg time="2025-10-08T22:29:58.754338" level="INFO">📊 Executive summary generated: results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
 <arg>📊 Executive summary generated: ${summary_file}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-07T22:29:58.348142" elapsed="0.000315"/>
+<status status="PASS" start="2025-10-08T22:29:58.754200" elapsed="0.000269"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-07T22:29:58.348641" level="INFO">✅ Test-7 Time Configuration Validation completed successfully!</msg>
+<msg time="2025-10-08T22:29:58.754760" level="INFO">✅ Test-7 Time Configuration Validation completed successfully!</msg>
 <arg>✅ Test-7 Time Configuration Validation completed successfully!</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-07T22:29:58.348552" elapsed="0.000179"/>
+<status status="PASS" start="2025-10-08T22:29:58.754624" elapsed="0.000334"/>
 </kw>
 <doc>📊 Generate executive summary for time configuration validation</doc>
-<status status="FAIL" start="2025-10-07T22:29:58.345048" elapsed="0.003813">Several failures occurred:
+<status status="FAIL" start="2025-10-08T22:29:58.751112" elapsed="0.004054">Several failures occurred:
 
 1) Variable '${TARGET_IP}' not found.
 
@@ -256,7 +256,7 @@ ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot pro
 🔍 Process: Find hostname in EDS → SSH to server → Collect time/NTP data → Validate timezone and NTP configuration
 ✅ Pass if timezone is Pacific/Los Angeles and NTP server is ntpx.domain.com with proper synchronization
 📊 Validates: Timezone setting, Chrony service status, NTP server configuration, time synchronization</doc>
-<status status="FAIL" start="2025-10-07T22:29:57.708764" elapsed="0.640175">Suite setup failed:
+<status status="FAIL" start="2025-10-08T22:29:58.087486" elapsed="0.667798">Suite setup failed:
 ValueError: CRITICAL: Hostname 'allxdvitap01' not found in EDS sheet. Cannot proceed with validation.
 
 Also suite teardown failed:
@@ -302,6 +302,6 @@ Several failures occurred:
 </suite>
 </statistics>
 <errors>
-<msg time="2025-10-07T22:29:58.334271" level="ERROR">Hostname 'allxdvitap01' not found in EDS sheet</msg>
+<msg time="2025-10-08T22:29:58.740448" level="ERROR">Hostname 'allxdvitap01' not found in EDS sheet</msg>
 </errors>
 </robot>

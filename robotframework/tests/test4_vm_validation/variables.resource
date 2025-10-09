@@ -5,6 +5,9 @@ Library          BuiltIn
 Library          OperatingSystem
 
 *** Variables ***
+# Target Configuration - Set via command line
+${TARGET_HOSTNAME}           # Set via command line --variable TARGET_HOSTNAME:value
+
 # Will be populated from EDS during suite setup
 ${TARGET_VXRAIL_CLUSTER}         ${EMPTY}
 ${TARGET_VCENTER_HOST}           ${EMPTY}

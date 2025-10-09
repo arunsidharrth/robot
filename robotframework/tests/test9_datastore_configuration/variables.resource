@@ -2,11 +2,14 @@
 Documentation    Variable definitions for Datastore Configuration Test Suite
 
 *** Variables ***
+# Target Configuration - Pulled from command line like test3
+${TARGET_HOSTNAME}             # Set via command line --variable TARGET_HOSTNAME:value
+
 # vCenter Connection Settings
 ${VCENTER_SERVER}              vcenter.example.com
 ${VCENTER_USERNAME}            administrator@vsphere.local
 ${VCENTER_PASSWORD}            %{VCENTER_PASSWORD=default_password}
-${VCENTER_HOST}                esxi-host-01.example.com
+${VCENTER_HOST}                ${TARGET_HOSTNAME}    # Use same hostname as test3
 ${CLUSTER_NAME}                Production-Cluster
 
 # Datastore Validation Thresholds

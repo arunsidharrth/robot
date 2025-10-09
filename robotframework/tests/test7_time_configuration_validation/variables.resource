@@ -3,6 +3,9 @@ Documentation    ⏰ Test-7 Variables: Time Configuration Validation
 ...              📋 Contains all variables specific to time zone and NTP configuration testing
 
 *** Variables ***
+# Target Configuration - Set via command line
+${TARGET_HOSTNAME}           # Set via command line --variable TARGET_HOSTNAME:value
+
 # 🎯 Test Suite Configuration
 ${TEST_SUITE_NAME}        Test-7 Time Configuration Validation
 ${TEST_SUITE_ID}          test7

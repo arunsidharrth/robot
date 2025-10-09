@@ -1,205 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.8 on win32)" generated="2025-10-07T22:29:59.091989" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.8 on win32)" generated="2025-10-08T22:29:59.585493" rpa="false" schemaversion="5">
 <suite id="s1" name="Ssh Key Authentication" source="C:\Users\write\project_2025\robot\robotframework\tests\test8_ssh_key_authentication\ssh_key_authentication.robot">
 <kw name="Initialize SSH Key Test Environment" owner="ssh_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-07T22:29:59.248970" level="INFO">🚀 Initializing Test-8: SSH Key Authentication Validation Environment...</msg>
+<msg time="2025-10-08T22:29:59.750556" level="INFO">🚀 Initializing Test-8: SSH Key Authentication Validation Environment...</msg>
 <arg>🚀 Initializing Test-8: SSH Key Authentication Validation Environment...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-07T22:29:59.248801" elapsed="0.000313"/>
+<status status="PASS" start="2025-10-08T22:29:59.750398" elapsed="0.000321"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-10-07T22:29:59.249421" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\write\project_2025\robot\robotframework\results\test8_ssh_key_authentication\data"&gt;C:\Users\write\project_2025\robot\robotframework\results\test8_ssh_key_authentication\data&lt;/a&gt;' already exists.</msg>
+<msg time="2025-10-08T22:29:59.750999" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\write\project_2025\robot\robotframework\results\test8_ssh_key_authentication\data"&gt;C:\Users\write\project_2025\robot\robotframework\results\test8_ssh_key_authentication\data&lt;/a&gt;' already exists.</msg>
 <arg>${DATA_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-10-07T22:29:59.249245" elapsed="0.000236"/>
+<status status="PASS" start="2025-10-08T22:29:59.750850" elapsed="0.000197"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-07T22:29:59.249745" level="INFO">📋 Code Server: 192.168.1.100</msg>
+<msg time="2025-10-08T22:29:59.751264" level="INFO">📋 Code Server: 192.168.1.100</msg>
 <arg>📋 Code Server: ${CODE_SERVER_HOST}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-07T22:29:59.249582" elapsed="0.000289"/>
+<status status="PASS" start="2025-10-08T22:29:59.751133" elapsed="0.000276"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-07T22:29:59.250113" level="INFO">📋 Code Server User: codeserver</msg>
+<msg time="2025-10-08T22:29:59.751679" level="INFO">📋 Code Server User: codeserver</msg>
 <arg>📋 Code Server User: ${CODE_SERVER_USER}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-07T22:29:59.249969" elapsed="0.000278"/>
+<status status="PASS" start="2025-10-08T22:29:59.751525" elapsed="0.000299"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-07T22:29:59.250523" level="INFO">🔗 Connecting to Code Server: 192.168.1.100...</msg>
+<msg time="2025-10-08T22:29:59.752059" level="INFO">🔗 Connecting to Code Server: 192.168.1.100...</msg>
 <arg>🔗 Connecting to Code Server: ${CODE_SERVER_HOST}...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-07T22:29:59.250377" elapsed="0.000286"/>
+<status status="PASS" start="2025-10-08T22:29:59.751924" elapsed="0.000237"/>
 </kw>
 <kw name="Open Connection" owner="SSHLibrary">
 <arg>${CODE_SERVER_HOST}</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="PASS" start="2025-10-07T22:29:59.250789" elapsed="0.000196"/>
+<status status="PASS" start="2025-10-08T22:29:59.752252" elapsed="0.000169"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
-<msg time="2025-10-07T22:29:59.251316" level="INFO">Logging into '192.168.1.100:22' as 'codeserver'.</msg>
-<msg time="2025-10-07T22:30:02.253606" level="FAIL">TimeoutError: timed out</msg>
+<msg time="2025-10-08T22:29:59.752652" level="INFO">Logging into '192.168.1.100:22' as 'codeserver'.</msg>
+<msg time="2025-10-08T22:30:02.754837" level="FAIL">TimeoutError: timed out</msg>
 <arg>${CODE_SERVER_USER}</arg>
 <arg>${CODE_SERVER_PASS}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="FAIL" start="2025-10-07T22:29:59.251078" elapsed="3.005169">TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-08T22:29:59.752505" elapsed="3.005019">TimeoutError: timed out</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ SSH connection to Code Server established successfully</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-07T22:30:02.256416" elapsed="0.000022"/>
+<status status="NOT RUN" start="2025-10-08T22:30:02.757680" elapsed="0.000021"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${whoami}</var>
 <arg>whoami</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-10-07T22:30:02.256517" elapsed="0.000013"/>
+<status status="NOT RUN" start="2025-10-08T22:30:02.757780" elapsed="0.000014"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${hostname}</var>
 <arg>hostname</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-10-07T22:30:02.256595" elapsed="0.000011"/>
+<status status="NOT RUN" start="2025-10-08T22:30:02.757861" elapsed="0.000013"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>👤 Connected as: ${whoami}@${hostname}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-07T22:30:02.256667" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-08T22:30:02.757938" elapsed="0.000013"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Test-8 environment initialized</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-07T22:30:02.256741" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-10-08T22:30:02.758018" elapsed="0.000013"/>
 </kw>
 <doc>🏗️ Set up test environment for SSH key authentication validation</doc>
-<status status="FAIL" start="2025-10-07T22:29:59.248288" elapsed="3.008576">TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-08T22:29:59.749884" elapsed="3.008241">TimeoutError: timed out</status>
 </kw>
 <test id="s1-t1" name="Critical - Connect to Code Server" line="18">
-<doc>🔗 Establish SSH connection to Code Server (Linux jump box)</doc>
+<doc>🔗 SSH directly to the code server (Linux jump box) to prepare for SSH key-based authentication testing</doc>
 <tag>connection</tag>
 <tag>critical</tag>
 <tag>infrastructure</tag>
 <tag>ssh</tag>
-<status status="FAIL" start="2025-10-07T22:30:02.256951" elapsed="0.000555">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:30:02.758206" elapsed="0.000601">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
-<test id="s1-t2" name="Critical - Verify SSH Private Key Exists" line="31">
-<doc>🔑 Verify SSH private key exists on Code Server with correct permissions</doc>
-<tag>critical</tag>
-<tag>security</tag>
-<tag>ssh_key</tag>
-<status status="FAIL" start="2025-10-07T22:30:02.258217" elapsed="0.000484">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-t3" name="Critical - Validate SSH Private Key Permissions" line="44">
-<doc>🔒 Validate SSH private key has secure permissions (600)</doc>
-<tag>critical</tag>
-<tag>permissions</tag>
-<tag>security</tag>
-<status status="FAIL" start="2025-10-07T22:30:02.259108" elapsed="0.000448">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-t4" name="Critical - Test Passwordless SSH Authentication" line="58">
-<doc>🔐 Test passwordless SSH connection from Code Server to target machine</doc>
+<test id="s1-t2" name="Critical - Test Passwordless SSH Authentication" line="31">
+<doc>🔐 From the code server, attempt SSH connection to target machine using key-based authentication without password prompts, verify the connection succeeds, check authorized_keys file permissions (should be 600), and capture connection details</doc>
 <tag>authentication</tag>
 <tag>critical</tag>
 <tag>passwordless</tag>
-<status status="FAIL" start="2025-10-07T22:30:02.259960" elapsed="0.000366">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:30:02.759578" elapsed="0.000695">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
-<test id="s1-t5" name="Critical - Validate Authorized Keys File" line="73">
-<doc>📝 Verify authorized_keys file exists on target with correct permissions</doc>
-<tag>authorized_keys</tag>
+<test id="s1-t3" name="Critical - Validate Authentication Security" line="58">
+<doc>🛡️ Confirm passwordless SSH works from code server to target, verify authorized_keys file contains correct public keys with proper permissions (600), validate SSH configuration, and ensure the jump box authentication chain is properly configured</doc>
 <tag>critical</tag>
 <tag>security</tag>
-<status status="FAIL" start="2025-10-07T22:30:02.260677" elapsed="0.000369">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-t6" name="Critical - Validate Authorized Keys Permissions" line="86">
-<doc>🔒 Validate authorized_keys file has secure permissions (600)</doc>
-<tag>critical</tag>
-<tag>permissions</tag>
-<tag>security</tag>
-<status status="FAIL" start="2025-10-07T22:30:02.261421" elapsed="0.000411">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-t7" name="Critical - Verify Public Key in Authorized Keys" line="100">
-<doc>🔑 Verify public key is present in authorized_keys file</doc>
-<tag>critical</tag>
-<tag>public_key</tag>
 <tag>validation</tag>
-<status status="FAIL" start="2025-10-07T22:30:02.262223" elapsed="0.000367">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-t8" name="Normal - Validate SSH Directory Permissions" line="117">
-<doc>🔒 Ensure .ssh directory has correct permissions (700) on both machines</doc>
-<tag>normal</tag>
-<tag>permissions</tag>
-<tag>security</tag>
-<status status="FAIL" start="2025-10-07T22:30:02.263035" elapsed="0.000328">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-t9" name="Normal - Validate SSH Key Type and Strength" line="135">
-<doc>🔐 Validate SSH key type and cryptographic strength</doc>
-<tag>crypto</tag>
-<tag>normal</tag>
-<tag>security</tag>
-<status status="FAIL" start="2025-10-07T22:30:02.263773" elapsed="0.000304">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-t10" name="Normal - Validate SSH Configuration Security" line="161">
-<doc>🛡️ Validate SSH server configuration on target machine</doc>
-<tag>configuration</tag>
-<tag>normal</tag>
-<tag>security</tag>
-<status status="FAIL" start="2025-10-07T22:30:02.264528" elapsed="0.000402">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-t11" name="Normal - Comprehensive SSH Authentication Chain Validation" line="173">
-<doc>🔗 Validate complete authentication chain from Code Server to target</doc>
-<tag>comprehensive</tag>
-<tag>normal</tag>
-<tag>validation</tag>
-<status status="FAIL" start="2025-10-07T22:30:02.265515" elapsed="0.000406">Parent suite setup failed:
+<status status="FAIL" start="2025-10-08T22:30:02.760731" elapsed="0.000600">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <kw name="Generate SSH Key Authentication Executive Summary" owner="ssh_keywords" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-07T22:30:02.267174" level="INFO">📊 Generating Test-8 SSH Key Authentication Executive Summary...</msg>
+<msg time="2025-10-08T22:30:02.762268" level="INFO">📊 Generating Test-8 SSH Key Authentication Executive Summary...</msg>
 <arg>📊 Generating Test-8 SSH Key Authentication Executive Summary...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-07T22:30:02.267028" elapsed="0.000306"/>
+<status status="PASS" start="2025-10-08T22:30:02.762153" elapsed="0.000240"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-07T22:30:02.267684" level="INFO">${timestamp} = 2025-10-07 22:30:02</msg>
+<msg time="2025-10-08T22:30:02.762720" level="INFO">${timestamp} = 2025-10-08 22:30:02</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-07T22:30:02.267452" elapsed="0.000256"/>
+<status status="PASS" start="2025-10-08T22:30:02.762506" elapsed="0.000239"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-07T22:30:02.267881" level="INFO">${summary_file} = results/test8_ssh_key_authentication/Test8_SSH_Key_Authentication_Executive_Summary.txt</msg>
+<msg time="2025-10-08T22:30:02.762956" level="INFO">${summary_file} = results/test8_ssh_key_authentication/Test8_SSH_Key_Authentication_Executive_Summary.txt</msg>
 <var>${summary_file}</var>
 <arg>results/test8_ssh_key_authentication/Test8_SSH_Key_Authentication_Executive_Summary.txt</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-07T22:30:02.267788" elapsed="0.000111"/>
+<status status="PASS" start="2025-10-08T22:30:02.762844" elapsed="0.000134"/>
 </kw>
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2025-10-07T22:30:02.268317" level="INFO">${summary_content} = ========================================
+<msg time="2025-10-08T22:30:02.763395" level="INFO">${summary_content} = ========================================
 🔐 TEST-8: SSH KEY AUTHENTICATION VALIDATION
 📊 EXECUTIVE SUMMARY REPORT
 ========================================
 
-📅 Report Generated: 2025-10-07 22:30:02
+📅 Report Generated: 2025-10-08 22:30:02
 🎯 Code...</msg>
 <var>${summary_content}</var>
 <arg>SEPARATOR=\n</arg>
@@ -247,67 +183,59 @@ TimeoutError: timed out</status>
 <arg>End of Executive Summary</arg>
 <arg>========================================</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2025-10-07T22:30:02.267969" elapsed="0.000374"/>
+<status status="PASS" start="2025-10-08T22:30:02.763063" elapsed="0.000355"/>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-10-07T22:30:02.269270" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\write\project_2025\robot\robotframework\results\test8_ssh_key_authentication\Test8_SSH_Key_Authentication_Executive_Summary.txt"&gt;C:\Users\write\project_2025\robot\robotframework\results\test8_ssh_key_authentication\Test8_SSH_Key_Authentication_Executive_Summary.txt&lt;/a&gt;'.</msg>
+<msg time="2025-10-08T22:30:02.764302" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\write\project_2025\robot\robotframework\results\test8_ssh_key_authentication\Test8_SSH_Key_Authentication_Executive_Summary.txt"&gt;C:\Users\write\project_2025\robot\robotframework\results\test8_ssh_key_authentication\Test8_SSH_Key_Authentication_Executive_Summary.txt&lt;/a&gt;'.</msg>
 <arg>${summary_file}</arg>
 <arg>${summary_content}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-10-07T22:30:02.268518" elapsed="0.000805"/>
+<status status="PASS" start="2025-10-08T22:30:02.763723" elapsed="0.000627"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-07T22:30:02.269534" level="INFO">📊 Executive summary generated: results/test8_ssh_key_authentication/Test8_SSH_Key_Authentication_Executive_Summary.txt</msg>
+<msg time="2025-10-08T22:30:02.764544" level="INFO">📊 Executive summary generated: results/test8_ssh_key_authentication/Test8_SSH_Key_Authentication_Executive_Summary.txt</msg>
 <arg>📊 Executive summary generated: ${summary_file}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-07T22:30:02.269410" elapsed="0.000247"/>
+<status status="PASS" start="2025-10-08T22:30:02.764429" elapsed="0.000258"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-07T22:30:02.269835" level="INFO">✅ Test-8 SSH Key Authentication Validation completed successfully!</msg>
+<msg time="2025-10-08T22:30:02.764866" level="INFO">✅ Test-8 SSH Key Authentication Validation completed successfully!</msg>
 <arg>✅ Test-8 SSH Key Authentication Validation completed successfully!</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-07T22:30:02.269749" elapsed="0.000754"/>
+<status status="PASS" start="2025-10-08T22:30:02.764777" elapsed="0.000213"/>
 </kw>
 <kw name="Close All Connections" owner="SSHLibrary">
 <doc>Closes all open connections.</doc>
-<status status="PASS" start="2025-10-07T22:30:02.270628" elapsed="0.000106"/>
+<status status="PASS" start="2025-10-08T22:30:02.765130" elapsed="0.000086"/>
 </kw>
 <doc>📊 Generate executive summary for SSH key authentication validation</doc>
-<status status="PASS" start="2025-10-07T22:30:02.266806" elapsed="0.003986"/>
+<status status="PASS" start="2025-10-08T22:30:02.761984" elapsed="0.003280"/>
 </kw>
 <doc>🔐 SSH Key Authentication Validation Test Suite - Test-8
 🔍 Process: Connect to Code Server → Test SSH key authentication → Validate authorized_keys configuration
 ✅ Pass if SSH key authentication works passwordlessly from Code Server to target machine
 📊 Validates: SSH key authentication, authorized_keys permissions, SSH configuration</doc>
-<status status="FAIL" start="2025-10-07T22:29:59.093458" elapsed="3.177367">Suite setup failed:
+<status status="FAIL" start="2025-10-08T22:29:59.586937" elapsed="3.178353">Suite setup failed:
 TimeoutError: timed out</status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="11" skip="0">All Tests</stat>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="0" fail="1" skip="0">authentication</stat>
-<stat pass="0" fail="1" skip="0">authorized_keys</stat>
-<stat pass="0" fail="1" skip="0">comprehensive</stat>
-<stat pass="0" fail="1" skip="0">configuration</stat>
 <stat pass="0" fail="1" skip="0">connection</stat>
-<stat pass="0" fail="7" skip="0">critical</stat>
-<stat pass="0" fail="1" skip="0">crypto</stat>
+<stat pass="0" fail="3" skip="0">critical</stat>
 <stat pass="0" fail="1" skip="0">infrastructure</stat>
-<stat pass="0" fail="4" skip="0">normal</stat>
 <stat pass="0" fail="1" skip="0">passwordless</stat>
-<stat pass="0" fail="3" skip="0">permissions</stat>
-<stat pass="0" fail="1" skip="0">public_key</stat>
-<stat pass="0" fail="7" skip="0">security</stat>
+<stat pass="0" fail="1" skip="0">security</stat>
 <stat pass="0" fail="1" skip="0">ssh</stat>
-<stat pass="0" fail="1" skip="0">ssh_key</stat>
-<stat pass="0" fail="2" skip="0">validation</stat>
+<stat pass="0" fail="1" skip="0">validation</stat>
 </tag>
 <suite>
-<stat name="Ssh Key Authentication" id="s1" pass="0" fail="11" skip="0">Ssh Key Authentication</stat>
+<stat name="Ssh Key Authentication" id="s1" pass="0" fail="3" skip="0">Ssh Key Authentication</stat>
 </suite>
 </statistics>
 <errors>

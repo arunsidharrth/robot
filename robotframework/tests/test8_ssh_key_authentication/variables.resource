@@ -9,8 +9,9 @@ ${CODE_SERVER_HOST}          192.168.1.100
 ${CODE_SERVER_USER}          codeserver
 ${CODE_SERVER_PASS}          password123
 
-# Target Machine Configuration
-${TARGET_HOST}               192.168.1.50
+# Target Machine Configuration - Pulled from command line like test3
+${TARGET_HOSTNAME}           # Set via command line --variable TARGET_HOSTNAME:value
+${TARGET_HOST}               ${TARGET_HOSTNAME}    # Use same hostname as test3
 ${TARGET_USER}               testuser
 
 # SSH Key Configuration

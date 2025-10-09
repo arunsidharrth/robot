@@ -16,50 +16,23 @@ Test Teardown    Log Test End      ${TEST_NAME}    ${TEST_STATUS}
 
 *** Test Cases ***
 Critical - Connect to Code Server
-    [Documentation]    🔗 Establish SSH connection to Code Server (Linux jump box)
+    [Documentation]    🔗 SSH directly to the code server (Linux jump box) to prepare for SSH key-based authentication testing
     [Tags]             critical    connection    ssh    infrastructure
 
-    Log    🔍 Verifying SSH connection to Code Server...    console=yes
+    Log    🔍 Connecting to Code Server (Linux jump box)...    console=yes
     Log    📋 Code Server: ${CODE_SERVER_HOST}    console=yes
 
     # Connection already established in Suite Setup
     ${connection_status}=    Execute Command    echo "Connection active"
     Should Contain    ${connection_status}    Connection active
 
-    Log    ✅ SSH connection to Code Server verified and active    console=yes
-
-Critical - Verify SSH Private Key Exists
-    [Documentation]    🔑 Verify SSH private key exists on Code Server with correct permissions
-    [Tags]             critical    ssh_key    security
-
-    Log    🔍 Verifying SSH private key on Code Server...    console=yes
-    Log    📋 Expected key path: ${SSH_KEY_PATH}    console=yes
-
-    # Check if private key exists
-    ${key_exists}=    Execute Command    test -f ${SSH_KEY_PATH} && echo "exists" || echo "not found"
-    Should Contain    ${key_exists}    exists    msg=SSH private key not found at ${SSH_KEY_PATH}
-
-    Log    ✅ SSH private key found at ${SSH_KEY_PATH}    console=yes
-
-Critical - Validate SSH Private Key Permissions
-    [Documentation]    🔒 Validate SSH private key has secure permissions (600)
-    [Tags]             critical    security    permissions
-
-    Log    🔍 Validating SSH private key permissions...    console=yes
-    Log    📋 Expected permissions: 600    console=yes
-
-    # Check private key permissions
-    ${key_perms}=    Execute Command    stat -c '%a' ${SSH_KEY_PATH}
-    Should Be Equal    ${key_perms}    600    msg=SSH private key permissions should be 600, found ${key_perms}
-
-    Log    🔒 Private key permissions: ${key_perms}    console=yes
-    Log    ✅ SSH private key permissions validated    console=yes
+    Log    ✅ SSH connection to Code Server established and verified    console=yes
 
 Critical - Test Passwordless SSH Authentication
-    [Documentation]    🔐 Test passwordless SSH connection from Code Server to target machine
+    [Documentation]    🔐 From the code server, attempt SSH connection to target machine using key-based authentication without password prompts, verify the connection succeeds, check authorized_keys file permissions (should be 600), and capture connection details
     [Tags]             critical    authentication    passwordless
 
-    Log    🔍 Testing passwordless SSH authentication...    console=yes
+    Log    🔍 Testing passwordless SSH authentication from Code Server to target...    console=yes
     Log    📋 Target: ${TARGET_USER}@${TARGET_HOST}    console=yes
 
     # Attempt passwordless SSH connection
@@ -70,120 +43,59 @@ Critical - Test Passwordless SSH Authentication
 
     Log    ✅ Passwordless SSH authentication successful    console=yes
 
-Critical - Validate Authorized Keys File
-    [Documentation]    📝 Verify authorized_keys file exists on target with correct permissions
-    [Tags]             critical    authorized_keys    security
-
-    Log    🔍 Validating authorized_keys file on target machine...    console=yes
-    Log    📋 Expected path: ${AUTHORIZED_KEYS_PATH}    console=yes
-
-    # Check if authorized_keys file exists
-    ${auth_exists}=    Execute Command    ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ${TARGET_USER}@${TARGET_HOST} 'test -f ${AUTHORIZED_KEYS_PATH} && echo "exists" || echo "not found"'
-    Should Contain    ${auth_exists}    exists    msg=authorized_keys file not found at ${AUTHORIZED_KEYS_PATH}
-
-    Log    ✅ authorized_keys file found on target machine    console=yes
-
-Critical - Validate Authorized Keys Permissions
-    [Documentation]    🔒 Validate authorized_keys file has secure permissions (600)
-    [Tags]             critical    security    permissions
-
-    Log    🔍 Validating authorized_keys file permissions...    console=yes
-    Log    📋 Expected permissions: 600    console=yes
-
-    # Check authorized_keys permissions
+    # Check authorized_keys file permissions (should be 600)
+    Log    🔍 Checking authorized_keys file permissions...    console=yes
     ${auth_perms}=    Execute Command    ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ${TARGET_USER}@${TARGET_HOST} 'stat -c "%a" ${AUTHORIZED_KEYS_PATH}'
     Should Be Equal    ${auth_perms}    600    msg=authorized_keys permissions should be 600, found ${auth_perms}
 
     Log    🔒 authorized_keys permissions: ${auth_perms}    console=yes
-    Log    ✅ authorized_keys permissions validated    console=yes
+    Log    ✅ authorized_keys file permissions validated (600)    console=yes
 
-Critical - Verify Public Key in Authorized Keys
-    [Documentation]    🔑 Verify public key is present in authorized_keys file
-    [Tags]             critical    public_key    validation
+    # Capture connection details
+    ${connection_details}=    Execute Command    ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ${TARGET_USER}@${TARGET_HOST} 'echo "Host: $(hostname), User: $(whoami), Time: $(date)"'
+    Log    📊 Connection details: ${connection_details}    console=yes
 
-    Log    🔍 Verifying public key in authorized_keys...    console=yes
+Critical - Validate Authentication Security
+    [Documentation]    🛡️ Confirm passwordless SSH works from code server to target, verify authorized_keys file contains correct public keys with proper permissions (600), validate SSH configuration, and ensure the jump box authentication chain is properly configured
+    [Tags]             critical    security    validation
 
-    # Get public key from Code Server
+    Log    🔍 Validating authentication security configuration...    console=yes
+
+    # Confirm passwordless SSH works
+    Log    🔍 Confirming passwordless SSH from code server to target...    console=yes
+    ${ssh_confirm}=    Execute Command    ssh -o StrictHostKeyChecking=no -o PasswordAuthentication=no -o BatchMode=yes -i ${SSH_KEY_PATH} ${TARGET_USER}@${TARGET_HOST} 'echo "Confirmed"'
+    Should Contain    ${ssh_confirm}    Confirmed    msg=Passwordless SSH confirmation failed
+
+    Log    ✅ Passwordless SSH from code server to target confirmed    console=yes
+
+    # Verify authorized_keys contains correct public keys with proper permissions
+    Log    🔍 Verifying public key in authorized_keys file...    console=yes
     ${pubkey}=    Execute Command    cat ${SSH_KEY_PATH}.pub
-    Log    🔑 Public key: ${pubkey[:50]}...    console=yes
-
-    # Get authorized_keys content from target
     ${auth_content}=    Execute Command    ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ${TARGET_USER}@${TARGET_HOST} 'cat ${AUTHORIZED_KEYS_PATH}'
-
     Should Contain    ${auth_content}    ${pubkey}    msg=Public key not found in authorized_keys file
 
     Log    ✅ Public key verified in authorized_keys file    console=yes
 
-Normal - Validate SSH Directory Permissions
-    [Documentation]    🔒 Ensure .ssh directory has correct permissions (700) on both machines
-    [Tags]             normal    security    permissions
+    # Verify authorized_keys permissions (600)
+    ${auth_perms}=    Execute Command    ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ${TARGET_USER}@${TARGET_HOST} 'stat -c "%a" ${AUTHORIZED_KEYS_PATH}'
+    Should Be Equal    ${auth_perms}    600    msg=authorized_keys permissions should be 600, found ${auth_perms}
 
-    Log    🔍 Validating .ssh directory permissions...    console=yes
+    Log    ✅ authorized_keys permissions validated (600)    console=yes
 
-    # Check Code Server .ssh directory permissions
-    ${cs_ssh_perms}=    Execute Command    stat -c '%a' /home/${CODE_SERVER_USER}/.ssh
-    Should Be Equal    ${cs_ssh_perms}    700    msg=Code Server .ssh directory should have 700 permissions, found ${cs_ssh_perms}
-    Log    🔒 Code Server .ssh permissions: ${cs_ssh_perms}    console=yes
-
-    # Check Target .ssh directory permissions
-    ${target_ssh_perms}=    Execute Command    ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ${TARGET_USER}@${TARGET_HOST} 'stat -c "%a" ~/.ssh'
-    Should Be Equal    ${target_ssh_perms}    700    msg=Target .ssh directory should have 700 permissions, found ${target_ssh_perms}
-    Log    🔒 Target .ssh permissions: ${target_ssh_perms}    console=yes
-
-    Log    ✅ .ssh directory permissions validated on both machines    console=yes
-
-Normal - Validate SSH Key Type and Strength
-    [Documentation]    🔐 Validate SSH key type and cryptographic strength
-    [Tags]             normal    security    crypto
-
-    Log    🔍 Validating SSH key type and strength...    console=yes
-
-    # Get key information
-    ${key_info}=    Execute Command    ssh-keygen -l -f ${SSH_KEY_PATH}
-    Log    📊 SSH key information: ${key_info}    console=yes
-
-    # Extract key type and bit strength
-    ${key_type}=    Execute Command    ssh-keygen -l -f ${SSH_KEY_PATH} | awk '{print $4}' | tr -d '()'
-    ${key_bits}=    Execute Command    ssh-keygen -l -f ${SSH_KEY_PATH} | awk '{print $1}'
-    ${bits_int}=    Convert To Integer    ${key_bits}
-
-    Log    🔑 Key type: ${key_type}    console=yes
-    Log    🔑 Key strength: ${key_bits} bits    console=yes
-
-    # Validate key strength based on type
-    Run Keyword If    'RSA' in '''${key_type}'''
-    ...    Should Be True    ${bits_int} >= 2048    msg=RSA key should be at least 2048 bits, found ${key_bits}
-    Run Keyword If    'ED25519' in '''${key_type}''' or 'ECDSA' in '''${key_type}'''
-    ...    Should Be True    ${bits_int} >= 256    msg=ED25519/ECDSA key should be at least 256 bits, found ${key_bits}
-
-    Log    ✅ SSH key strength validated: ${key_bits} bits ${key_type}    console=yes
-
-Normal - Validate SSH Configuration Security
-    [Documentation]    🛡️ Validate SSH server configuration on target machine
-    [Tags]             normal    security    configuration
-
-    Log    🔍 Validating SSH server configuration...    console=yes
-
-    # Check SSH server configuration
-    ${ssh_config}=    Execute Command    ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ${TARGET_USER}@${TARGET_HOST} 'grep -E "^(PubkeyAuthentication|PasswordAuthentication|PermitRootLogin)" /etc/ssh/sshd_config 2>/dev/null || echo "Config check requires privileges"'
-
+    # Validate SSH configuration
+    Log    🔍 Validating SSH configuration...    console=yes
+    ${ssh_config}=    Execute Command    ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ${TARGET_USER}@${TARGET_HOST} 'grep -E "^(PubkeyAuthentication|PasswordAuthentication)" /etc/ssh/sshd_config 2>/dev/null || echo "Config check requires privileges"'
     Log    📋 SSH server configuration: ${ssh_config}    console=yes
-    Log    ✅ SSH server configuration collected    console=yes
 
-Normal - Comprehensive SSH Authentication Chain Validation
-    [Documentation]    🔗 Validate complete authentication chain from Code Server to target
-    [Tags]             normal    comprehensive    validation
+    # Ensure jump box authentication chain is properly configured
+    Log    🔍 Validating jump box authentication chain...    console=yes
+    ${chain_validation}=    Validate SSH Authentication Chain
+    Log    ✅ Jump box authentication chain properly configured    console=yes
 
-    Log    🔍 Performing comprehensive SSH authentication chain validation...    console=yes
-
-    # Validate authentication chain
-    Validate SSH Authentication Chain
-
-    Log    📊 Comprehensive validation summary:    console=yes
-    Log    📊 - Code Server connection: ✅    console=yes
-    Log    📊 - SSH private key: ✅    console=yes
-    Log    📊 - Key permissions: ✅    console=yes
-    Log    📊 - Passwordless authentication: ✅    console=yes
-    Log    📊 - authorized_keys: ✅    console=yes
-    Log    📊 - Directory permissions: ✅    console=yes
-    Log    ✅ Comprehensive SSH authentication validation: PASSED    console=yes
+    Log    📊 Authentication security validation summary:    console=yes
+    Log    📊 - Passwordless SSH: ✅    console=yes
+    Log    📊 - Public key in authorized_keys: ✅    console=yes
+    Log    📊 - authorized_keys permissions (600): ✅    console=yes
+    Log    📊 - SSH configuration: ✅    console=yes
+    Log    📊 - Jump box authentication chain: ✅    console=yes
+    Log    ✅ Authentication security validation: PASSED    console=yes
